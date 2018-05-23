@@ -1,0 +1,134 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.superbowlLayout "Superbowl Home"> <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Content Wrapper. Contains page content
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="content-wrapper">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Content Header (Page header)
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content-header">
+		<h1>
+			${i18n("exhibition.title")} <small>${i18n("exhibition.title.text")}</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i>
+					${i18n("breadcrumb.home")}</a></li>
+			<li><a href="#">${i18n("exhibition.title")}</a></li>
+			<li class="active">${i18n("exhibition.title.text")}</li>
+		</ol>
+	</section>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Main content
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content">
+	
+		<#assign lEmptyTableFalse="false">
+		<#assign lEmptyTableTrue="true">	
+		<#assign lManufactureId="">
+
+		<#if exhibitions?size==0>
+		
+			<div class="row-fluid">
+				<h4>Es wurden ${exhibitions?size} Eintr&auml;ge zu Ausstellungen in der Datenbank gefunden!</h4>
+			</div>
+		
+			<div class="row-fluid"><br/></div>
+		
+			<div class="row-fluid">
+				<a class="btn btn-primary pull-left" href="/superbowl/registerExhibition?emptyTable=${lEmptyTableTrue}&manufactureId=${lManufactureId}" role="button">${i18n("exhibition.register.title")}</a>
+			</div>
+		
+		<#else>	
+
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				Box
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<div class="box box-solid box-default">
+
+				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					Box Header
+					~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				<div class="box-header with-border">
+					<h3 class="box-title">${i18n("exhibition.title.box")}</h3>
+
+					<div class="box-tools pull-right">
+						<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+						<!-- Buttons, labels, and many other things can be placed here! -->
+						<!-- Here is a label for example -->
+						<span class="label label-primary">${exhibitions?size}</span>
+					</div>
+					<!-- /.box-tools -->
+				</div>
+				<!-- /.box-header -->
+
+				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  			Box Body
+		  			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				<div class="box-body table-responsive">					
+						
+					<table id="superbowlDataTable" class="table table-bordered table-striped table-hover">
+						<thead>
+							<tr>
+								<th>${i18n("exhibition.table.header.one")}</th>
+								<th>${i18n("exhibition.table.header.two")}</th>
+								<th>${i18n("exhibition.table.header.three")}</th>
+								<th>${i18n("exhibition.table.header.four")}</th>
+								<th>${i18n("exhibition.table.header.five")}</th>
+								<th>${i18n("exhibition.table.header.six")}</th>
+								<th>${i18n("exhibition.table.header.seven")}</th>
+								<th>${i18n("exhibition.table.header.eight")}</th>
+								<th>${i18n("exhibition.table.header.nine")}</th>
+							</tr>
+						</thead>
+						<tfoot></tfoot>
+						<tbody>
+							<#list exhibitions as exhibition>
+							<tr>
+								<td>${exhibition.index}</td>
+								<td>${exhibition.name}</td>
+								<td>${exhibition.institution}</td>
+								<td>${exhibition.year}</td>
+								<td>${exhibition.dateFrom}</td>
+								<td>${exhibition.dateTo}</td>
+								<td>${exhibition.city}</td>
+								<td>${exhibition.country}</td>
+								<td>${exhibition.comment}</td>
+							</tr>
+							</#list>
+						</tbody>
+					</table>						
+			
+				</div>
+				<!-- /.box-body -->
+	
+				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					Box Footer
+					~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				<div class="box-footer">
+					${i18n("exhibition.table.footer.text")}
+				</div>
+				<!-- box-footer -->
+					
+			</div>
+			<!-- /.box -->
+			
+			<#if exhibitions?size != 0>
+
+				<form method="post" action="/superbowl/registerExhibition?emptyTable=${lEmptyTableFalse}&manufactureId=${lManufactureId}">
+					<div class="form-group">
+						<div class="col-xs-10">
+							<button id="buttonRegisterExhibition" name="buttonRegisterExhibitionOK" type="submit" class="btn btn-sm btn-primary">${i18n("exhibition.register.title")}</button>
+						</div>
+						<label class="col-xs-2 control-label" for="buttonRegisterExhibitionOK"></label>
+					</div>
+				</form>
+				
+			</#if>
+			
+		</#if>
+
+	</section>
+	<!-- ./content -->
+</div>
+<!-- /.content-wrapper --> </@layout.superbowlLayout>

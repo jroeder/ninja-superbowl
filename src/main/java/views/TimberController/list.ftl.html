@@ -1,0 +1,151 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.superbowlLayout "Superbowl Home">
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Content Wrapper. Contains page content
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="content-wrapper">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Content Header (Page header)
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content-header">
+		<h1>
+			${i18n("timber.title")}
+			<small>${i18n("timber.title.text")}</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i> ${i18n("breadcrumb.home")}</a></li>
+			<li><a href="#">${i18n("timber.title")}</a></li>
+			<li class="active">${i18n("timber.title.text")}</li>
+		</ol>
+	</section>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Main content
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content">
+	
+		<#assign lEmptyTableTrue="true">
+		<#assign lEmptyTableFalse="false">
+		<#assign lGeoRegionCode="">
+		<#assign lBotanicSystemOrder="">
+		<#assign lBotanicSystemFamily="">
+		<#assign lBotanicSystemSubFamily="">
+
+		<#if holzarten?size == 0>
+		
+			<div class="row-fluid">
+				<h4>Es wurden ${holzarten?size} Holzarten in der Datenbank gefunden!</h4>
+			</div>
+		
+			<div class="row-fluid"><br/></div>
+		
+			<div class="row-fluid">
+				<a class="btn btn-default pull-left" href="/registerTimber?emptyTable=${lEmptyTableTrue}&geoRegionCode=${lGeoRegionCode}&botanicSystemOrder=${lBotanicSystemOrder}&botanicSystemFamily=${lBotanicSystemFamily}&botanicSystemSubFamily=${lBotanicSystemSubFamily}" role="button">${i18n("timber.register")} ${i18n("timber.title")}</a>
+			</div>
+		
+		<#else>	
+
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				Box
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<div class="box">
+
+				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					Box Header
+					~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				<div class="box-header with-border">
+					<h3 class="box-title">${i18n("timber.title.box")}</h3>
+
+					<div class="box-tools pull-right">
+						<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+						<!-- Buttons, labels, and many other things can be placed here! -->
+						<!-- Here is a label for example -->
+						<span class="label label-primary">${holzarten?size}</span>
+					</div>
+					<!-- /.box-tools -->
+				</div>
+				<!-- /.box-header -->
+
+				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  			Box Body
+		  			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				<div class="box-body table-responsive">					
+						
+					<table id="superbowlDataTable" class="table table-bordered table-striped table-hover">
+						<thead>
+							<tr>
+								<th>${i18n("timber.table.header.one")}</th>
+								<th>${i18n("timber.table.header.two")}</th>
+								<th>${i18n("timber.table.header.four")}</th>
+								<th>${i18n("timber.table.header.five")}</th>
+								<th>${i18n("timber.table.header.seven")}</th>
+								<th>${i18n("timber.table.header.eight")}</th>
+								<th>${i18n("timber.table.header.nine")}</th>
+								<th>${i18n("timber.table.header.ten")}</th>
+								<th>${i18n("timber.table.header.eleven")}</th>
+								<th>${i18n("timber.table.header.twelve")}</th>
+								<th>${i18n("timber.table.header.thirteen")}</th>
+								<th>${i18n("timber.table.header.fourteen")}</th>
+								<th>${i18n("timber.table.header.fivteen")}</th>
+								<th>${i18n("timber.table.header.sixteen")}</th>
+							</tr>
+						</thead>
+						<tfoot></tfoot>
+						<tbody>
+							<#list holzarten as timber>
+							<tr>
+								<td>${timber.geoRegion.region}</td>
+								<td>${timber.botanicSystem.order}&nbsp;${timber.botanicSystem.family}&nbsp;${timber.botanicSystem.subFamily}</td>
+								<td>${timber.code}</td>
+								<td>${timber.name}</td>
+								<td>${timber.academicName}</td>
+								<td>${timber.grossDensity}</td>
+								<td>${timber.tensileStrength}</td>
+								<td>${timber.burstStrength}</td>
+								<td>${timber.bendingStrength}</td>
+								<td>${timber.shearStrength}</td>
+								<td>${timber.brinellHardnessOne}</td>
+								<td>${timber.brinellHardnessTwo}</td>
+								<td>${timber.tangentShrinkage}</td>
+								<td>${timber.radialShrinkage}</td>
+							</tr>
+							</#list>
+						</tbody>
+					</table>						
+			
+				</div>
+				<!-- /.box-body -->
+	
+				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					Box Footer
+					~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				<div class="box-footer">
+					${i18n("timber.table.footer.text")}
+				</div>
+				<!-- box-footer -->
+					
+			</div>
+			<!-- /.box -->
+			
+			<#if holzarten?size != 0>
+
+				<form method="post" action="/superbowl/registerTimber?emptyTable=${lEmptyTableFalse}&geoRegionCode=${lGeoRegionCode}&botanicSystemOrder=${lBotanicSystemOrder}&botanicSystemFamily=${lBotanicSystemFamily}&botanicSystemSubFamily=${lBotanicSystemSubFamily}">
+					<div class="form-group">
+						<div class="col-xs-10">
+							<button id="buttonRegisterBowl" name="buttonRegisterTimberOK" type="submit" class="btn btn-sm btn-primary">${i18n("timber.register")} ${i18n("timber.title")}</button>
+						</div>
+						<label class="col-xs-2 control-label" for="buttonRegisterTimberOK"></label>
+					</div>
+				</form>
+				
+			</#if>
+
+		</#if>
+
+	</section>
+	<!-- ./content -->
+</div>
+<!-- /.content-wrapper -->
+
+</@layout.superbowlLayout>

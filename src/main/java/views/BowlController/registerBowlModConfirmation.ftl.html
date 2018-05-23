@@ -1,0 +1,197 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.superbowlLayout "Superbowl Home">
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Content Wrapper. Contains page content
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="content-wrapper">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Content Header (Page header)
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content-header">
+		<h1>
+			${i18n("bowl.title")} <small>${i18n("bowl.title.text")}</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i>
+					${i18n("breadcrumb.home")}</a></li>
+			<li><a href="#">${i18n("bowl.title")}</a></li>
+			<li class="active">${i18n("bowl.title.text")}</li>
+		</ol>
+	</section>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Main content
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content">
+
+		<!-- Your Page Content Here -->
+
+		<div class="container-fluid">
+			<div class="row-fluid form-horizontal">
+
+				<h3>${i18n("bowl.mod.legend.confirm")}</h3>
+
+				<div class="form-group">
+					
+					<label class="col-xs-2 control-label" for="textinput">Bowl Id</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.bowlId!"0"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					
+					<label class="col-xs-2 control-label" for="textinput">Bowl ModStep Id</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.bowlModStepId!"0"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+					<label class="col-xs-2 control-label" for="textinput">Modifikationsschritt</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.bowlModStepName!"N.A."}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-2 control-label" for="textinput">Datum</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.date!"01.01.2017"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					
+					<label class="col-xs-2 control-label" for="textinput">Durchmesser</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.diameter!"0"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					
+					<label class="col-xs-2 control-label" for="textinput">Höhe</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.height!"0"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-2 control-label" for="textinput">Wandstärke Min</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.wallthicknessMin!"0"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					
+					<label class="col-xs-2 control-label" for="textinput">Wandstärke Max</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.wallthicknessMax!"0"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+					<label class="col-xs-2 control-label" for="textinput">Körnung</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.granulation!"0"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-2 control-label" for="textinput">Oberfläche</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.surface!"Unknown"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					
+					<label class="col-xs-2 control-label" for="textinput">Tap</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.tap!"Unknown"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					
+					<label class="col-xs-2 control-label" for="textinput">Rezess</label>
+					<div class="col-xs-2">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.recess!"Unknown"}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-2 control-label" for="textinput">Kommentar</label>
+					<div class="col-xs-10">
+						<#if bowlMod??>
+							<p class="form-control-static">${bowlMod.comment!"N.N."}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<form method="post" action="/superbowl/registerBowlModCompletion">
+					<!-- Button (Double) -->
+					<div class="form-group">
+						<label class="col-xs-2 control-label" for="buttonOK"></label>
+						<div class="col-xs-10">
+							<button id="buttonConfirmBowlMod" name="buttonOK" type="submit" class="btn btn-success btn-sm">${i18n("button.ok")}</button>
+							<a class="btn btn-primary btn-sm" href="/superbowl/registerBowlMod?bowlId=${bowlMod.bowlId}&bowlModStepId=${bowlMod.bowlModStepId}&bowlModStepIndex=${bowlMod.bowlModStepIndex}&bowlModStepCode=${bowlMod.bowlModStepCode}&bowlModStepName=${bowlMod.bowlModStepName}" role="button">${i18n("button.back")}</a>
+							<a class="btn btn-warning btn-sm" href="/superbowl/bowl" role="button">${i18n("button.cancel")}</a>
+							<a class="btn btn-info btn-sm" href="#" role="button">${i18n("button.help")}</a>
+						</div>
+					</div>
+				</form>
+
+			</div>
+			<!-- ./row-fluid -->
+		</div>
+		<!-- ./container-fluid -->
+
+	</section>
+	<!-- ./content -->
+</div>
+<!-- /.content-wrapper --> </@layout.superbowlLayout>

@@ -1,0 +1,629 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.superbowlLayout "Superbowl Home"> <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Content Wrapper. Contains page content
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="content-wrapper">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Content Header (Page header)
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content-header">
+		<h1>
+			${i18n("timber.title")} <small>${i18n("timber.title.text")}</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i>
+					${i18n("breadcrumb.home")}</a></li>
+			<li><a href="#">${i18n("timber.title")}</a></li>
+			<li class="active">${i18n("timber.title.text")}</li>
+		</ol>
+	</section>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Main content
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content">
+	
+		<#assign lType="L">
+		<#assign lBotanicSystemOrder="">
+		<#assign lBotanicSystemFamily="">
+		<#assign lBotanicSystemSubFamily="">
+
+		<div class="container-fluid">
+
+			<div class="row-fluid">
+
+				<#-- ======================== 
+					  Form 
+					  ======================== -->
+				<form method="post" action="/superbowl/registerTimberConfirmation" class="form-horizontal">
+
+					<#if (violations)??>
+						<div class="text-warning">
+							<ul>
+								<#list validation.violations as violation>
+									${i18n(violation)}
+								</#list>
+							</ul>
+						</div>
+					</#if>
+
+					<#-- ========================
+					  	  Fieldset
+					  	  ======================== -->
+					<fieldset>
+
+						<!-- Form Name -->
+						<legend>Neuerfassung Holzart</legend>
+
+						<#-- ================
+							  Select GeoRegion
+							  ================ -->
+						<div class="form-group">
+						
+							<label class="col-xs-1 control-label" for="textinput">GeoRegion</label>
+							<div class="col-xs-4">
+								<#-- Input group of GeoRegion -->						
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-default dropdown-toggle selected" id="timberDropdownMenuGeoRegion" 
+											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select <span class="caret"></span>
+										</button>
+										<#if geoRegionList?has_content>
+								  			<ul class="dropdown-menu">
+												<#list geoRegionList as geoRegion>
+								      			<li><a href="/superbowl/registerTimber?emptyTable=${tEmptyTable}&geoRegionCode=${geoRegion.code}&botanicSystemOrder=${selectedBotanicSystemOrder}&botanicSystemFamily=${selectedBotanicSystemFamily}&botanicSystemSubFamily=${selectedBotanicSystemSubFamily}">${geoRegion.region}</a></li>
+												</#list>
+											</ul>
+										</#if>
+									</div>
+									<#-- /btn-group -->
+									<#if geoRegionList?has_content>
+										<input id="selectedGeoRegion" type="text" value="${geoRegionList[selectedGeoRegionIndex].region}" class="form-control input-mandatory" aria-label="GeoRegion"></input>
+									<#else>
+										<input id="selectedGeoRegion" type="text" value="${selectedGeoRegionName}" class="form-control input-mandatory" aria-label="GeoRegion"></input>
+									</#if>
+								</div>
+								<span class="help-block">Geographische Region</span>
+								<#-- /input-group -->							
+							</div>
+							<#-- ./col-xs-4 -->
+							<#if selectedGeoRegionId?has_content>
+								<div class="col-xs-1">
+									<input id="geoRegionId" name="geoRegionId" placeholder="Pflichtfeld"
+											class="form-control input-xs" type="text" value=${selectedGeoRegionId} readonly>
+										<span	class="help-block">Id</span>
+									</input>
+								</div>
+							</#if>
+							<#-- ./col-xs-1 -->
+													
+							<#-- ===================
+							     Hidden index fields
+							  	  =================== -->							
+							<div class="col-xs-1">
+								<#if selectedGeoRegionIndex?has_content>
+									<input id="geoRegionIndex" name="geoRegionIndex" placeholder=""
+										class="form-control input-xs" type="text" value=${selectedGeoRegionIndex} readonly>
+										<span class="help-block">Index</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->
+														
+							<div class="col-xs-1">
+								<#if geoRegionList?has_content>
+									<input id="geoRegionCode" name="geoRegionCode" placeholder=""
+										class="form-control input-xs" type="hidden" value=${geoRegionList[selectedGeoRegionIndex].code} readonly>
+										<span class="help-block"></span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->
+														
+							<div class="col-xs-1">
+								<#if geoRegionList?has_content>
+									<input id="geoRegionName" name="geoRegionName" placeholder=""
+										class="form-control input-xs" type="hidden" value=${geoRegionList[selectedGeoRegionIndex].name} readonly>
+										<span class="help-block"></span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->
+												
+						</div>
+						<#-- ./form-group -->
+
+						<#-- =====================
+							  Select BotanicSystem
+							  ==================== -->
+						<div class="form-group">
+						
+							<label class="col-xs-1 control-label" for="textinput">Ordnung</label>
+							<div class="col-xs-2">
+								<#-- Input group of BotanicSystem Order -->						
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-default dropdown-toggle selected" id="timberDropdownMenuBotanicSystemOrder" 
+											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select <span class="caret"></span>
+										</button>
+										<#if botanicSystemOrderList?has_content>
+								  			<ul class="dropdown-menu">
+												<#list botanicSystemOrderList as botanicSystemOrder>
+								      			<li><a href="/superbowl/registerTimber?emptyTable=${tEmptyTable}&geoRegionCode=${selectedGeoRegionCode}&botanicSystemOrder=${botanicSystemOrder}&botanicSystemFamily=${selectedBotanicSystemFamily}&botanicSystemSubFamily=${selectedBotanicSystemSubFamily}">${botanicSystemOrder}</a></li>
+												</#list>
+											</ul>
+										</#if>
+									</div>
+									<#-- /btn-group -->
+									<#if botanicSystemOrderList?has_content>
+										<input id="selectedBotanicSystemOrder" type="text" value="${selectedBotanicSystemOrder}" class="form-control input-mandatory" aria-label="BotanicSystemOrder"></input>
+									<#else>
+										<input id="selectedBotanicSystemOrder" type="text" value="${botanicSystemOrder}" class="form-control input-mandatory" aria-label="BotanicSystemOrder"></input>
+									</#if>
+								</div>
+								<span class="help-block">Botanische Ordnung</span>
+								<#-- /input-group -->							
+							</div>
+							<#-- ./col-xs-2 -->
+						
+							<label class="col-xs-1 control-label" for="textinput">Familie</label>
+							<div class="col-xs-2">
+								<#-- Input group of BotanicSystem Family -->						
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-default dropdown-toggle selected" id="timberDropdownMenuBotanicSystemFamily" 
+											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select <span class="caret"></span>
+										</button>
+										<#if botanicSystemFamilyList?has_content>
+								  			<ul class="dropdown-menu">
+												<#list botanicSystemFamilyList as botanicSystemFamily>
+								      			<li><a href="/superbowl/registerTimber?emptyTable=${tEmptyTable}&geoRegionCode=${selectedGeoRegionCode}&botanicSystemOrder=${selectedBotanicSystemOrder}&botanicSystemFamily=${botanicSystemFamily}&botanicSystemSubFamily=${selectedBotanicSystemSubFamily}">${botanicSystemFamily}</a></li>
+												</#list>
+											</ul>
+										</#if>
+									</div>
+									<#-- /btn-group -->
+									<#if botanicSystemFamilyList?has_content>
+										<input id="selectedBotanicSystemFamily" type="text" value="${selectedBotanicSystemFamily}" class="form-control input-mandatory" aria-label="BotanicSystemFamily"></input>
+									<#else>
+										<input id="selectedBotanicSystemFamily" type="text" value="${botanicSystemFamily}" class="form-control input-mandatory" aria-label="BotanicSystemFamily"></input>
+									</#if>
+								</div>
+								<span class="help-block">Botanische Familie</span>
+								<#-- /input-group -->							
+							</div>
+							<#-- ./col-xs-2 -->
+						
+							<label class="col-xs-1 control-label" for="textinput">Unterfamilie</label>
+							<div class="col-xs-2">
+								<#-- Input group of BotanicSystem SubFamily -->						
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-default dropdown-toggle selected" id="timberDropdownMenuBotanicSystemSubFamily" 
+											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select <span class="caret"></span>
+										</button>
+										<#if botanicSystemSubFamilyList?has_content>
+								  			<ul class="dropdown-menu">
+												<#list botanicSystemSubFamilyList as botanicSystemSubFamily>
+								      			<li><a href="/superbowl/registerTimber?emptyTable=${tEmptyTable}&geoRegionCode=${selectedGeoRegionCode}&botanicSystemOrder=${selectedBotanicSystemOrder}&botanicSystemFamily=${selectedBotanicSystemFamily}&botanicSystemSubFamily=${botanicSystemSubFamily}">${botanicSystemSubFamily}</a></li>
+												</#list>
+											</ul>
+										</#if>
+									</div>
+									<#-- /btn-group -->
+									<#if botanicSystemSubFamilyList?has_content>
+										<input id="selectedBotanicSystemSubFamily" type="text" value="${selectedBotanicSystemSubFamily}" class="form-control input-mandatory" aria-label="BotanicSystemSubFamily"></input>
+									<#else>
+										<input id="selectedBotanicSystemSubFamily" type="text" value="${botanicSystemSubFamily}" class="form-control input-mandatory" aria-label="BotanicSystemSubFamily"></input>
+									</#if>
+								</div>
+								<#-- /input-group -->
+								<span class="help-block">Botanische Unterfamilie</span>							
+							</div>
+							<#-- ./col-xs-2 -->
+																
+							<#-- ==================
+							     Hidden form fields
+							  	  ================== -->							
+							<div class="col-xs-1">
+								<#if botanicSystemId?has_content>
+									<input id="botanicSystemId" name="botanicSystemId" placeholder=""
+										class="form-control input-xs" type="text" value=${botanicSystemId} readonly>
+										<span class="help-block">Id</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->
+														
+							<div class="col-xs-1">
+								<#if botanicSystemOrderList?has_content>
+									<input id="botanicSystemOrder" name="botanicSystemOrder" placeholder=""
+										class="form-control input-xs" type="hidden" value=${selectedBotanicSystemOrder} readonly>
+										<span class="help-block"></span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->
+														
+							<div class="col-xs-1">
+								<#if botanicSystemFamilyList?has_content>
+									<input id="botanicSystemFamily" name="botanicSystemFamily" placeholder=""
+										class="form-control input-xs" type="hidden" value=${selectedBotanicSystemFamily} readonly>
+										<span class="help-block"></span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->
+														
+							<div class="col-xs-1">
+								<#if botanicSystemSubFamilyList?has_content>
+									<input id="botanicSystemSubFamily" name="botanicSystemSubFamily" placeholder=""
+										class="form-control input-xs" type="hidden" value=${selectedBotanicSystemSubFamily} readonly>
+										<span class="help-block"></span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->
+														
+							<div class="col-xs-1">
+								<#if botanicSystemId != 0>
+									<span class="glyphicon glyphicon-ok icon-success" aria-hidden="true"></span>
+									<!--
+									<span class="icon-success"><i class="fa fa-check"></i> O.K.</span>
+									<a class="btn btn-default icon-success" href="#">
+										<i class="fa fa-check"></i> O.K.</a>
+  									-->
+								</#if>
+								<#-- ./if -->
+							</div>
+							<#-- ./col-xs-1 -->
+												
+						</div>
+						<#-- ./form-group -->
+
+						<#-- ================================================
+							  Warning Message
+							  ================================================ -->
+						<#if botanicSystemId == 0>
+							<div class="form-group">			
+								<div class="col-xs-1"></div>		
+								<div class="col-xs-10">			
+									<div class="alert alert-error" role="alert">
+										<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+										<span class="sr-only">Error:</span>
+										Botanisches System Unbekannt - Bitte vor dem Speichern der Holzart ein entsprechendes Botanisches System anlegen!
+									</div>
+								</div>
+								<#-- ./col-xs-10 -->				
+								<div class="col-xs-1"></div>			
+							</div>
+							<#-- ./form-group -->
+						</#if>
+						<#-- ./if -->
+
+						<#-- ================================================
+							  Index, Type and Code
+							  ================================================ -->
+						<div class="form-group">
+						
+							<label class="col-xs-1 control-label" for="textinput">Type</label>
+							<div class="col-xs-2">
+								<#if tType?has_content>
+									<input id="type" name="type" placeholder="Pflichtfeld"
+										class="form-control input-xs input-mandatory" type="text" 
+										value=${tType}>
+										<span class="help-block">Type (L -> Laubbaum; N -> Nadelbaum)</span>
+									</input>
+								<#else>
+									<input id="type" name="type" placeholder="Pflichtfeld"
+										class="form-control input-xs input-mandatory" type="text" value=${lType}>
+										<span class="help-block">Type (L -> Laubbaum; N -> Nadelbaum)</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+						
+							<label class="col-xs-1 control-label" for="textinput">Code</label>
+							<div class="col-xs-2">
+								<#if tCode?has_content>
+									<input id="code" name="code" placeholder="Pflichtfeld"
+										class="form-control input-xs input-mandatory" type="text" 
+										minLength="4" maxlength="4" value=${tCode}>
+										<span class="help-block">4-stelliger eindeutiger Code</span>
+									</input>
+								<#else>
+									<input id="code" name="code" placeholder="Pflichtfeld"
+										class="form-control input-xs input-mandatory" type="text" 
+										minLength="4" maxlength="4">
+										<span class="help-block">4-stelliger eindeutiger Code</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+						
+							<label class="col-xs-1 control-label" for="textinput">Name</label>
+							<div class="col-xs-5">
+								<#if tName?has_content>
+									<input id="name" name="name" placeholder="Pflichtfeld"
+										class="form-control input-xs input-mandatory" type="text" maxLength="35"
+										value=tName>
+										<span class="help-block">Name (max. 35 Zeichen)</span>
+									</input>
+								<#else>
+									<input id="name" name="name" placeholder="Pflichtfeld"
+										class="form-control input-xs input-mandatory" type="text" maxLength="35">
+										<span class="help-block">Name (max. 35 Zeichen)</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-5 -->
+							
+						</div>
+						<!-- ./form-group -->
+
+						<#-- ================================================
+							  Name und Akademischer Name
+							  ================================================ -->
+						<div class="form-group">
+						
+							<label class="col-xs-1 control-label" for="textinput">Akademischer Name</label>
+							<div class="col-xs-8">
+								<#if tAkademicName?has_content>
+									<input id="academicName" name="academicName" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text" maxLength="50"
+										value=tAkademicName>
+										<span class="help-block">Akademischer Name (max. 50 Zeichen)</span>
+									</input>
+								<#else>
+									<input id="academicName" name="academicName" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text" maxLength="50">
+										<span class="help-block">Akademischer Name (max. 50 Zeichen)</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-8 -->
+							
+							<div class="col-xs-1"></div>
+							<#-- ./col-xs-1 -->
+							
+							<div class="col-xs-1">
+								<#if tIndex?has_content>
+									<input id="index" name="index" placeholder=""
+										class="form-control input-xs" type="hidden" value=${tIndex} readonly>
+										<span class="help-block"></span>
+									</input>
+								<#else>
+									<input id="index" name="index" placeholder=""
+										class="form-control input-xs" type="hidden" readonly>
+										<span class="help-block"></span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->
+							
+						</div>
+						<!-- ./form-group -->
+
+						<#-- ===================================================================
+							  Zugfestigkeit, Biegefestigkeit, Druckfestigkeit und Scherfestigkeit
+							  =================================================================== -->
+						<div class="form-group">
+						
+							<label class="col-xs-1 control-label" for="textinput">Zugfestigkeit</label>
+							<div class="col-xs-2">
+								<#if tTensileStrength?has_content>
+									<input id="tensileStrength" name="tensileStrength" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text"
+										value=${tTenacity}>
+										<span class="help-block">Zugfestigkeit in N/mm²</span>
+									</input>
+								<#else>
+									<input id="tensileStrength" name="tensileStrength" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text">
+										<span class="help-block">Zugfestigkeit in N/mm²</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+						
+							<label class="col-xs-1 control-label" for="textinput">Biegefestigkeit</label>
+							<div class="col-xs-2">
+								<#if tBendingStrength?has_content>
+									<input id="bendingStrength" name="bendingStrength" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text" 
+										value=${tBendingStrength}>
+										<span class="help-block">Biegefestigkeit in N/mm²</span>
+									</input>
+								<#else>
+									<input id="bendingStrength" name="bendingStrength" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text">
+										<span class="help-block">Biegefestigkeit in N/mm²</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+						
+							<label class="col-xs-1 control-label" for="textinput">Druckfestigkeit</label>
+							<div class="col-xs-2">
+								<#if tBurstStrength?has_content>
+									<input id="burstStrength" name="burstStrength" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text"
+										value=${tBurstStrength}>
+										<span class="help-block">Druckfestigkeit in N/mm²</span>
+									</input>
+								<#else>
+									<input id="burstStrength" name="burstStrength" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text">
+										<span class="help-block">Druckfestigkeit in N/mm²</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+						
+							<label class="col-xs-1 control-label" for="textinput">Scherfestigkeit</label>
+							<div class="col-xs-2">
+								<#if tShearStrength?has_content>
+									<input id="shearStrength" name="shearStrength" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text"
+										value=${tShearStrength}>
+										<span class="help-block">Scherfestigkeit in N/mm²</span>
+									</input>
+								<#else>
+									<input id="shearStrength" name="shearStrength" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text">
+										<span class="help-block">Scherfestigkeit in N/mm²</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+							
+						</div>
+						<!-- ./form-group -->
+
+						<#-- ========================
+							  Brinell Härte 1 und 2
+							  ======================== -->
+						<div class="form-group">
+						
+							<label class="col-xs-1 control-label" for="textinput">Rohdichte</label>
+							<div class="col-xs-2">
+								<#if tGrossDensity?has_content>
+									<input id="grossDensity" name="grossDensity" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text"
+										value=${tGrossDensity}>
+										<span class="help-block">Rohdichte in g/ccm</span>
+									</input>
+								<#else>
+									<input id="grossDensity" name="grossDensity" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text">
+										<span class="help-block">Rohdichte in g/ccm</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+						
+							<label class="col-xs-1 control-label" for="textinput">Brinellhärte 1</label>
+							<div class="col-xs-2">
+								<#if tBrinellHardnessOne?has_content>
+									<input id="brinellHardnessOne" name="brinellHardnessOne" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text"
+										value=${tBrinellHardnessOne}>
+										<span class="help-block">Brinell Härte 1 in N/mm²</span>
+									</input>
+								<#else>
+									<input id="brinellHardnessOne" name="brinellHardnessOne" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text">
+										<span class="help-block">Brinell Härte 1 in N/mm²</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+							
+							<label class="col-xs-1 control-label" for="textinput">Brinellhärte 2</label>
+							<div class="col-xs-2">
+								<#if tBrinellHardnessTwo?has_content>
+									<input id="brinellHardnessTwo" name="brinellHardnessTwo" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text"
+										maxlength="32"	value=${tBrinellHardnessTwo}>
+										<span class="help-block">Brinell Härte 2 in N/mm²</span>
+									</input>
+								<#else>
+									<input id="brinellHardnessTwo" name="brinellHardnessTwo" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text"maxlength="32">
+										<span class="help-block">Brinell Härte 2 in N/mm²</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+							
+							<div class="col-xs-3"></div>
+									
+						</div>
+						<!-- ./form-group -->
+
+						<#-- =======================================
+							  RadialShrinkage und TangentialShrinkage
+							  ======================================= -->
+						<div class="form-group">
+						
+							<label class="col-xs-1 control-label" for="textinput">Tangential Schwund</label>
+							<div class="col-xs-2">
+								<#if tTangentShrinkage?has_content>
+									<input id="tangentShrinkage" name="tangentShrinkage" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text" 
+										value=${tTangentShrinkage}>
+										<span class="help-block">Tangentialschwund in %</span>
+									</input>
+								<#else>
+									<input id="tangentShrinkage" name="tangentShrinkage" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text">
+										<span class="help-block">Tangentialschwund in %</span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-2 -->
+								
+							<label class="col-xs-1 control-label" for="textinput">Radial Schwund</label>
+							<div class="col-xs-2">
+								<#if tRadialShrinkage?has_content>
+									<input id="radialShrinkage" name="radialShrinkage" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text" 
+										value=${tRadialShrinkage}>
+										<span class="help-block">Radialschwund in %</span>
+									</input>
+								<#else>
+									<input id="radialShrinkage" name="radialShrinkage" placeholder="Optional"
+										class="form-control input-xs input-optional" type="text">
+										<span class="help-block">Radialschwund in %</span>
+									</input>
+								</#if>								
+							</div>
+							<#-- ./col-xs-2 -->	
+							
+							<div class="col-xs-6"></div>
+							
+							<#-- ========================
+							  	  EmptyTable as hidden field
+							  	  ======================== -->
+							<div class="col-xs-1">
+								<#if tEmptyTable?has_content>
+									<input id="emptyTable" name="emptyTable" placeholder=""
+										class="form-control input-xs" type="hidden" value=${tEmptyTable} readonly>
+										<span class="help-block"></span>
+									</input>
+								</#if>
+							</div>
+							<#-- ./col-xs-1 -->		
+						</div>
+						<!-- ./form-group -->
+
+						<#-- ========================
+							  Button Group
+							  ======================== -->
+						<div class="form-group">
+							<label class="col-xs-1 control-label" for="buttonTimberOK"></label>
+							<div class="col-xs-11">
+								<#if botanicSystemId != 0>
+									<button id="buttonSaveTimber" name="buttonTimberOK" type="submit" class="btn btn-success btn-sm">${i18n("button.persist")}</button>
+								</#if>
+								<a class="btn btn-primary btn-sm" href="/superbowl/timber" role="button">${i18n("button.back")}</a>
+								<a class="btn btn-warning btn-sm" href="/superbowl" role="button">${i18n("button.cancel")}</a>
+								<a class="btn btn-info btn-sm" href="#" role="button">${i18n("button.help")}</a>
+							</div>
+						</div>
+						<!-- ./form-group -->
+
+					</fieldset>
+					<!-- ./fieldset -->
+				</form>
+				<!-- ./form -->
+
+			</div>
+			<!-- ./row-fluid -->
+		</div>
+		<!-- ./container-fluid -->
+
+	</section>
+	<!-- ./content -->
+</div>
+<!-- /.content-wrapper --> </@layout.superbowlLayout>

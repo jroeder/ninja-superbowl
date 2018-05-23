@@ -1,0 +1,142 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.superbowlLayout "Superbowl Home">
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Content Wrapper. Contains page content
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="content-wrapper">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Content Header (Page header)
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content-header">
+		<h1>
+			${i18n("header.artist")}
+			<small><a href="http://www.thomas-pildner.de" target="_blank">${i18n("header.artist.label")}</a></small>
+      </h1>
+		<ol class="breadcrumb">
+			<li class="active"><a href="#"><i class="fa fa-dashboard"></i> ${i18n("breadcrumb.home")}</a></li>
+		</ol>
+	</section>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Main content
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content">
+
+		<div class="container-fluid">
+
+			<div class="row-fluid">
+
+				<div class="col-xs-2"></div>
+
+				<div class="col-xs-8">
+
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+							<div class="item active">
+											<img src="/assets/images/gallery/tp-000.jpg" alt="Holzkunst">
+											<div class="carousel-caption">
+										   	<h2>Holzkunst</h2>
+											</div>
+							</div>
+							<div class="item">
+											<img src="/assets/images/gallery/tp-001.jpg" alt="Gallery">
+											<div class="carousel-caption">
+										   	<h2>Gallerie</h2>
+											</div>
+							</div>
+							<div class="item">
+								          <img src="/assets/images/gallery/tp-002.jpg" alt="Exhibition">
+								          <div class="carousel-caption">
+								            <h2>Ausstellung</h2>
+								          </div>
+							</div>
+							<div class="item">
+											<img src="/assets/images/gallery/tp-003.jpg" alt="Artist">
+											<div class="carousel-caption">
+										   	<h2>Künstler</h2>
+											</div>
+							</div>
+							<div class="item">
+											<img src="/assets/images/gallery/tp-004.jpg" alt="Impressions">
+											<div class="carousel-caption">
+										   	<h2>Impressionen</h2>
+											</div>
+							</div>
+							<div class="item">
+							         	<img src="/assets/images/gallery/tp-005.jpg" alt="At Work">
+							         	<div class="carousel-caption">
+							            	<h2>Rohmaterial</h2>
+							         	</div>
+							</div>
+						</div>
+
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+
+				</div>
+				<!-- ./col-xs-8 -->
+
+				<div class="col-xs-2"></div>
+
+			</div>
+			<!-- ./row-fluid -->
+
+		</div>
+		<!-- ./container-fluid -->
+
+		<div class="container-fluid">
+
+			<div class="row-fluid">
+
+				<hr/>
+
+			</div>
+			<!-- ./row-fluid -->
+
+		</div>
+		<!-- ./container-fluid -->
+
+		<div class="container-fluid">
+
+			<div class="row-fluid">
+				<div class="col-xs-2"></div>
+
+				<div class="col-xs-8">
+					<div>
+						<h3>Schalen manuell gefertigt aus dem wunderbarsten natürlichen Werkstoff - Holz</h3>
+					</div>
+				</div>
+				<!-- ./col-xs-8 -->
+
+				<div class="col-lg-2"></div>
+			</div>
+			<!-- ./row-fluid -->
+
+		</div>
+		<!-- ./container-fluid -->
+
+	</section>
+	<!-- /.content -->
+
+</div>
+<!-- /.content-wrapper -->
+
+</@layout.superbowlLayout>

@@ -1,0 +1,354 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.superbowlLayout "Superbowl Home"> <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Content Wrapper. Contains page content
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="content-wrapper">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Content Header (Page header)
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content-header">
+		<h1>
+			${i18n("bowl.mod.title")} <small>${i18n("bowl.mod.title.text")}</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i>
+					${i18n("breadcrumb.home")}</a></li>
+			<li><a href="#">${i18n("bowl.mod.title")}</a></li>
+			<li class="active">${i18n("bowl.mod.title.text")}</li>
+		</ol>
+	</section>
+
+	<!-- ~~~~~~~~~~~~~~~~~
+		  Main page content
+		  ~~~~~~~~~~~~~~~~~ -->
+	<section class="content">
+	
+		<#assign lBowlModStepId="N.A.">
+		<#assign lBowlModStepIndex="N.A.">
+		<#assign lBowlModStepCode="N.A.">
+		<#assign lBowlModStepName="N.A.">
+
+		<!-- Your Page Content Here -->
+
+		<!-- ~~~~~~~~~~~~~
+			  Bowl anzeigen
+			  ~~~~~~~~~~~~~ -->
+		<div class="container-fluid">
+		
+			<div class="row">
+				<div class="col-xs-12">
+					<h4>Objekt #${bowl.ordinal} in Bearbeitung</h4>
+				</div>
+			</div>
+			<!-- ./row -->
+
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~
+			  	  Bild und Daten anzeigen
+			  	  ~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<div class="row">
+
+				<div class="col-xs-2 pull-left image">
+					<img src="/assets/images/bowl/${globalImageNamePrefix}${bowl.ordinal}${globalImageNameSuffix}"
+						height="110" width="150" alt="Bowl Image">
+				</div>
+
+				<div class="col-xs-10">
+
+					<div class="row">
+
+						<label class="col-xs-1 control-label" for="textinput">Status</label>
+						<div class="col-xs-2">
+							<p>${bowl.statusText!"N.A."}</p>
+						</div>
+
+						<label class="col-xs-1 control-label" for="textinput">Holzart</label>
+						<div class="col-xs-2">
+							<p>${bowl.timberName!"N.A."}</p>
+						</div>
+
+						<label class="col-xs-1 control-label" for="textinput">Ordinal#</label>
+						<div class="col-xs-2">
+							<p>${bowl.ordinal!"N.A."}</p>
+						</div>
+
+						<label class="col-xs-1 control-label" for="textinput">Bildname</label>
+						<div class="col-xs-2">
+							<p>${bowl.imageName!"N.A."}</p>
+						</div>
+
+					</div>
+					<!-- ./row -->
+
+					<div class="row">
+
+						<label class="col-xs-1 control-label" for="textinput">Jahr</label>
+						<div class="col-xs-2">
+							<p>${year!"N.A."}</p>
+						</div>
+
+						<label class="col-xs-1 control-label" for="textinput">Preis</label>
+						<div class="col-xs-2">
+							<p>${bowl.price!"N.A."}</p>
+						</div>
+						
+						<div class="col-xs-6"></div>
+
+					</div>
+					<!-- ./row -->
+
+					<div class="row">
+
+						<label class="col-xs-1 control-label" for="textinput">VK-Preis</label>
+						<div class="col-xs-2">
+							<p>${bowl.salesPrice!"N.A."}</p>
+						</div>
+
+						<label class="col-xs-1 control-label" for="textinput">VK-Ort</label>
+						<div class="col-xs-2">
+							<p>${bowl.salesLocation!"N.A."}</p>
+						</div>
+
+						<label class="col-xs-1 control-label" for="textinput">Käufer</label>
+						<div class="col-xs-2">
+							<p>${bowl.salesDate!"N.A."}</p>
+						</div>
+						
+						<div class="col-xs-3"></div>
+
+					</div>
+					<!-- ./row -->
+
+					<div class="row">
+
+						<label class="col-xs-1 control-label" for="textinput">Herkunft</label>
+						<div class="col-xs-11">
+							<p>${timberOriginName!"N.A."}</p>
+						</div>
+
+					</div>
+					<!-- ./row -->
+
+					<div class="row">
+
+						<label class="col-xs-1 control-label" for="textinput">Kommentar</label>
+						<div class="col-xs-11">
+							<p>${bowl.comment!"N.A."}</p>
+						</div>
+
+					</div>
+					<!-- ./row -->
+
+				</div>
+				<!-- ./col-xs-10 -->
+
+			</div>
+			<!-- ./row-fluid -->
+
+		</div>
+		<!-- ./container-fluid -->
+
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			  Bowl Modifikationen vorhanden? 
+			  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		<#if bowlModifications?size==0>
+		
+			<div class="container-fluid">
+		
+				<div class="row-fluid">
+					<h4>Es wurden ${bowlModifications?size} Modifikationen für das Objekt #${bowl.ordinal} in der Datenbank gefunden</h4>
+				</div>
+				<!-- ./row-fluid -->
+				
+				<div class="row">
+					<div class="col-xs-12"><hr/></div>
+				</div>
+				<!-- ./row -->
+		
+				<div class="row">
+					<div class="col-xs-12">			
+						<div class="alert alert-danger" role="alert">
+							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							<span class="sr-only">Error:</span>
+							Daten zur Objektmodifkation können durch Klicken auf die Schaltfläche 
+							<a class="btn btn-success btn-sm" role="button" href="#">Mod Neu</a>
+							erfasst werden!
+						</div>
+					</div>
+				</div>
+				<!-- ./row -->
+				
+				<div class="row">
+					<div class="col-xs-12"><hr/></div>
+				</div>
+				<!-- ./row -->
+				
+				<div class="row">
+					<div class="col-xs-12"><hr/></div>
+				</div>
+				<!-- ./row -->
+
+				<#-- ========================
+					  Buttons
+					  ======================== -->
+				<div class="row">
+					<div class="col-xs-12">
+						<a class="btn btn-success btn-sm" role="button" href="/superbowl/registerBowlMod?bowlId=${bowl.id}&bowlModStepId=&bowlModStepIndex=&bowlModStepCode=&bowlModStepName=">${i18n("button.bowl.modification")}</a>
+						<a class="btn btn-primary btn-sm" role="button" href="/superbowl/bowl">${i18n("button.back")}</a>
+						<a class="btn btn-warning btn-sm" role="button" href="/superbowl">${i18n("button.cancel")}</a>
+						<a class="btn btn-info btn-sm" role="button" href="#" data-target="#editBowlModHelpModal">${i18n("button.help")}</a>
+					</div>
+				</div>
+				<!-- ./row -->
+			
+			</div>
+			<!-- ./container-fluid -->
+		
+		<#else>
+		
+			<div class="container-fluid">
+
+				<!-- ~~~~~~~~~~
+					  Box
+					  ~~~~~~~~~~ -->
+				<div class="box box-solid box-default">
+		
+					<!-- ~~~~~~~~~~
+						  Box Header
+						  ~~~~~~~~~~ -->
+					<div class="box-header with-border">
+						<#if bowlModifications?size==1>
+							<h3 class="box-title">Objekt #${bowl.ordinal} ist ${bowlModifications?size} Modifikation zugeordnet</h3>
+						<#else>
+							<h3 class="box-title">Objekt #${bowl.ordinal} sind ${bowlModifications?size} Modifikationen zugeordnet</h3>
+						</#if>
+						
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+							<!-- Buttons, labels, and many other things can be placed here! -->
+							<!-- Here is a label for example -->
+							<span class="label label-primary">${bowlModifications?size}</span>
+						</div>
+						<!-- /.box-tools -->
+					</div>
+					<!-- /.box-header -->
+		
+					<!-- ~~~~~~~~~~
+						  Box Body
+						  ~~~~~~~~~~ -->					
+					<div class="box-body table-responsive">
+
+						<table id="bowlModDataTable" class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>${i18n("bowlmod.table.header.item")}</th>
+									<th>${i18n("bowlmod.table.header.name")}</th>
+									<th>${i18n("bowlmod.table.header.zero")}</th>
+									<th>${i18n("bowlmod.table.header.one")}</th>
+									<th>${i18n("bowlmod.table.header.two")}</th>
+									<th>${i18n("bowlmod.table.header.three")}</th>
+									<th>${i18n("bowlmod.table.header.four")}</th>
+									<th>${i18n("bowlmod.table.header.five")}</th>
+									<th>${i18n("bowlmod.table.header.six")}</th>
+									<th>${i18n("bowlmod.table.header.seven")}</th>
+									<th>${i18n("bowlmod.table.header.eight")}</th>
+									<th>${i18n("bowlmod.table.header.nine")}</th>
+									<th>${i18n("bowlmod.table.header.ten")}</th>
+									<th>${i18n("bowlmod.table.header.eleven")}</th>
+									<th>${i18n("bowlmod.table.header.twelve")}</th>
+									<th>${i18n("bowlmod.table.header.thirteen")}</th>
+								</tr>
+							</thead>
+							<tfoot></tfoot>
+							<tbody>
+								<#list bowlModifications as bowlMod>
+									<tr>
+										<#if bowlMod.bowlModJoinedId??>
+											<#if bowlMod.duplicateModStepId?then('Y', 'N') == 'N'>
+												<td>
+													<a class="btn btn-primary pull-left btn-xs" role="button" 
+														href="/superbowl/registerBowlModItem?bowlId=${bowlMod.bowlModJoinedBowlId}&bowlModId=${bowlMod.bowlModJoinedId}">
+													<span class="glyphicon glyphicon-asterisk"></a>
+												</td>
+											<#else>
+												<td></td>
+											</#if>
+										<#else>
+											<td>N.A.</td>
+										</#if>
+										<#if bowlMod.duplicateModStepId?then('Y', 'N') == 'N'>
+											<td>${bowlMod.bowlModJoinedBowlModStepName}</td>
+											<td>${bowlMod.bowlModJoinedDate}</td>
+											<td>${bowlMod.bowlModJoinedDiameter}</td>
+											<td>${bowlMod.bowlModJoinedHeight}</td>
+											<td>${bowlMod.bowlModJoinedWallthicknessMin}</td>
+											<td>${bowlMod.bowlModJoinedWallthicknessMax}</td>
+											<td>${bowlMod.bowlModJoinedGranulation}</td>
+											<td>${bowlMod.bowlModJoinedSurface}</td>
+											<td>${bowlMod.bowlModJoinedTap}</td>
+											<td>${bowlMod.bowlModJoinedRecess}</td>
+											<td>${bowlMod.bowlModJoinedComment}</td>
+										<#else>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</#if>
+										<#if bowlMod.bowlModJoinedItemDate??>
+											<td>${bowlMod.bowlModJoinedItemDate}</td>
+										</#if>
+										<#if bowlMod.bowlModJoinedItemWeight??>
+											<td>${bowlMod.bowlModJoinedItemWeight}</td>
+										</#if>
+										<#if bowlMod.bowlModJoinedItemMoisture??>
+											<td>${bowlMod.bowlModJoinedItemMoisture}</td>
+										</#if>
+										<#if bowlMod.bowlModJoinedItemText??>
+											<td>${bowlMod.bowlModJoinedItemText}</td>
+										</#if>
+									</tr>	
+								</#list>
+							</tbody>
+						</table>
+						<!-- ./table -->
+					
+					</div>
+					<!-- /.box-body -->
+		
+					<!-- ~~~~~~~~~~
+						  Box Footer
+						  ~~~~~~~~~~ -->
+					<!--<div class="box-footer"></div>-->
+					<!-- box-footer -->
+						
+				</div>
+				<!-- /.box -->
+
+				<#-- ========================
+					  Buttons
+					  ======================== -->
+				<div class="row">
+					<div class="col-xs-12">
+						<a class="btn btn-success btn-sm" role="button" href="/superbowl/registerBowlMod?bowlId=${bowl.id}&bowlModStepId=&bowlModStepIndex=&bowlModStepCode=&bowlModStepName=">${i18n("button.bowl.modification")}</a>
+						<a class="btn btn-primary btn-sm" role="button" href="/superbowl/bowl">${i18n("button.back")}</a>
+						<a class="btn btn-warning btn-sm" role="button" href="/superbowl">${i18n("button.cancel")}</a>
+						<a class="btn btn-info btn-sm" role="button" href="#" data-target="#editBowlModHelpModal">${i18n("button.help")}</a>
+					</div>
+				</div>
+				<!-- ./row -->
+			
+			</div>
+			<!-- ./container-fluid -->
+		
+		</#if>
+
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper --> </@layout.superbowlLayout> 

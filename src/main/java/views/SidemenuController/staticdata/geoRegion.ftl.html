@@ -1,0 +1,158 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.superbowlLayout "Superbowl Home">
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Content Wrapper. Contains page content
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="content-wrapper">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Content Header (Page header)
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content-header">
+		<h1>
+			${i18n("georegion.title")}
+			<small>${i18n("georegion.title.text")}</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i> ${i18n("breadcrumb.home")}</a></li>
+			<li><a href="#">${i18n("georegion.title")}</a></li>
+			<li class="active">${i18n("georegion.title.text")}</li>
+		</ol>
+	</section>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Main page content
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content">
+
+		<div class="row">
+			<div class="col-xs-12">
+
+				<div class="box">
+
+					<!-- Box Header -->
+					<div class="box-header with-border">
+						<h3 class="box-title">${i18n("georegion.title.box")}</h3>
+
+						<div class="box-tools pull-right">
+							<!-- Buttons, labels, and many other things can be placed here! -->
+							<!-- Here is a label for example -->
+							<span class="label label-primary">12</span>
+						</div>
+						<!-- /.box-tools -->
+					</div>
+					<!-- /.box-header -->
+
+					<!-- Box Body -->
+					<div class="box-body table-responsive">
+
+						<table id="geoRegionData" class="table table-bordered table-hover table-striped">
+							<thead>
+								<tr>
+									<th>${i18n("georegion.table.header.one")}</th>
+									<th>${i18n("georegion.table.header.two")}</th>
+									<th>${i18n("georegion.table.header.three")}</th>
+									<th>${i18n("georegion.table.header.four")}</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>AF</td>
+									<td>Afrika</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>AM</td>
+									<td>Amerika</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>AM(N)</td>
+									<td>Amerika</td>
+									<td>Nordamerika</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>AM(S)</td>
+									<td>Amerika</td>
+									<td>Südamerika</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>AM(C)</td>
+									<td>Amerika</td>
+									<td>Zentralamerika</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>AM(C&S)</td>
+									<td>Amerika</td>
+									<td>Zentral- und Südamerika</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>AN</td>
+									<td>Antarktis</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>AS</td>
+									<td>Asien</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>AS(EU)</td>
+									<td>Eurasien</td>
+									<td>Asien und Europa</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>EU</td>
+									<td>Europa</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>AP</td>
+									<td>Ozeanien</td>
+									<td>Australien/Pazifik</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>AS(AP)</td>
+									<td>Australasien</td>
+									<td>Asien & Australien/Pazifik</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th>${i18n("georegion.table.header.one")}</th>
+									<th>${i18n("georegion.table.header.two")}</th>
+									<th>${i18n("georegion.table.header.three")}</th>
+									<th>${i18n("georegion.table.header.four")}</th>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+					<!-- /.box-body -->
+
+					<div class="box-footer">
+						${i18n("georegion.table.footer.text")}
+					</div>
+					<!-- box-footer -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<!-- /.col-xs-12 -->
+		</div>
+		<!-- /.row -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+</@layout.superbowlLayout>
