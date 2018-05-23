@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/DECORATION/1.7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.7.0 http://maven.apache.org/xsd/decoration-1.7.0.xsd"
+  name="Superbowl - A timber bowl administration project" ><!--  combine.self="override" -->
+	<bannerLeft>
+		<name>Superbowl Administration Project</name>
+		<src>http://maven.apache.org/images/apache-maven-project-2.png</src>
+		<alt></alt>
+		<href>http://maven.apache.org/</href>
+		<border/>
+		<width>100</width>
+		<height>80</height>
+		<title>Superbowl</title>
+	</bannerLeft>
+	<bannerRight>
+		<name/>
+		<src>http://maven.apache.org/images/maven-logo-2.gif</src>
+		<alt/>
+		<href/>
+		<border/>
+		<width/>
+		<height/>
+		<title/>
+	</bannerRight>
+
+	<googleAdSenseClient/>
+	<googleAdSenseSlot/>
+	<googleAnalyticsAccountId/>
+
+	<!-- The position attribute can have one of these values: left, right, navigation-top, navigation-bottom, bottom, none -->
+	<publishDate position="left" format="yyyy-MM-dd" />
+	<version position="left" />
+	<poweredBy>
+		<logo name="Maven" href="http://maven.apache.org/" img="http://maven.apache.org/images/logos/maven-feather.png"/>
+	</poweredBy>
+
+<!--
+	<skin>
+		<groupId></groupId>
+		<artifactId></artifactId>
+		<version></version>
+	</skin>
+-->
+		<!-- Reflow  Maven Skin - http://andriusvelykis.github.io/reflow-maven-skin -->
+		<!--
+		<groupId>lt.velykis.maven.skins</groupId>
+		<artifactId>reflow-maven-skin</artifactId>
+		<version>1.1.1</version>
+		-->
+	<skin>
+		<!-- Apache Maven Fluido Skin - https://maven.apache.org/skins/maven-fluido-skin -->
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-fluido-skin</artifactId>
+		<version>1.6</version>
+	</skin>
+
+	<custom>
+		<fluidoSkin>
+			<topBarEnabled>true</topBarEnabled>
+			<topBarIcon>
+				<name>Maven Fluido Skin</name>
+				<alt>Maven Fluido Skin</alt>
+				<src>/images/topbar-logo.png</src>
+				<href>/index.html</href>
+	      </topBarIcon>
+			<sideBarEnabled>false</sideBarEnabled>
+			<googleSearch/>
+      	<sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+		</fluidoSkin>
+	</custom>
+
+	<body>
+		<head/>
+		<links>
+	     	<item name="Holz in Form" href="https://www.thomas-pildner.de/" img="" position="" alt="" border="" width="" height="" target="_blank" title="" />
+		</links>
+
+	   <breadcrumbs>
+	     	<item name="Maven" href="http://maven.apache.org/" target="_blank"/>
+	     	<item name="Doxia" href="http://maven.apache.org/doxia/index.html" target="_blank"/>
+	     	<item name="Derby" href="http://db.apache.org/derby/" target="_blank"/>
+	     	<item name="Ninja" href="http://www.ninjaframework.org/" target="_blank"/>
+	   </breadcrumbs>
+
+		<menu name="Superbowl 1.0" inherit="" inheritAsRef="false" ref="reports" img="" alt="" position="" border="" width="" height="" title="">
+      	<item collapse="false" name="Introduction" href="index.html">
+	     		<description/>
+	     	</item>
+      	<item collapse="false" name="Download" href="download.html">
+	     		<description/>
+	     	</item>
+      	<item collapse="false" name="Release Notes" href="release-notes.html">
+	     		<description/>
+	     	</item>
+      	<item collapse="false" name="General Information" href="about.html">
+	     		<description/>
+	     	</item>
+      	<item collapse="false" name="Road Map" href="roadmap.html">
+	     		<description/>
+	     	</item>
+		</menu>
+
+		<!-- When building the site, this is replaced by a menu with links to all the reports that you have configured -->
+		<menu ref="reports"/>
+
+		<!--
+		<menu name="" inherit="" inheritAsRef="false" ref="reports" img="" alt="" position="" border="" width="" height="" title="" >
+	     	<item collapse="false" ref="" name="" href="" img="" position="" alt="" border="" width="" height="" target="" title="" >
+	     		<description/>
+	     	</item>
+	   </menu>
+		-->
+
+		<footer>
+			<!--
+			<div class="row">Holz in Form is a trademark of Thomas Pildner.</div>
+			<div class="row">
+				<div class="span4">
+					<address>
+            		<strong>Jürgen Röder</strong><br/>
+            		<i>Hammarskjöldring 202</i><br/>
+            		<i>60439 Frankfurt am Main</i><br/>
+						<i>Germany</i><br/>
+						<abbr title="Mob">Fon:</abbr> <i>+49-1522-1908464</i>
+						<abbr title="Fon">Fon:</abbr> <i>+49-69-576808</i>
+						<abbr title="Fax">Fax:</abbr> <i>+49-69-57800107</i>
+					</address>
+				</div>
+				<div class="span4">
+					<address>
+            		<strong>Jürgen Röder</strong><br/>
+            		<i>Hammarskjöldring 202</i><br/>
+            		<i>60439 Frankfurt am Main</i><br/>
+            		<i>Deutschland</i><br/>
+            		<a href="mailto:roeder@gmx.net">Jürgen Röder</a>
+					</address>
+				</div>
+			</div>
+			-->
+			<![CDATA[All rights reserved.]]>
+		</footer>
+	</body>
+
+</project>
