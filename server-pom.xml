@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<artifactId>ninja-superbowl</artifactId>
+	<!-- If you want to deploy to a war please -->
+	<!-- replace "jar" with "war" and -->
+	<!-- comment ninja-standalone dependency and -->
+	<!-- uncomment the dependency for ninja-servlet -->
+	<packaging>war</packaging>
+	<groupId>de.microbeans.superbowl</groupId>
+	<version>1.1-SNAPSHOT</version>
+	<modelVersion>4.0.0</modelVersion>
+
+	<url>http://www.ninjaframework.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<ninja.version>6.2.0</ninja.version>
+		<!-- <ninja.version.rc1>6.0.0-rc1</ninja.version.rc1> -->
+		<jetty.version>9.4.2.v20170220</jetty.version>
+		<bootstrap.version>3.3.7</bootstrap.version>
+		<jquery.version>3.1.1</jquery.version>
+		<datatables.version>1.10.13</datatables.version>
+		<h2.version>1.4.193</h2.version>
+		<!-- <mysql.version>5.1.41</mysql.version> -->
+		<!-- <mariadb.version>1.5.8</mariadb.version> -->
+		<!-- <derby.version>10.13.1.1</derby.version> -->
+		<liquibase.version>3.5.3</liquibase.version>
+		<snakeyaml.version>1.17</snakeyaml.version>
+		<reflow.version>1.1.1</reflow.version>
+		<!--
+		<velocity.version>1.7</velocity.version>
+		-->
+		<maven.compiler.plugin.version>3.2</maven.compiler.plugin.version>
+		<maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
+		<maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
+		<maven.javadoc.plugin.version>2.10.4</maven.javadoc.plugin.version>
+		<maven.liquibase.plugin.version>3.5.3</maven.liquibase.plugin.version>
+		<maven.project.info.report.plugin.version>2.6</maven.project.info.report.plugin.version>
+		<maven.site.plugin.version>3.6</maven.site.plugin.version>
+		<maven.shade.plugin.version>2.2</maven.shade.plugin.version>
+		<maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
+		<maven.surefire.report.plugin.version>2.19.1</maven.surefire.report.plugin.version>
+		<maven.war.plugin.version>3.1.0</maven.war.plugin.version>
+		<javax.servlet.api.version>3.1.0</javax.servlet.api.version>
+		<itextpdf.version>7.0.2</itextpdf.version>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>java8-doclint-disabled</id>
+			<activation>
+				<jdk>[1.8,)</jdk>
+			</activation>
+	    	<properties>
+				<javadoc.opts>-Xdoclint:none</javadoc.opts>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<finalName>superbowl</finalName>
+		<plugins>
+			<!-- ===================== -->
+			<!-- Maven Compiler Plugin -->
+			<!-- ===================== -->
+			<!-- Use Java 1.8 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Maven Enforcer Plugin -->
+			<!-- ===================== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>${maven.enforcer.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>enforce-versions</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<bannedPlugins>
+									<!-- will only display a warning but does not fail the build. -->
+									<level>WARN</level>
+									<excludes>
+										<exclude>org.apache.maven.plugins:maven-verifier-plugin</exclude>
+									</excludes>
+									<message>Please consider using the maven-invoker-plugin
+										(http://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
+								</bannedPlugins>
+								<requireMavenVersion>
+									<version>3.3.9</version>
+								</requireMavenVersion>
+								<requireJavaVersion>
+									<version>1.8</version>
+								</requireJavaVersion>
+								<requireOS>
+									<!--
+									<family>windows</family>
+									-->
+									<family>unix</family>
+								</requireOS>
+							</rules>
+						</configuration>
+					</execution>
+					<!-- <execution> <id>enforce-banned-dependencies</id> <goals> <goal>enforce</goal>
+						</goals> <configuration> <rules> <bannedDependencies> <excludes> <exclude>commons-logging</exclude>
+						</excludes> </bannedDependencies> </rules> <fail>true</fail> </configuration>
+						</execution> -->
+				</executions>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Maven Surefire Plugin -->
+			<!-- ===================== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Maven Jetty Plugin    -->
+			<!-- ===================== -->
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<configuration>
+					<contextPath>/</contextPath>
+					<stopKey>stop</stopKey>
+					<stopPort>8889</stopPort>
+					<scanIntervalSeconds>1</scanIntervalSeconds>
+					<reload>automatic</reload>
+					<scanTargetPatterns>
+						<scanTargetPattern>
+							<directory>target/classes</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+							<excludes>
+								<exclude>**/*.ftl.html</exclude>
+								<exclude>assets/**</exclude>
+							</excludes>
+						</scanTargetPattern>
+					</scanTargetPatterns>
+					<systemProperties>
+						<systemProperty>
+							<name>ninja.mode</name>
+							<value>dev</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Maven Javadoc Plugin  -->
+			<!-- ===================== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>Superbowl-JavaDocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+                  	<additionalparam>${javadoc.opts}</additionalparam>
+							<arguments>-Dmaven.javadoc.skip=true</arguments>
+               	</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Maven Site Plugin     -->
+			<!-- ===================== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${maven.site.plugin.version}</version>
+				<configuration>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<configuration>
+								<additionalparam>${javadoc.opts}</additionalparam>
+							</configuration>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Maven Deploy Plugin   -->
+			<!-- ===================== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven.deploy.plugin.version}</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Maven Shade Plugin    -->
+			<!-- ===================== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>${maven.shade.plugin.version}</version>
+				<configuration>
+					<createDependencyReducedPom>true</createDependencyReducedPom>
+					<filters>
+						<filter>
+							<artifact>*:*</artifact>
+							<excludes>
+								<exclude>META-INF/*.SF</exclude>
+								<exclude>META-INF/*.DSA</exclude>
+								<exclude>META-INF/*.RSA</exclude>
+							</excludes>
+						</filter>
+					</filters>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>ninja.standalone.NinjaJetty</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Maven War Plugin      -->
+			<!-- ===================== -->
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven.war.plugin.version}</version>
+				<configuration>
+                  	<!-- Relative path to the pom.xml directory -->
+					<!--
+            	<webResources>
+               	<resource>
+                  	<directory></directory>
+               	</resource>
+            	</webResources>
+            	-->
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<!-- ===================== -->
+			<!-- Ninja Maven Plugin    -->
+			<!-- ===================== -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!-- Allows you to run Ninja via the SuperDevMode                                -->
+			<!-- run "mvn ninja:run" on the command line for the best development experience -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<plugin>
+				<groupId>org.ninjaframework</groupId>
+				<artifactId>ninja-maven-plugin</artifactId>
+				<version>${ninja.version}</version>
+				<configuration>
+					<useDefaultExcludes>true</useDefaultExcludes>
+					<excludes>
+						<exclude>(.*)png$</exclude>
+						<exclude>(.*)jpg$</exclude>
+						<exclude>(.*)csv$</exclude>
+						<exclude>(.*)ods$</exclude>
+						<exclude>(.*)txt$</exclude>
+						<exclude>(.*)sql$</exclude>
+					</excludes>
+					<contextPath>/</contextPath>
+					<port>8090</port>
+				</configuration>
+			</plugin>
+			<!-- ====================== -->
+			<!-- Liquibase Maven Plugin -->
+			<!-- ====================== -->
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>${maven.liquibase.plugin.version}</version>
+				<configuration>
+					<propertyFile>liquibase/liquibase.properties</propertyFile>
+					<changeLogFile>liquibase/db-changelog-master.xml</changeLogFile>
+					<!-- Using both a Configuration Property File and specifying Configuration
+						Values It is possible to specify a Configuration Property File and individual
+						Properties in the <configuration> section of the Maven Liquibase plugin.
+						If this is done the properties specified in the <configuration> section will
+						be used in preference over those defined in the properties file. If this
+						behaviour is not desirable, then the properties file can be setup to override
+						the specified properties in the <configuration> section by adding the following
+						to the <configuration> section -->
+					<propertyFileWillOverride>true</propertyFileWillOverride>
+				</configuration>
+				<!-- I personally prefer run it manually -->
+				<!-- <executions> <execution> <phase>process-resources</phase> <goals>
+					<goal>dbDoc</goal> </goals> </execution> </executions> -->
+			</plugin>
+			<!-- ====================== -->
+			<!-- Maven JAXB Plugin      -->
+			<!-- ====================== -->
+			<!--
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			-->
+		</plugins>
+		<resources>
+			<!-- ====================== -->
+			<!-- src/main/java          -->
+			<!-- ====================== -->
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.conf.mint</exclude>
+					<exclude>**/*.conf.windows</exclude>
+				<!--
+					<exclude>**/*.java</exclude>
+				-->
+				</excludes>
+			</resource>
+			<!-- ====================== -->
+			<!-- src/main/javadoc       -->
+			<!-- ====================== -->
+			<resource>
+				<directory>src/main/javadoc</directory>
+				<includes>
+					<!--
+					<include>**/*</include>
+					-->
+				</includes>
+				<excludes>
+					<exclude>**/*</exclude>
+				</excludes>
+			</resource>
+			<!-- ====================== -->
+			<!-- src/main/webapp        -->
+			<!-- ====================== -->
+			<resource>
+				<directory>src/main/webapp</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<excludes>
+					<!--
+					<exclude>**/*</exclude>
+					-->
+				</excludes>
+			</resource>
+			<!-- ====================== -->
+			<!-- src/main/resources     -->
+			<!-- ====================== -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.html</exclude>
+					<exclude>**/*.css</exclude>
+					<exclude>**/*.jpg</exclude>
+					<exclude>**/*.png</exclude>
+					<exclude>**/*.csv</exclude>
+					<exclude>**/*.ods</exclude>
+					<exclude>**/*.txt</exclude>
+					<exclude>**/*.sql</exclude>
+					<exclude>**/*.properties</exclude>
+					<exclude>**/*.xml.derby</exclude>
+					<exclude>**/*.xml.h2</exclude>
+					<exclude>**/*.xml.mysql</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	</build>
+	<dependencies>
+		<!-- ========================================== -->
+		<!-- If you want to deploy to a war please      -->
+		<!-- comment ninja-standalone dependency and    -->
+		<!-- uncomment the dependency for ninja-servlet -->
+		<!-- ========================================== -->
+		<!-- ==========================================
+		     This package contains a class that runs Ninja 
+		     inside an embedded Jetty. Very useful for making 
+		     a fat library that contains Ninja and Jetty as 
+		     a service and can be run by one command.
+		     The embedded Jetty also powers the test utilities 
+		     embedded Testserver. 
+		     ========================================== -->
+		<!--
+		<dependency>
+			<groupId>org.ninjaframework</groupId>
+			<artifactId>ninja-standalone</artifactId>
+			<version>${ninja.version}</version>
+		</dependency>
+		-->
+		<!-- ==========================================
+		     Ninja Servlet 
+		     ========================================== -->
+		<dependency>
+			<groupId>org.ninjaframework</groupId>
+			<artifactId>ninja-servlet</artifactId>
+			<version>${ninja.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+		<dependency>
+    		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-war-plugin</artifactId>
+    		<version>${maven.war.plugin.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
+		<!--
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-site-plugin</artifactId>
+			<version>3.6</version>
+		</dependency>
+		-->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet.api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${bootstrap.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>${jquery.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/datatables -->
+		<!--
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>datatables</artifactId>
+			<version>${datatables.version}</version>
+		</dependency>
+		-->
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+		</dependency>
+		<!-- iText PDF v7.x -->
+		<!--
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itext7-core</artifactId>
+			<version>${itextpdf.version}</version>
+		</dependency>
+		-->
+		<!-- https://mvnrepository.com/artifact/com.mariadb/mariadb -->
+		<!--
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>${mariadb.version}</version>
+		</dependency>
+		-->
+		<!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
+		<!--
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>${derby.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<version>${derby.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbynet</artifactId>
+			<version>${derby.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbytools</artifactId>
+			<version>${derby.version}</version>
+		</dependency>
+		-->
+		<!-- Reflow skin requires Velocity >= 1.7 -->
+		<!--
+		<dependency>
+			<groupId>lt.velykis.maven.skins</groupId>
+			<artifactId>reflow-velocity-tools</artifactId>
+			<version>${reflow.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>${velocity.version}</version>
+		</dependency>
+		-->
+		<!-- ==========================================
+		     Ninja Test Utilities 
+		     ========================================== -->		
+		<dependency>
+			<groupId>org.ninjaframework</groupId>
+			<artifactId>ninja-test-utilities</artifactId>
+			<version>${ninja.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- ==========================================
+		     Liquibase
+		     ========================================== -->
+		<!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>${liquibase.version}</version>
+		</dependency>
+		<!-- ==========================================
+		     YAML
+		     ========================================== -->
+		<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+		<!-- <dependency> <groupId>org.yaml</groupId> <artifactId>snakeyaml</artifactId>
+			<version>${snakeyaml.version}</version> </dependency> -->
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>sonatype-snapshots</id>
+			<name>OSS Sonatype Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+		<!-- <repository> <id>Sonatype-public</id> <name>SnakeYAML repository</name>
+			<url>http://oss.sonatype.org/content/groups/public/</url> </repository> -->
+	</repositories>
+	<reporting>
+		<plugins>
+			<!-- ======================== -->
+			<!-- Maven Info Report Plugin -->
+			<!-- ======================== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>${maven.project.info.report.plugin.version}</version>
+				<reportSets>
+					<reportSet>
+						<!-- select reports -->
+						<reports>
+							<report>index</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<!-- ============================ -->
+			<!-- Maven Surefire Report Plugin -->
+			<!-- ============================ -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${maven.surefire.report.plugin.version}</version> </plugin> -->
+			<!-- ==================== -->
+			<!-- Maven Javadoc Plugin -->
+			<!-- ==================== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin.version}</version>
+				<reportSets>
+					<!-- by default, id = "default" -->
+					<reportSet>
+						<!-- select non-aggregate reports -->
+						<reports>
+							<report>javadoc</report>
+							<report>test-javadoc</report>
+						</reports>
+					</reportSet>
+					<!-- aggregate reportSet, to define in poms having modules -->
+					<reportSet>
+						<id>aggregate</id>
+						<!-- don't run aggregate in child modules -->
+						<inherited>false</inherited>
+						<reports>
+							<report>aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+	<name>Ninja Superbowl</name>
+	<description>A web based administration application to manage timber bowls during the manufacturing and sales process.</description>
+	<organization>
+		<name>Thomas Pildner Holz in Form</name>
+		<url>http://www.thomas-pildner.de</url>
+	</organization>
+</project>

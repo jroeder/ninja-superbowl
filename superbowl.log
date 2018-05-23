@@ -1,0 +1,1225 @@
+15:28:11.785 [main] INFO  ninja.utils.NinjaModeHelper - Ninja is running in mode dev
+15:28:12.110 [NinjaJetty] INFO  org.eclipse.jetty.util.log - Logging initialized @1140ms
+15:28:12.282 [NinjaJetty] WARN  o.e.j.server.handler.ContextHandler - Empty contextPath
+15:28:12.614 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Trying to start jetty v9.3.15.v20161220 on <all>:8090
+15:28:12.619 [NinjaJetty] INFO  org.eclipse.jetty.server.Server - jetty-9.3.15.v20161220
+15:28:13.022 [NinjaJetty] INFO  ninja.servlet.NinjaServletListener - Using JSR-356 websocket container org.eclipse.jetty.websocket.jsr356.server.ServerContainer
+15:28:13.026 [NinjaJetty] INFO  ninja.Bootstrap - Successfully configured Logback.
+15:28:13.029 [NinjaJetty] INFO  ninja.Bootstrap - Enabling Ninja classic configuration
+15:28:15.307 [NinjaJetty] INFO  ninja.cache.CacheProvider - Using ninja.cache.CacheEhCacheImpl as implementation for ninja.cache.Cache
+15:28:15.563 [NinjaJetty] INFO  ninja.utils.SwissKnife - Could not load file conf/messages_de_DE.properties (not a bad thing necessarily, but I am returing null)
+15:28:15.563 [NinjaJetty] INFO  ninja.i18n.MessagesImpl - Did not find conf/messages_de_DE.properties but it was specified in application.conf. Using default language instead.
+15:28:15.564 [NinjaJetty] INFO  ninja.utils.SwissKnife - Could not load file conf/messages_en_GB.properties (not a bad thing necessarily, but I am returing null)
+15:28:15.564 [NinjaJetty] INFO  ninja.i18n.MessagesImpl - Did not find conf/messages_en_GB.properties but it was specified in application.conf. Using default language instead.
+15:28:15.828 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - -------------------------------------------------------------------
+15:28:15.828 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - Registered response template engines
+15:28:15.829 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - -------------------------------------------------------------------
+15:28:15.829 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/javascript  =>  ninja.template.TemplateEngineJsonP
+15:28:15.829 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/json        =>  ninja.template.TemplateEngineJson
+15:28:15.829 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/xml         =>  ninja.template.TemplateEngineXml
+15:28:15.829 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - text/html               =>  ninja.template.TemplateEngineFreemarker
+15:28:15.830 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - text/plain              =>  ninja.template.TemplateEngineText
+15:28:15.849 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - ----------------------------------------------------------------------------
+15:28:15.850 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - Registered request bodyparser engines
+15:28:15.850 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - ----------------------------------------------------------------------------
+15:28:15.850 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/json                   =>  ninja.bodyparser.BodyParserEngineJson
+15:28:15.850 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/x-www-form-urlencoded  =>  ninja.bodyparser.BodyParserEnginePost
+15:28:15.850 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/xml                    =>  ninja.bodyparser.BodyParserEngineXml
+15:28:15.853 [NinjaJetty] INFO  ninja.Bootstrap - Ninja injector started in 2818 ms.
+15:28:15.914 [NinjaJetty] WARN  ninja.params.ControllerMethodInvoker - Using deprecated non-strict mode for injection of parameters into controller (ninja.strict_argument_extractors = false). This mode will soon be removed from Ninja. Make sure you upgrade your application as soon as possible. More: http://www.ninjaframework.org/documentation/basic_concepts/controllers.html 'A note about null and Optional'.
+15:28:16.169 [NinjaJetty] INFO  ninja.RouterImpl - -----------------------------------------------------------------------------------------
+15:28:16.170 [NinjaJetty] INFO  ninja.RouterImpl - Registered routes
+15:28:16.170 [NinjaJetty] INFO  ninja.RouterImpl - -----------------------------------------------------------------------------------------
+15:28:16.170 [NinjaJetty] INFO  ninja.RouterImpl - GET  /                                             =>  controllers.ApplicationController::index
+15:28:16.171 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl                                    =>  controllers.ApplicationController::index
+15:28:16.171 [NinjaJetty] INFO  ninja.RouterImpl - GET  /exhibitions                                  =>  controllers.ApplicationController::exhibitions
+15:28:16.171 [NinjaJetty] INFO  ninja.RouterImpl - GET  /events                                       =>  controllers.ApplicationController::events
+15:28:16.171 [NinjaJetty] INFO  ninja.RouterImpl - GET  /news                                         =>  controllers.ApplicationController::news
+15:28:16.172 [NinjaJetty] INFO  ninja.RouterImpl - GET  /partners                                     =>  controllers.ApplicationController::partners
+15:28:16.172 [NinjaJetty] INFO  ninja.RouterImpl - GET  /profile                                      =>  controllers.ApplicationController::profile
+15:28:16.172 [NinjaJetty] INFO  ninja.RouterImpl - GET  /roadmap                                      =>  controllers.ApplicationController::roadmap
+15:28:16.172 [NinjaJetty] INFO  ninja.RouterImpl - GET  /settings                                     =>  controllers.ApplicationController::settings
+15:28:16.173 [NinjaJetty] INFO  ninja.RouterImpl - GET  /software                                     =>  controllers.ApplicationController::software
+15:28:16.173 [NinjaJetty] INFO  ninja.RouterImpl - GET  /specification                                =>  controllers.ApplicationController::specification
+15:28:16.173 [NinjaJetty] INFO  ninja.RouterImpl - GET  /login                                        =>  controllers.ApplicationController::login
+15:28:16.173 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/exhibitions                        =>  controllers.ApplicationController::exhibitions
+15:28:16.174 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/events                             =>  controllers.ApplicationController::events
+15:28:16.174 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/news                               =>  controllers.ApplicationController::news
+15:28:16.174 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/partners                           =>  controllers.ApplicationController::partners
+15:28:16.174 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/profile                            =>  controllers.ApplicationController::profile
+15:28:16.175 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/roadmap                            =>  controllers.ApplicationController::roadmap
+15:28:16.175 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/settings                           =>  controllers.ApplicationController::settings
+15:28:16.175 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/software                           =>  controllers.ApplicationController::software
+15:28:16.175 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/specification                      =>  controllers.ApplicationController::specification
+15:28:16.176 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/login                              =>  controllers.ApplicationController::login
+15:28:16.176 [NinjaJetty] INFO  ninja.RouterImpl - GET  /botanicSystem                                =>  controllers.BotanicSystemController::list
+15:28:16.176 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBotanicSystem                        =>  controllers.BotanicSystemController::registerBotanicSystem
+15:28:16.176 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystem                        =>  controllers.BotanicSystemController::registerBotanicSystem
+15:28:16.177 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystemConfirmation            =>  controllers.BotanicSystemController::registerBotanicSystemConfirmation
+15:28:16.177 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystemCompletion              =>  controllers.BotanicSystemController::registerBotanicSystemCompletion
+15:28:16.178 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/botanicSystem                      =>  controllers.BotanicSystemController::list
+15:28:16.179 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBotanicSystem              =>  controllers.BotanicSystemController::registerBotanicSystem
+15:28:16.179 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystem              =>  controllers.BotanicSystemController::registerBotanicSystem
+15:28:16.179 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystemConfirmation  =>  controllers.BotanicSystemController::registerBotanicSystemConfirmation
+15:28:16.188 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystemCompletion    =>  controllers.BotanicSystemController::registerBotanicSystemCompletion
+15:28:16.189 [NinjaJetty] INFO  ninja.RouterImpl - GET  /bowl                                         =>  controllers.AbstractBowlController::listBowl
+15:28:16.189 [NinjaJetty] INFO  ninja.RouterImpl - GET  /portfolioBowl                                =>  controllers.BowlController::portfolioBowl
+15:28:16.189 [NinjaJetty] INFO  ninja.RouterImpl - GET  /editBowl                                     =>  controllers.BowlController::editBowl
+15:28:16.190 [NinjaJetty] INFO  ninja.RouterImpl - GET  /editBowlByStatusCode                         =>  controllers.BowlController::editBowl
+15:28:16.190 [NinjaJetty] INFO  ninja.RouterImpl - POST /editBowlConfirmation                         =>  controllers.BowlController::editBowlConfirmation
+15:28:16.190 [NinjaJetty] INFO  ninja.RouterImpl - POST /editBowlCompletion                           =>  controllers.BowlController::editBowlCompletion
+15:28:16.190 [NinjaJetty] INFO  ninja.RouterImpl - GET  /updateBowl                                   =>  controllers.BowlController::updateBowl
+15:28:16.191 [NinjaJetty] INFO  ninja.RouterImpl - POST /updateBowlConfirmation                       =>  controllers.BowlController::updateBowlConfirmation
+15:28:16.191 [NinjaJetty] INFO  ninja.RouterImpl - POST /updateBowlCompletion                         =>  controllers.BowlController::updateBowlCompletion
+15:28:16.191 [NinjaJetty] INFO  ninja.RouterImpl - GET  /modifyBowl                                   =>  controllers.BowlController::modifyBowl
+15:28:16.191 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowl                                 =>  controllers.BowlController::registerBowl
+15:28:16.192 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowl                                 =>  controllers.BowlController::registerBowl
+15:28:16.192 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByGeoRegionCode                  =>  controllers.BowlController::registerBowlByGeoRegionCode
+15:28:16.192 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByManufactureYear                =>  controllers.BowlController::registerBowlByManufactureYear
+15:28:16.192 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByStatusCode                     =>  controllers.BowlController::registerBowlByStatusCode
+15:28:16.193 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByTimberCode                     =>  controllers.BowlController::registerBowlByTimberCode
+15:28:16.193 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlConfirmation                     =>  controllers.BowlController::registerBowlConfirmation
+15:28:16.193 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlCompletion                       =>  controllers.BowlController::registerBowlCompletion
+15:28:16.193 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlMod                              =>  controllers.BowlController::registerBowlMod
+15:28:16.194 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlMod                              =>  controllers.BowlController::registerBowlMod
+15:28:16.194 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModConfirmation                  =>  controllers.BowlController::registerBowlModConfirmation
+15:28:16.194 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModCompletion                    =>  controllers.BowlController::registerBowlModCompletion
+15:28:16.206 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlModItem                          =>  controllers.BowlController::registerBowlModItem
+15:28:16.208 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItem                          =>  controllers.BowlController::registerBowlModItem
+15:28:16.208 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItemConfirmation              =>  controllers.BowlController::registerBowlModItemConfirmation
+15:28:16.208 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItemCompletion                =>  controllers.BowlController::registerBowlModItemCompletion
+15:28:16.208 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/bowl                               =>  controllers.AbstractBowlController::listBowl
+15:28:16.208 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/portfolioBowl                      =>  controllers.BowlController::portfolioBowl
+15:28:16.208 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/editBowl                           =>  controllers.BowlController::editBowl
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/editBowlByStatusCode               =>  controllers.BowlController::editBowl
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/editBowlConfirmation               =>  controllers.BowlController::editBowlConfirmation
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/editBowlCompletion                 =>  controllers.BowlController::editBowlCompletion
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/updateBowl                         =>  controllers.BowlController::updateBowl
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/updateBowlConfirmation             =>  controllers.BowlController::updateBowlConfirmation
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/updateBowlCompletion               =>  controllers.BowlController::updateBowlCompletion
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/modifyBowl                         =>  controllers.BowlController::modifyBowl
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowl                       =>  controllers.BowlController::registerBowl
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowl                       =>  controllers.BowlController::registerBowl
+15:28:16.209 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByGeoRegionCode        =>  controllers.BowlController::registerBowlByGeoRegionCode
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByManufactureYear      =>  controllers.BowlController::registerBowlByManufactureYear
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByStatusCode           =>  controllers.BowlController::registerBowlByStatusCode
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByTimberCode           =>  controllers.BowlController::registerBowlByTimberCode
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlConfirmation           =>  controllers.BowlController::registerBowlConfirmation
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlCompletion             =>  controllers.BowlController::registerBowlCompletion
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlMod                    =>  controllers.BowlController::registerBowlMod
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlMod                    =>  controllers.BowlController::registerBowlMod
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModConfirmation        =>  controllers.BowlController::registerBowlModConfirmation
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModCompletion          =>  controllers.BowlController::registerBowlModCompletion
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlModItem                =>  controllers.BowlController::registerBowlModItem
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItem                =>  controllers.BowlController::registerBowlModItem
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItemConfirmation    =>  controllers.BowlController::registerBowlModItemConfirmation
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItemCompletion      =>  controllers.BowlController::registerBowlModItemCompletion
+15:28:16.210 [NinjaJetty] INFO  ninja.RouterImpl - GET  /customer                                     =>  controllers.CustomerController::list
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerCustomer                             =>  controllers.CustomerController::registerCustomer
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomer                             =>  controllers.CustomerController::registerCustomer
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomerConfirmation                 =>  controllers.CustomerController::registerCustomerConfirmation
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomerCompletion                   =>  controllers.CustomerController::registerCustomerCompletion
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/customer                           =>  controllers.CustomerController::list
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerCustomer                   =>  controllers.CustomerController::registerCustomer
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomer                   =>  controllers.CustomerController::registerCustomer
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomerConfirmation       =>  controllers.CustomerController::registerCustomerConfirmation
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomerCompletion         =>  controllers.CustomerController::registerCustomerCompletion
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - GET  /exhibition                                   =>  controllers.ExhibitionController::list
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerExhibition                           =>  controllers.ExhibitionController::registerExhibition
+15:28:16.211 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibition                           =>  controllers.ExhibitionController::registerExhibition
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibitionConfirmation               =>  controllers.ExhibitionController::registerExhibitionConfirmation
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibitionCompletion                 =>  controllers.ExhibitionController::registerExhibitionCompletion
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/exhibition                         =>  controllers.ExhibitionController::list
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerExhibition                 =>  controllers.ExhibitionController::registerExhibition
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibition                 =>  controllers.ExhibitionController::registerExhibition
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibitionConfirmation     =>  controllers.ExhibitionController::registerExhibitionConfirmation
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibitionCompletion       =>  controllers.ExhibitionController::registerExhibitionCompletion
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - GET  /geoRegion                                    =>  controllers.GeoRegionController::list
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/geoRegion                          =>  controllers.GeoRegionController::list
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - GET  /status                                       =>  controllers.StatusController::list
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerStatus                               =>  controllers.StatusController::registerStatus
+15:28:16.212 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatus                               =>  controllers.StatusController::registerStatus
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatusConfirmation                   =>  controllers.StatusController::registerStatusConfirmation
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatusCompletion                     =>  controllers.StatusController::registerStatusCompletion
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/status                             =>  controllers.StatusController::list
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerStatus                     =>  controllers.StatusController::registerStatus
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatus                     =>  controllers.StatusController::registerStatus
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatusConfirmation         =>  controllers.StatusController::registerStatusConfirmation
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatusCompletion           =>  controllers.StatusController::registerStatusCompletion
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - GET  /timber                                       =>  controllers.TimberController::list
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerTimber                               =>  controllers.TimberController::registerTimber
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimber                               =>  controllers.TimberController::registerTimber
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberConfirmation                   =>  controllers.TimberController::registerTimberConfirmation
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberCompletion                     =>  controllers.TimberController::registerTimberCompletion
+15:28:16.213 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/timber                             =>  controllers.TimberController::list
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerTimber                     =>  controllers.TimberController::registerTimber
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimber                     =>  controllers.TimberController::registerTimber
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberConfirmation         =>  controllers.TimberController::registerTimberConfirmation
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberCompletion           =>  controllers.TimberController::registerTimberCompletion
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - GET  /timberOrigin                                 =>  controllers.TimberOriginController::list
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerTimberOrigin                         =>  controllers.TimberOriginController::registerTimberOrigin
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOrigin                         =>  controllers.TimberOriginController::registerTimberOrigin
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOriginConfirmation             =>  controllers.TimberOriginController::registerTimberOriginConfirmation
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOriginCompletion               =>  controllers.TimberOriginController::registerTimberOriginCompletion
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/timberOrigin                       =>  controllers.TimberOriginController::list
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerTimberOrigin               =>  controllers.TimberOriginController::registerTimberOrigin
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOrigin               =>  controllers.TimberOriginController::registerTimberOrigin
+15:28:16.214 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOriginConfirmation   =>  controllers.TimberOriginController::registerTimberOriginConfirmation
+15:28:16.215 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOriginCompletion     =>  controllers.TimberOriginController::registerTimberOriginCompletion
+15:28:16.215 [NinjaJetty] INFO  ninja.RouterImpl - GET  /assets/webjars/{fileName: .*}                =>  ninja.AssetsController::serveWebJars
+15:28:16.215 [NinjaJetty] INFO  ninja.RouterImpl - GET  /assets/{fileName: .*}                        =>  ninja.AssetsController::serveStatic
+15:28:16.215 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/setup                              =>  controllers.ApplicationController::setup
+15:28:16.216 [NinjaJetty] INFO  ninja.NinjaDefault - 
+ _______  .___ _______        ____.  _____   
+ \      \ |   |\      \      |    | /  _  \  
+ /   |   \|   |/   |   \     |    |/  /_\  \ 
+/    |    \   /    |    \/\__|    /    |    \  http://www.ninjaframework.org
+\____|__  /___\____|__  /\________\____|__  /  @ninjaframework
+     web\/framework   \/                  \/   6.2.0
+
+15:28:16.216 [NinjaJetty] INFO  ninja.lifecycle.LifecycleServiceImpl - Starting Ninja application...
+15:28:16.365 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:28:16.366 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:28:16.366 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:28:16.577 [NinjaJetty] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: superbowlDS
+	...]
+15:28:16.808 [NinjaJetty] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+15:28:16.811 [NinjaJetty] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:28:16.815 [NinjaJetty] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:28:17.461 [NinjaJetty] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:28:17.594 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH010002: C3P0 using driver: org.h2.Driver at URL: jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true
+15:28:17.594 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH000046: Connection properties: {user=sa, password=****}
+15:28:17.595 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH000006: Autocommit mode: false
+15:28:17.672 [NinjaJetty] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+15:28:17.923 [NinjaJetty] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+15:28:18.084 [NinjaJetty] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@41a3ea44 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@d09e275 [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfsx9r18pzw6y11a3iw9|11d867, idleConnectionTestPeriod -> 2000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 500, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@399e9e94 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfsx9r18pzw6y11a3iw9|1fef314, jdbcUrl -> jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfsx9r18pzw6y11a3iw9|1c2146c, numHelperThreads -> 3 ]
+15:28:18.368 [NinjaJetty] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+15:28:18.414 [NinjaJetty] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+15:28:18.860 [NinjaJetty] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+15:28:18.993 [NinjaJetty] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.1.Final
+15:28:20.230 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+15:28:20.235 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+15:28:20.256 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+15:28:20.318 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOTANICSYSTEM
+15:28:20.319 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bs_id, bs_family, bs_subfamily_index, bs_version, bs_subfamily, bs_ordinal, bs_family_index, bs_order, bs_order_index]
+15:28:20.319 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.319 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bs_ordinal_idx, primary_key_f]
+15:28:20.359 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWL
+15:28:20.359 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bowl_comment, bowl_exhibition_id, bowl_status_id, bowl_sales_location, bowl_version, bowl_timberorigin_id, bowl_timber_id, bowl_sales_price, bowl_imagename, bowl_id, bowl_sales_date, bowl_index, bowl_customer_id, bowl_manufacture_id, bowl_price, bowl_ordinal]
+15:28:20.359 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bowl_exhibition_fk, bowl_timberorigin_fk, bowl_status_fk, bowl_manufacture_fk, bowl_timber_fk, bowl_customer_fk]
+15:28:20.359 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bowl_status_fk_index_1, bowl_status_idx, bowl_timberorigin_fk_index_1, bowl_timberorigin_idx, bowl_manufacture_idx, bowl_exhibition_fk_index_1, bowl_pk, primary_key_1f, bowl_manufacture_fk_index_1, bowl_timber_fk_index_1, bowl_timber_idx, bowl_customer_idx, bowl_customer_fk_index_1, bowl_exhibition_idx]
+15:28:20.377 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMOD
+15:28:20.377 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bm_height, bm_version, bm_recess, bm_surface, bm_wallthickness_min, bm_granulation, bm_tap, bm_date, bm_diameter, bm_bms_id, bm_wallthickness_max, bm_id, bm_bowl_id, bm_comment]
+15:28:20.377 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bm_bowl_fk, bm_bms_fk]
+15:28:20.377 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bm_bowl_fk_index_2, primary_key_2f, bm_bms_idx, bm_bowl_idx, bm_bms_fk_index_2]
+15:28:20.421 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODITEM
+15:28:20.422 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bmi_id, bmi_version, bmi_moisture, bmi_weight, bmi_text, bmi_bm_id, bmi_date]
+15:28:20.422 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bmi_bm_fk]
+15:28:20.422 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_73a, bmi_bm_fk_index_7, bmi_bm_idx]
+15:28:20.457 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODJOINED
+15:28:20.458 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bowlmodjoined_id, bowlmodjoined_surface, bowlmodjoined_bowlmod_version, bowlmodjoined_bowlmodstep_id, bowlmodjoined_version, bowlmodjoined_wallthickness_max, bowlmodjoined_date, bowlmodjoined_item_bowlmod_id, bowlmodjoined_tap, bowlmodjoined_granulation, bowlmodjoined_height, bowlmodjoined_item_date, bowlmodjoined_recess, bowlmodjoined_bowlmod_id, bowlmodjoined_item_weight, bowlmodjoined_item_text, bowlmodjoined_bowl_id, bowlmodjoined_item_moisture, bowlmodjoined_comment, bowlmodjoined_diameter, bowlmodjoined_wallthickness_min, bowlmodjoined_item_id, bowlmodjoined_item_version]
+15:28:20.458 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.458 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_3]
+15:28:20.465 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODSTEP
+15:28:20.465 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bms_id, bms_version, bms_code, bms_name, bms_index, bms_comment]
+15:28:20.466 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.466 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_73]
+15:28:20.476 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.CUSTOMER
+15:28:20.476 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [customer_salutation, customer_mobile, customer_country, customer_givenname, customer_phone, customer_countrycode, customer_housenumber, customer_familyname, customer_street, customer_fax, customer_index, customer_zipcode, customer_email, customer_version, customer_id, customer_comment, customer_graduation, customer_city]
+15:28:20.477 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.478 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [customer_familyname_idx, customer_email_idx, primary_key_5]
+15:28:20.484 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.EXHIBITION
+15:28:20.484 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [exhibition_country, exhibition_date_from, exhibition_city, exhibition_name, exhibition_id, exhibition_institution, exhibition_year, exhibition_date_to, exhibition_comment, exhibition_version, exhibition_index]
+15:28:20.484 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.484 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_9]
+15:28:20.518 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.GEOREGION
+15:28:20.518 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [gr_code, gr_name, gr_index, gr_ordinal, gr_version, gr_region, gr_id]
+15:28:20.518 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.519 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_1, georegion_region_idx]
+15:28:20.534 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.MANUFACTURE
+15:28:20.534 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [manu_version, manu_index, manu_id, manu_year]
+15:28:20.535 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.535 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_6]
+15:28:20.545 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.ROADMAP
+15:28:20.545 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [roadmap_id, roadmap_feature, roadmap_version, roadmap_status, roadmap_versionnumber, roadmap_comment]
+15:28:20.545 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.545 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_7]
+15:28:20.557 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SALES
+15:28:20.557 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sales_customer_id, sales_date, sales_version, sales_comment, sales_price, sales_id, sales_location, sales_bowl_id]
+15:28:20.557 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_biu8k4to3bdyqapo1opdxgdar, fk_6jp4vfmr7chcjho0jewmpm041]
+15:28:20.557 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_4, fk_biu8k4to3bdyqapo1opdxgdar_index_4, fk_6jp4vfmr7chcjho0jewmpm041_index_4]
+15:28:20.581 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SETTING
+15:28:20.582 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [setting_version, setting_param_name, setting_param_value, setting_comment, setting_id]
+15:28:20.583 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.583 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_a]
+15:28:20.609 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SOFTWARE
+15:28:20.610 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [software_vendor, software_id, software_description, software_versionnumber, software_type, software_version, software_name, software_url]
+15:28:20.610 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.610 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [software_vendor_idx, primary_key_7d]
+15:28:20.635 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.STATUS
+15:28:20.636 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [status_id, status_code, status_index, status_comment, status_text, status_version]
+15:28:20.636 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.636 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_92]
+15:28:20.666 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SUBUSER
+15:28:20.667 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [subuser_userid, subuser_lastlogout, subuser_username, subuser_logincount, subuser_lastlogin, subuser_locked, subuser_email, subuser_id, subuser_password, subuser_version]
+15:28:20.667 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:28:20.667 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [subuser_email_idx, primary_key_b, subuser_userid_idx, subuser_username_idx]
+15:28:20.700 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.TIMBER
+15:28:20.700 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [timber_bending_strength, timber_burst_strength, timber_id, timber_type, timber_tangent_shrinkage, timber_code, timber_brinell_hardness2, timber_brinell_hardness1, timber_radial_shrinkage, timber_imagename, timber_botanicsystem_id, timber_name, timber_index, timber_tensile_strength, timber_academicname, timber_version, timber_shear_strength, timber_gross_density, timber_georegion_id]
+15:28:20.700 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [timber_georegion_fk, timber_botanicsystem_fk]
+15:28:20.701 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_93, timber_georegion_fk_index_9, timber_botanicsystem_fk_index_9, timber_botanicsystem_idx, timber_georegion_idx, timber_name_idx]
+15:28:20.749 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.TIMBERORIGIN
+15:28:20.750 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [to_location_text, to_timber_id, to_comment, to_location, to_cutdown, to_id, to_city, to_version, to_index]
+15:28:20.750 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [to_timber_fk]
+15:28:20.750 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_2, to_city_idx, to_timber_idx, to_location_idx, to_timber_fk_index_2]
+15:28:20.753 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+15:28:21.101 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isDev() : true
+15:28:21.101 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isProd(): false
+15:28:21.101 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isTest(): false
+15:28:21.102 [NinjaJetty] INFO  ninja.lifecycle.LifecycleServiceImpl - Ninja application started in 4886ms
+15:28:21.107 [NinjaJetty] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@8c465d{/,null,AVAILABLE}
+15:28:21.133 [NinjaJetty] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@be611c{HTTP/1.1,[http/1.1]}{0.0.0.0:8090}
+15:28:21.134 [NinjaJetty] INFO  org.eclipse.jetty.server.Server - Started @10167ms
+15:28:21.134 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Started jetty v9.3.15.v20161220 on <all>:8090
+15:28:21.134 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - -------------------------------------------------------
+15:28:21.134 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Ninja application running at
+15:28:21.134 [NinjaJetty] INFO  ninja.standalone.NinjaJetty -  => http://localhost:8090
+15:28:21.135 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - -------------------------------------------------------
+15:29:25.444 [qtp27504421-13] INFO  Ninja - ApplicationController.index(context) 
+15:29:25.445 [qtp27504421-13] INFO  Ninja - ApplicationController -> ContextPath (Ninja Properties): 
+15:29:25.445 [qtp27504421-13] INFO  Ninja - ApplicationController -> ContextPath (Context).........: 
+15:29:40.957 [qtp27504421-13] INFO  Ninja - No Setting instance found in data store!
+15:29:41.023 [qtp27504421-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key settings.title missing. Using key as value inside template - but this is most likely not what you want.
+15:29:41.024 [qtp27504421-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key settings.title.text missing. Using key as value inside template - but this is most likely not what you want.
+15:29:41.025 [qtp27504421-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key settings.title missing. Using key as value inside template - but this is most likely not what you want.
+15:29:41.026 [qtp27504421-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key settings.title.text missing. Using key as value inside template - but this is most likely not what you want.
+15:33:00.206 [qtp27504421-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key settings.title missing. Using key as value inside template - but this is most likely not what you want.
+15:33:00.210 [qtp27504421-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key settings.title.text missing. Using key as value inside template - but this is most likely not what you want.
+15:33:00.210 [qtp27504421-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key settings.title missing. Using key as value inside template - but this is most likely not what you want.
+15:33:00.210 [qtp27504421-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key settings.title.text missing. Using key as value inside template - but this is most likely not what you want.
+15:36:27.387 [Thread-16] INFO  ninja.lifecycle.LifecycleServiceImpl - Stopping Ninja application...
+15:36:27.437 [Thread-16] INFO  ninja.lifecycle.LifecycleServiceImpl - Ninja application stopped in 50ms
+15:36:27.444 [Thread-16] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@8c465d{/,null,UNAVAILABLE}
+15:36:27.445 [Thread-16] INFO  ninja.standalone.NinjaJetty - Trying to stop jetty on <all>:8090
+15:36:27.489 [Thread-16] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@be611c{HTTP/1.1,[http/1.1]}{0.0.0.0:8090}
+15:36:27.497 [Thread-16] INFO  ninja.standalone.NinjaJetty - Stopped jetty on <all>:8090
+15:36:28.913 [main] INFO  ninja.utils.NinjaModeHelper - Ninja is running in mode dev
+15:36:29.132 [NinjaJetty] INFO  org.eclipse.jetty.util.log - Logging initialized @1397ms
+15:36:29.239 [NinjaJetty] WARN  o.e.j.server.handler.ContextHandler - Empty contextPath
+15:36:29.575 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Trying to start jetty v9.3.15.v20161220 on <all>:8090
+15:36:29.578 [NinjaJetty] INFO  org.eclipse.jetty.server.Server - jetty-9.3.15.v20161220
+15:36:29.994 [NinjaJetty] INFO  ninja.servlet.NinjaServletListener - Using JSR-356 websocket container org.eclipse.jetty.websocket.jsr356.server.ServerContainer
+15:36:29.997 [NinjaJetty] INFO  ninja.Bootstrap - Successfully configured Logback.
+15:36:29.999 [NinjaJetty] INFO  ninja.Bootstrap - Enabling Ninja classic configuration
+15:36:32.854 [NinjaJetty] INFO  ninja.cache.CacheProvider - Using ninja.cache.CacheEhCacheImpl as implementation for ninja.cache.Cache
+15:36:33.129 [NinjaJetty] INFO  ninja.utils.SwissKnife - Could not load file conf/messages_de_DE.properties (not a bad thing necessarily, but I am returing null)
+15:36:33.129 [NinjaJetty] INFO  ninja.i18n.MessagesImpl - Did not find conf/messages_de_DE.properties but it was specified in application.conf. Using default language instead.
+15:36:33.130 [NinjaJetty] INFO  ninja.utils.SwissKnife - Could not load file conf/messages_en_GB.properties (not a bad thing necessarily, but I am returing null)
+15:36:33.130 [NinjaJetty] INFO  ninja.i18n.MessagesImpl - Did not find conf/messages_en_GB.properties but it was specified in application.conf. Using default language instead.
+15:36:33.263 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - -------------------------------------------------------------------
+15:36:33.263 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - Registered response template engines
+15:36:33.263 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - -------------------------------------------------------------------
+15:36:33.263 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/javascript  =>  ninja.template.TemplateEngineJsonP
+15:36:33.264 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/json        =>  ninja.template.TemplateEngineJson
+15:36:33.264 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/xml         =>  ninja.template.TemplateEngineXml
+15:36:33.264 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - text/html               =>  ninja.template.TemplateEngineFreemarker
+15:36:33.264 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - text/plain              =>  ninja.template.TemplateEngineText
+15:36:33.442 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - ----------------------------------------------------------------------------
+15:36:33.443 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - Registered request bodyparser engines
+15:36:33.443 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - ----------------------------------------------------------------------------
+15:36:33.444 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/json                   =>  ninja.bodyparser.BodyParserEngineJson
+15:36:33.444 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/x-www-form-urlencoded  =>  ninja.bodyparser.BodyParserEnginePost
+15:36:33.444 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/xml                    =>  ninja.bodyparser.BodyParserEngineXml
+15:36:33.461 [NinjaJetty] INFO  ninja.Bootstrap - Ninja injector started in 3457 ms.
+15:36:33.567 [NinjaJetty] WARN  ninja.params.ControllerMethodInvoker - Using deprecated non-strict mode for injection of parameters into controller (ninja.strict_argument_extractors = false). This mode will soon be removed from Ninja. Make sure you upgrade your application as soon as possible. More: http://www.ninjaframework.org/documentation/basic_concepts/controllers.html 'A note about null and Optional'.
+15:36:33.899 [NinjaJetty] INFO  ninja.RouterImpl - -----------------------------------------------------------------------------------------
+15:36:33.899 [NinjaJetty] INFO  ninja.RouterImpl - Registered routes
+15:36:33.900 [NinjaJetty] INFO  ninja.RouterImpl - -----------------------------------------------------------------------------------------
+15:36:33.900 [NinjaJetty] INFO  ninja.RouterImpl - GET  /                                             =>  controllers.ApplicationController::index
+15:36:33.900 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl                                    =>  controllers.ApplicationController::index
+15:36:33.900 [NinjaJetty] INFO  ninja.RouterImpl - GET  /exhibitions                                  =>  controllers.ApplicationController::exhibitions
+15:36:33.900 [NinjaJetty] INFO  ninja.RouterImpl - GET  /events                                       =>  controllers.ApplicationController::events
+15:36:33.900 [NinjaJetty] INFO  ninja.RouterImpl - GET  /news                                         =>  controllers.ApplicationController::news
+15:36:33.901 [NinjaJetty] INFO  ninja.RouterImpl - GET  /partners                                     =>  controllers.ApplicationController::partners
+15:36:33.901 [NinjaJetty] INFO  ninja.RouterImpl - GET  /profile                                      =>  controllers.ApplicationController::profile
+15:36:33.901 [NinjaJetty] INFO  ninja.RouterImpl - GET  /roadmap                                      =>  controllers.ApplicationController::roadmap
+15:36:33.901 [NinjaJetty] INFO  ninja.RouterImpl - GET  /settings                                     =>  controllers.ApplicationController::settings
+15:36:33.901 [NinjaJetty] INFO  ninja.RouterImpl - GET  /software                                     =>  controllers.ApplicationController::software
+15:36:33.901 [NinjaJetty] INFO  ninja.RouterImpl - GET  /specification                                =>  controllers.ApplicationController::specification
+15:36:33.901 [NinjaJetty] INFO  ninja.RouterImpl - GET  /login                                        =>  controllers.ApplicationController::login
+15:36:33.902 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/exhibitions                        =>  controllers.ApplicationController::exhibitions
+15:36:33.902 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/events                             =>  controllers.ApplicationController::events
+15:36:33.902 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/news                               =>  controllers.ApplicationController::news
+15:36:33.902 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/partners                           =>  controllers.ApplicationController::partners
+15:36:33.902 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/profile                            =>  controllers.ApplicationController::profile
+15:36:33.902 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/roadmap                            =>  controllers.ApplicationController::roadmap
+15:36:33.903 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/settings                           =>  controllers.ApplicationController::settings
+15:36:33.903 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/software                           =>  controllers.ApplicationController::software
+15:36:33.903 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/specification                      =>  controllers.ApplicationController::specification
+15:36:33.903 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/login                              =>  controllers.ApplicationController::login
+15:36:33.903 [NinjaJetty] INFO  ninja.RouterImpl - GET  /botanicSystem                                =>  controllers.BotanicSystemController::list
+15:36:33.903 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBotanicSystem                        =>  controllers.BotanicSystemController::registerBotanicSystem
+15:36:33.903 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystem                        =>  controllers.BotanicSystemController::registerBotanicSystem
+15:36:33.904 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystemConfirmation            =>  controllers.BotanicSystemController::registerBotanicSystemConfirmation
+15:36:33.904 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystemCompletion              =>  controllers.BotanicSystemController::registerBotanicSystemCompletion
+15:36:33.904 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/botanicSystem                      =>  controllers.BotanicSystemController::list
+15:36:33.904 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBotanicSystem              =>  controllers.BotanicSystemController::registerBotanicSystem
+15:36:33.904 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystem              =>  controllers.BotanicSystemController::registerBotanicSystem
+15:36:33.904 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystemConfirmation  =>  controllers.BotanicSystemController::registerBotanicSystemConfirmation
+15:36:33.904 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystemCompletion    =>  controllers.BotanicSystemController::registerBotanicSystemCompletion
+15:36:33.905 [NinjaJetty] INFO  ninja.RouterImpl - GET  /bowl                                         =>  controllers.AbstractBowlController::listBowl
+15:36:33.905 [NinjaJetty] INFO  ninja.RouterImpl - GET  /portfolioBowl                                =>  controllers.BowlController::portfolioBowl
+15:36:33.905 [NinjaJetty] INFO  ninja.RouterImpl - GET  /editBowl                                     =>  controllers.BowlController::editBowl
+15:36:33.905 [NinjaJetty] INFO  ninja.RouterImpl - GET  /editBowlByStatusCode                         =>  controllers.BowlController::editBowl
+15:36:33.905 [NinjaJetty] INFO  ninja.RouterImpl - POST /editBowlConfirmation                         =>  controllers.BowlController::editBowlConfirmation
+15:36:33.905 [NinjaJetty] INFO  ninja.RouterImpl - POST /editBowlCompletion                           =>  controllers.BowlController::editBowlCompletion
+15:36:33.906 [NinjaJetty] INFO  ninja.RouterImpl - GET  /updateBowl                                   =>  controllers.BowlController::updateBowl
+15:36:33.906 [NinjaJetty] INFO  ninja.RouterImpl - POST /updateBowlConfirmation                       =>  controllers.BowlController::updateBowlConfirmation
+15:36:33.906 [NinjaJetty] INFO  ninja.RouterImpl - POST /updateBowlCompletion                         =>  controllers.BowlController::updateBowlCompletion
+15:36:33.906 [NinjaJetty] INFO  ninja.RouterImpl - GET  /modifyBowl                                   =>  controllers.BowlController::modifyBowl
+15:36:33.906 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowl                                 =>  controllers.BowlController::registerBowl
+15:36:33.906 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowl                                 =>  controllers.BowlController::registerBowl
+15:36:33.906 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByGeoRegionCode                  =>  controllers.BowlController::registerBowlByGeoRegionCode
+15:36:33.907 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByManufactureYear                =>  controllers.BowlController::registerBowlByManufactureYear
+15:36:33.907 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByStatusCode                     =>  controllers.BowlController::registerBowlByStatusCode
+15:36:33.907 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByTimberCode                     =>  controllers.BowlController::registerBowlByTimberCode
+15:36:33.907 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlConfirmation                     =>  controllers.BowlController::registerBowlConfirmation
+15:36:33.907 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlCompletion                       =>  controllers.BowlController::registerBowlCompletion
+15:36:33.907 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlMod                              =>  controllers.BowlController::registerBowlMod
+15:36:33.908 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlMod                              =>  controllers.BowlController::registerBowlMod
+15:36:33.908 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModConfirmation                  =>  controllers.BowlController::registerBowlModConfirmation
+15:36:33.908 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModCompletion                    =>  controllers.BowlController::registerBowlModCompletion
+15:36:33.908 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlModItem                          =>  controllers.BowlController::registerBowlModItem
+15:36:33.908 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItem                          =>  controllers.BowlController::registerBowlModItem
+15:36:33.908 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItemConfirmation              =>  controllers.BowlController::registerBowlModItemConfirmation
+15:36:33.908 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItemCompletion                =>  controllers.BowlController::registerBowlModItemCompletion
+15:36:33.909 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/bowl                               =>  controllers.AbstractBowlController::listBowl
+15:36:33.909 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/portfolioBowl                      =>  controllers.BowlController::portfolioBowl
+15:36:33.909 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/editBowl                           =>  controllers.BowlController::editBowl
+15:36:33.909 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/editBowlByStatusCode               =>  controllers.BowlController::editBowl
+15:36:33.909 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/editBowlConfirmation               =>  controllers.BowlController::editBowlConfirmation
+15:36:33.915 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/editBowlCompletion                 =>  controllers.BowlController::editBowlCompletion
+15:36:33.915 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/updateBowl                         =>  controllers.BowlController::updateBowl
+15:36:33.915 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/updateBowlConfirmation             =>  controllers.BowlController::updateBowlConfirmation
+15:36:33.915 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/updateBowlCompletion               =>  controllers.BowlController::updateBowlCompletion
+15:36:33.915 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/modifyBowl                         =>  controllers.BowlController::modifyBowl
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowl                       =>  controllers.BowlController::registerBowl
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowl                       =>  controllers.BowlController::registerBowl
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByGeoRegionCode        =>  controllers.BowlController::registerBowlByGeoRegionCode
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByManufactureYear      =>  controllers.BowlController::registerBowlByManufactureYear
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByStatusCode           =>  controllers.BowlController::registerBowlByStatusCode
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByTimberCode           =>  controllers.BowlController::registerBowlByTimberCode
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlConfirmation           =>  controllers.BowlController::registerBowlConfirmation
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlCompletion             =>  controllers.BowlController::registerBowlCompletion
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlMod                    =>  controllers.BowlController::registerBowlMod
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlMod                    =>  controllers.BowlController::registerBowlMod
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModConfirmation        =>  controllers.BowlController::registerBowlModConfirmation
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModCompletion          =>  controllers.BowlController::registerBowlModCompletion
+15:36:33.916 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlModItem                =>  controllers.BowlController::registerBowlModItem
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItem                =>  controllers.BowlController::registerBowlModItem
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItemConfirmation    =>  controllers.BowlController::registerBowlModItemConfirmation
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItemCompletion      =>  controllers.BowlController::registerBowlModItemCompletion
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - GET  /customer                                     =>  controllers.CustomerController::list
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerCustomer                             =>  controllers.CustomerController::registerCustomer
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomer                             =>  controllers.CustomerController::registerCustomer
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomerConfirmation                 =>  controllers.CustomerController::registerCustomerConfirmation
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomerCompletion                   =>  controllers.CustomerController::registerCustomerCompletion
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/customer                           =>  controllers.CustomerController::list
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerCustomer                   =>  controllers.CustomerController::registerCustomer
+15:36:33.917 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomer                   =>  controllers.CustomerController::registerCustomer
+15:36:33.918 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomerConfirmation       =>  controllers.CustomerController::registerCustomerConfirmation
+15:36:33.918 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomerCompletion         =>  controllers.CustomerController::registerCustomerCompletion
+15:36:33.918 [NinjaJetty] INFO  ninja.RouterImpl - GET  /exhibition                                   =>  controllers.ExhibitionController::list
+15:36:33.918 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerExhibition                           =>  controllers.ExhibitionController::registerExhibition
+15:36:33.919 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibition                           =>  controllers.ExhibitionController::registerExhibition
+15:36:33.919 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibitionConfirmation               =>  controllers.ExhibitionController::registerExhibitionConfirmation
+15:36:33.919 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibitionCompletion                 =>  controllers.ExhibitionController::registerExhibitionCompletion
+15:36:33.919 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/exhibition                         =>  controllers.ExhibitionController::list
+15:36:33.919 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerExhibition                 =>  controllers.ExhibitionController::registerExhibition
+15:36:33.919 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibition                 =>  controllers.ExhibitionController::registerExhibition
+15:36:33.920 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibitionConfirmation     =>  controllers.ExhibitionController::registerExhibitionConfirmation
+15:36:33.920 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibitionCompletion       =>  controllers.ExhibitionController::registerExhibitionCompletion
+15:36:33.920 [NinjaJetty] INFO  ninja.RouterImpl - GET  /geoRegion                                    =>  controllers.GeoRegionController::list
+15:36:33.920 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/geoRegion                          =>  controllers.GeoRegionController::list
+15:36:33.920 [NinjaJetty] INFO  ninja.RouterImpl - GET  /status                                       =>  controllers.StatusController::list
+15:36:33.920 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerStatus                               =>  controllers.StatusController::registerStatus
+15:36:33.920 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatus                               =>  controllers.StatusController::registerStatus
+15:36:33.921 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatusConfirmation                   =>  controllers.StatusController::registerStatusConfirmation
+15:36:33.921 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatusCompletion                     =>  controllers.StatusController::registerStatusCompletion
+15:36:33.921 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/status                             =>  controllers.StatusController::list
+15:36:33.921 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerStatus                     =>  controllers.StatusController::registerStatus
+15:36:33.921 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatus                     =>  controllers.StatusController::registerStatus
+15:36:33.921 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatusConfirmation         =>  controllers.StatusController::registerStatusConfirmation
+15:36:33.921 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatusCompletion           =>  controllers.StatusController::registerStatusCompletion
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - GET  /timber                                       =>  controllers.TimberController::list
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerTimber                               =>  controllers.TimberController::registerTimber
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimber                               =>  controllers.TimberController::registerTimber
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberConfirmation                   =>  controllers.TimberController::registerTimberConfirmation
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberCompletion                     =>  controllers.TimberController::registerTimberCompletion
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/timber                             =>  controllers.TimberController::list
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerTimber                     =>  controllers.TimberController::registerTimber
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimber                     =>  controllers.TimberController::registerTimber
+15:36:33.922 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberConfirmation         =>  controllers.TimberController::registerTimberConfirmation
+15:36:33.923 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberCompletion           =>  controllers.TimberController::registerTimberCompletion
+15:36:33.923 [NinjaJetty] INFO  ninja.RouterImpl - GET  /timberOrigin                                 =>  controllers.TimberOriginController::list
+15:36:33.923 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerTimberOrigin                         =>  controllers.TimberOriginController::registerTimberOrigin
+15:36:33.923 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOrigin                         =>  controllers.TimberOriginController::registerTimberOrigin
+15:36:33.923 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOriginConfirmation             =>  controllers.TimberOriginController::registerTimberOriginConfirmation
+15:36:33.923 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOriginCompletion               =>  controllers.TimberOriginController::registerTimberOriginCompletion
+15:36:33.924 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/timberOrigin                       =>  controllers.TimberOriginController::list
+15:36:33.924 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerTimberOrigin               =>  controllers.TimberOriginController::registerTimberOrigin
+15:36:33.924 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOrigin               =>  controllers.TimberOriginController::registerTimberOrigin
+15:36:33.924 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOriginConfirmation   =>  controllers.TimberOriginController::registerTimberOriginConfirmation
+15:36:33.925 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOriginCompletion     =>  controllers.TimberOriginController::registerTimberOriginCompletion
+15:36:33.930 [NinjaJetty] INFO  ninja.RouterImpl - GET  /assets/webjars/{fileName: .*}                =>  ninja.AssetsController::serveWebJars
+15:36:33.931 [NinjaJetty] INFO  ninja.RouterImpl - GET  /assets/{fileName: .*}                        =>  ninja.AssetsController::serveStatic
+15:36:33.934 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/setup                              =>  controllers.ApplicationController::setup
+15:36:33.936 [NinjaJetty] INFO  ninja.NinjaDefault - 
+ _______  .___ _______        ____.  _____   
+ \      \ |   |\      \      |    | /  _  \  
+ /   |   \|   |/   |   \     |    |/  /_\  \ 
+/    |    \   /    |    \/\__|    /    |    \  http://www.ninjaframework.org
+\____|__  /___\____|__  /\________\____|__  /  @ninjaframework
+     web\/framework   \/                  \/   6.2.0
+
+15:36:33.936 [NinjaJetty] INFO  ninja.lifecycle.LifecycleServiceImpl - Starting Ninja application...
+15:36:34.048 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:36:34.048 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:36:34.049 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:36:34.263 [NinjaJetty] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: superbowlDS
+	...]
+15:36:34.411 [NinjaJetty] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+15:36:34.414 [NinjaJetty] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:36:34.417 [NinjaJetty] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:36:35.351 [NinjaJetty] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:36:35.443 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH010002: C3P0 using driver: org.h2.Driver at URL: jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true
+15:36:35.444 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH000046: Connection properties: {user=sa, password=****}
+15:36:35.445 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH000006: Autocommit mode: false
+15:36:35.487 [NinjaJetty] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+15:36:35.810 [NinjaJetty] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+15:36:35.963 [NinjaJetty] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@10e857c5 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@58de4ac [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfsx9r18qakbc1f7a8hz|f649d3, idleConnectionTestPeriod -> 2000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 500, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@4eb0cec0 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfsx9r18qakbc1f7a8hz|1dcd7f1, jdbcUrl -> jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfsx9r18qakbc1f7a8hz|b9a54, numHelperThreads -> 3 ]
+15:36:36.297 [NinjaJetty] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+15:36:36.356 [NinjaJetty] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+15:36:37.067 [NinjaJetty] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+15:36:37.172 [NinjaJetty] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.1.Final
+15:36:38.447 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+15:36:38.448 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+15:36:38.460 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+15:36:38.492 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOTANICSYSTEM
+15:36:38.493 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bs_id, bs_family, bs_subfamily_index, bs_version, bs_subfamily, bs_ordinal, bs_family_index, bs_order, bs_order_index]
+15:36:38.493 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.493 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bs_ordinal_idx, primary_key_f]
+15:36:38.510 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWL
+15:36:38.510 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bowl_comment, bowl_exhibition_id, bowl_status_id, bowl_sales_location, bowl_version, bowl_timberorigin_id, bowl_timber_id, bowl_sales_price, bowl_imagename, bowl_id, bowl_sales_date, bowl_index, bowl_customer_id, bowl_manufacture_id, bowl_price, bowl_ordinal]
+15:36:38.510 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bowl_exhibition_fk, bowl_timberorigin_fk, bowl_status_fk, bowl_manufacture_fk, bowl_timber_fk, bowl_customer_fk]
+15:36:38.511 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bowl_status_fk_index_1, bowl_status_idx, bowl_timberorigin_fk_index_1, bowl_timberorigin_idx, bowl_manufacture_idx, bowl_exhibition_fk_index_1, bowl_pk, primary_key_1f, bowl_manufacture_fk_index_1, bowl_timber_fk_index_1, bowl_timber_idx, bowl_customer_idx, bowl_customer_fk_index_1, bowl_exhibition_idx]
+15:36:38.534 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMOD
+15:36:38.534 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bm_height, bm_version, bm_recess, bm_surface, bm_wallthickness_min, bm_granulation, bm_tap, bm_date, bm_diameter, bm_bms_id, bm_wallthickness_max, bm_id, bm_bowl_id, bm_comment]
+15:36:38.534 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bm_bowl_fk, bm_bms_fk]
+15:36:38.534 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bm_bowl_fk_index_2, primary_key_2f, bm_bms_idx, bm_bowl_idx, bm_bms_fk_index_2]
+15:36:38.551 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODITEM
+15:36:38.551 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bmi_id, bmi_version, bmi_moisture, bmi_weight, bmi_text, bmi_bm_id, bmi_date]
+15:36:38.551 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bmi_bm_fk]
+15:36:38.551 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_73a, bmi_bm_fk_index_7, bmi_bm_idx]
+15:36:38.576 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODJOINED
+15:36:38.577 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bowlmodjoined_id, bowlmodjoined_surface, bowlmodjoined_bowlmod_version, bowlmodjoined_bowlmodstep_id, bowlmodjoined_version, bowlmodjoined_wallthickness_max, bowlmodjoined_date, bowlmodjoined_item_bowlmod_id, bowlmodjoined_tap, bowlmodjoined_granulation, bowlmodjoined_height, bowlmodjoined_item_date, bowlmodjoined_recess, bowlmodjoined_bowlmod_id, bowlmodjoined_item_weight, bowlmodjoined_item_text, bowlmodjoined_bowl_id, bowlmodjoined_item_moisture, bowlmodjoined_comment, bowlmodjoined_diameter, bowlmodjoined_wallthickness_min, bowlmodjoined_item_id, bowlmodjoined_item_version]
+15:36:38.577 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.577 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_3]
+15:36:38.593 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODSTEP
+15:36:38.593 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bms_id, bms_version, bms_code, bms_name, bms_index, bms_comment]
+15:36:38.593 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.594 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_73]
+15:36:38.605 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.CUSTOMER
+15:36:38.605 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [customer_salutation, customer_mobile, customer_country, customer_givenname, customer_phone, customer_countrycode, customer_housenumber, customer_familyname, customer_street, customer_fax, customer_index, customer_zipcode, customer_email, customer_version, customer_id, customer_comment, customer_graduation, customer_city]
+15:36:38.605 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.605 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [customer_familyname_idx, customer_email_idx, primary_key_5]
+15:36:38.638 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.EXHIBITION
+15:36:38.638 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [exhibition_country, exhibition_date_from, exhibition_city, exhibition_name, exhibition_id, exhibition_institution, exhibition_year, exhibition_date_to, exhibition_comment, exhibition_version, exhibition_index]
+15:36:38.638 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.639 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_9]
+15:36:38.655 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.GEOREGION
+15:36:38.659 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [gr_code, gr_name, gr_index, gr_ordinal, gr_version, gr_region, gr_id]
+15:36:38.660 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.660 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_1, georegion_region_idx]
+15:36:38.721 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.MANUFACTURE
+15:36:38.721 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [manu_version, manu_index, manu_id, manu_year]
+15:36:38.721 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.722 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_6]
+15:36:38.754 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.ROADMAP
+15:36:38.754 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [roadmap_id, roadmap_feature, roadmap_version, roadmap_status, roadmap_versionnumber, roadmap_comment]
+15:36:38.755 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.755 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_7]
+15:36:38.788 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SALES
+15:36:38.789 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sales_customer_id, sales_date, sales_version, sales_comment, sales_price, sales_id, sales_location, sales_bowl_id]
+15:36:38.789 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_biu8k4to3bdyqapo1opdxgdar, fk_6jp4vfmr7chcjho0jewmpm041]
+15:36:38.789 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_4, fk_biu8k4to3bdyqapo1opdxgdar_index_4, fk_6jp4vfmr7chcjho0jewmpm041_index_4]
+15:36:38.807 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SETTING
+15:36:38.807 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [setting_version, setting_param_name, setting_param_value, setting_comment, setting_id]
+15:36:38.808 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.808 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_a]
+15:36:38.847 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SOFTWARE
+15:36:38.847 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [software_vendor, software_id, software_description, software_versionnumber, software_type, software_version, software_name, software_url]
+15:36:38.847 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.847 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [software_vendor_idx, primary_key_7d]
+15:36:38.861 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.STATUS
+15:36:38.861 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [status_id, status_code, status_index, status_comment, status_text, status_version]
+15:36:38.861 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.861 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_92]
+15:36:38.876 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SUBUSER
+15:36:38.877 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [subuser_userid, subuser_lastlogout, subuser_username, subuser_logincount, subuser_lastlogin, subuser_locked, subuser_email, subuser_id, subuser_password, subuser_version]
+15:36:38.888 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:36:38.889 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [subuser_email_idx, primary_key_b, subuser_userid_idx, subuser_username_idx]
+15:36:38.918 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.TIMBER
+15:36:38.918 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [timber_bending_strength, timber_burst_strength, timber_id, timber_type, timber_tangent_shrinkage, timber_code, timber_brinell_hardness2, timber_brinell_hardness1, timber_radial_shrinkage, timber_imagename, timber_botanicsystem_id, timber_name, timber_index, timber_tensile_strength, timber_academicname, timber_version, timber_shear_strength, timber_gross_density, timber_georegion_id]
+15:36:38.918 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [timber_georegion_fk, timber_botanicsystem_fk]
+15:36:38.918 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_93, timber_georegion_fk_index_9, timber_botanicsystem_fk_index_9, timber_botanicsystem_idx, timber_georegion_idx, timber_name_idx]
+15:36:38.930 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.TIMBERORIGIN
+15:36:38.931 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [to_location_text, to_timber_id, to_comment, to_location, to_cutdown, to_id, to_city, to_version, to_index]
+15:36:38.931 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [to_timber_fk]
+15:36:38.931 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_2, to_city_idx, to_timber_idx, to_location_idx, to_timber_fk_index_2]
+15:36:38.934 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+15:36:39.321 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isDev() : true
+15:36:39.321 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isProd(): false
+15:36:39.321 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isTest(): false
+15:36:39.321 [NinjaJetty] INFO  ninja.lifecycle.LifecycleServiceImpl - Ninja application started in 5385ms
+15:36:39.325 [NinjaJetty] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@acce5d{/,null,AVAILABLE}
+15:36:39.347 [NinjaJetty] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@e5c684{HTTP/1.1,[http/1.1]}{0.0.0.0:8090}
+15:36:39.347 [NinjaJetty] INFO  org.eclipse.jetty.server.Server - Started @11618ms
+15:36:39.347 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Started jetty v9.3.15.v20161220 on <all>:8090
+15:36:39.347 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - -------------------------------------------------------
+15:36:39.348 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Ninja application running at
+15:36:39.348 [NinjaJetty] INFO  ninja.standalone.NinjaJetty -  => http://localhost:8090
+15:36:39.348 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - -------------------------------------------------------
+15:36:50.737 [Thread-16] INFO  ninja.lifecycle.LifecycleServiceImpl - Stopping Ninja application...
+15:36:50.765 [Thread-16] INFO  ninja.lifecycle.LifecycleServiceImpl - Ninja application stopped in 28ms
+15:36:50.776 [Thread-16] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@acce5d{/,null,UNAVAILABLE}
+15:36:50.782 [Thread-16] INFO  ninja.standalone.NinjaJetty - Trying to stop jetty on <all>:8090
+15:36:50.806 [Thread-16] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@e5c684{HTTP/1.1,[http/1.1]}{0.0.0.0:8090}
+15:36:50.815 [Thread-16] INFO  ninja.standalone.NinjaJetty - Stopped jetty on <all>:8090
+15:36:52.089 [main] INFO  ninja.utils.NinjaModeHelper - Ninja is running in mode dev
+15:36:52.289 [NinjaJetty] INFO  org.eclipse.jetty.util.log - Logging initialized @1435ms
+15:36:52.381 [NinjaJetty] WARN  o.e.j.server.handler.ContextHandler - Empty contextPath
+15:36:52.704 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Trying to start jetty v9.3.15.v20161220 on <all>:8090
+15:36:52.707 [NinjaJetty] INFO  org.eclipse.jetty.server.Server - jetty-9.3.15.v20161220
+15:36:53.148 [NinjaJetty] INFO  ninja.servlet.NinjaServletListener - Using JSR-356 websocket container org.eclipse.jetty.websocket.jsr356.server.ServerContainer
+15:36:53.151 [NinjaJetty] INFO  ninja.Bootstrap - Successfully configured Logback.
+15:36:53.155 [NinjaJetty] INFO  ninja.Bootstrap - Enabling Ninja classic configuration
+15:36:55.909 [NinjaJetty] INFO  ninja.cache.CacheProvider - Using ninja.cache.CacheEhCacheImpl as implementation for ninja.cache.Cache
+15:36:56.191 [NinjaJetty] INFO  ninja.utils.SwissKnife - Could not load file conf/messages_de_DE.properties (not a bad thing necessarily, but I am returing null)
+15:36:56.200 [NinjaJetty] INFO  ninja.i18n.MessagesImpl - Did not find conf/messages_de_DE.properties but it was specified in application.conf. Using default language instead.
+15:36:56.201 [NinjaJetty] INFO  ninja.utils.SwissKnife - Could not load file conf/messages_en_GB.properties (not a bad thing necessarily, but I am returing null)
+15:36:56.205 [NinjaJetty] INFO  ninja.i18n.MessagesImpl - Did not find conf/messages_en_GB.properties but it was specified in application.conf. Using default language instead.
+15:36:56.320 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - -------------------------------------------------------------------
+15:36:56.320 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - Registered response template engines
+15:36:56.321 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - -------------------------------------------------------------------
+15:36:56.321 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/javascript  =>  ninja.template.TemplateEngineJsonP
+15:36:56.321 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/json        =>  ninja.template.TemplateEngineJson
+15:36:56.321 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/xml         =>  ninja.template.TemplateEngineXml
+15:36:56.321 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - text/html               =>  ninja.template.TemplateEngineFreemarker
+15:36:56.321 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - text/plain              =>  ninja.template.TemplateEngineText
+15:36:56.519 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - ----------------------------------------------------------------------------
+15:36:56.519 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - Registered request bodyparser engines
+15:36:56.519 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - ----------------------------------------------------------------------------
+15:36:56.519 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/json                   =>  ninja.bodyparser.BodyParserEngineJson
+15:36:56.519 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/x-www-form-urlencoded  =>  ninja.bodyparser.BodyParserEnginePost
+15:36:56.519 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/xml                    =>  ninja.bodyparser.BodyParserEngineXml
+15:36:56.529 [NinjaJetty] INFO  ninja.Bootstrap - Ninja injector started in 3370 ms.
+15:36:56.594 [NinjaJetty] WARN  ninja.params.ControllerMethodInvoker - Using deprecated non-strict mode for injection of parameters into controller (ninja.strict_argument_extractors = false). This mode will soon be removed from Ninja. Make sure you upgrade your application as soon as possible. More: http://www.ninjaframework.org/documentation/basic_concepts/controllers.html 'A note about null and Optional'.
+15:36:56.883 [NinjaJetty] INFO  ninja.RouterImpl - -----------------------------------------------------------------------------------------
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - Registered routes
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - -----------------------------------------------------------------------------------------
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /                                             =>  controllers.ApplicationController::index
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl                                    =>  controllers.ApplicationController::index
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /exhibitions                                  =>  controllers.ApplicationController::exhibitions
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /events                                       =>  controllers.ApplicationController::events
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /news                                         =>  controllers.ApplicationController::news
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /partners                                     =>  controllers.ApplicationController::partners
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /profile                                      =>  controllers.ApplicationController::profile
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /roadmap                                      =>  controllers.ApplicationController::roadmap
+15:36:56.884 [NinjaJetty] INFO  ninja.RouterImpl - GET  /settings                                     =>  controllers.ApplicationController::settings
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /software                                     =>  controllers.ApplicationController::software
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /specification                                =>  controllers.ApplicationController::specification
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /login                                        =>  controllers.ApplicationController::login
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/exhibitions                        =>  controllers.ApplicationController::exhibitions
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/events                             =>  controllers.ApplicationController::events
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/news                               =>  controllers.ApplicationController::news
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/partners                           =>  controllers.ApplicationController::partners
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/profile                            =>  controllers.ApplicationController::profile
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/roadmap                            =>  controllers.ApplicationController::roadmap
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/settings                           =>  controllers.ApplicationController::settings
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/software                           =>  controllers.ApplicationController::software
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/specification                      =>  controllers.ApplicationController::specification
+15:36:56.885 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/login                              =>  controllers.ApplicationController::login
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - GET  /botanicSystem                                =>  controllers.BotanicSystemController::list
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBotanicSystem                        =>  controllers.BotanicSystemController::registerBotanicSystem
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystem                        =>  controllers.BotanicSystemController::registerBotanicSystem
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystemConfirmation            =>  controllers.BotanicSystemController::registerBotanicSystemConfirmation
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystemCompletion              =>  controllers.BotanicSystemController::registerBotanicSystemCompletion
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/botanicSystem                      =>  controllers.BotanicSystemController::list
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBotanicSystem              =>  controllers.BotanicSystemController::registerBotanicSystem
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystem              =>  controllers.BotanicSystemController::registerBotanicSystem
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystemConfirmation  =>  controllers.BotanicSystemController::registerBotanicSystemConfirmation
+15:36:56.886 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystemCompletion    =>  controllers.BotanicSystemController::registerBotanicSystemCompletion
+15:36:56.887 [NinjaJetty] INFO  ninja.RouterImpl - GET  /bowl                                         =>  controllers.AbstractBowlController::listBowl
+15:36:56.887 [NinjaJetty] INFO  ninja.RouterImpl - GET  /portfolioBowl                                =>  controllers.BowlController::portfolioBowl
+15:36:56.887 [NinjaJetty] INFO  ninja.RouterImpl - GET  /editBowl                                     =>  controllers.BowlController::editBowl
+15:36:56.887 [NinjaJetty] INFO  ninja.RouterImpl - GET  /editBowlByStatusCode                         =>  controllers.BowlController::editBowl
+15:36:56.887 [NinjaJetty] INFO  ninja.RouterImpl - POST /editBowlConfirmation                         =>  controllers.BowlController::editBowlConfirmation
+15:36:56.887 [NinjaJetty] INFO  ninja.RouterImpl - POST /editBowlCompletion                           =>  controllers.BowlController::editBowlCompletion
+15:36:56.887 [NinjaJetty] INFO  ninja.RouterImpl - GET  /updateBowl                                   =>  controllers.BowlController::updateBowl
+15:36:56.887 [NinjaJetty] INFO  ninja.RouterImpl - POST /updateBowlConfirmation                       =>  controllers.BowlController::updateBowlConfirmation
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - POST /updateBowlCompletion                         =>  controllers.BowlController::updateBowlCompletion
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - GET  /modifyBowl                                   =>  controllers.BowlController::modifyBowl
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowl                                 =>  controllers.BowlController::registerBowl
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowl                                 =>  controllers.BowlController::registerBowl
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByGeoRegionCode                  =>  controllers.BowlController::registerBowlByGeoRegionCode
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByManufactureYear                =>  controllers.BowlController::registerBowlByManufactureYear
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByStatusCode                     =>  controllers.BowlController::registerBowlByStatusCode
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByTimberCode                     =>  controllers.BowlController::registerBowlByTimberCode
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlConfirmation                     =>  controllers.BowlController::registerBowlConfirmation
+15:36:56.888 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlCompletion                       =>  controllers.BowlController::registerBowlCompletion
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlMod                              =>  controllers.BowlController::registerBowlMod
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlMod                              =>  controllers.BowlController::registerBowlMod
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModConfirmation                  =>  controllers.BowlController::registerBowlModConfirmation
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModCompletion                    =>  controllers.BowlController::registerBowlModCompletion
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlModItem                          =>  controllers.BowlController::registerBowlModItem
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItem                          =>  controllers.BowlController::registerBowlModItem
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItemConfirmation              =>  controllers.BowlController::registerBowlModItemConfirmation
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItemCompletion                =>  controllers.BowlController::registerBowlModItemCompletion
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/bowl                               =>  controllers.AbstractBowlController::listBowl
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/portfolioBowl                      =>  controllers.BowlController::portfolioBowl
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/editBowl                           =>  controllers.BowlController::editBowl
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/editBowlByStatusCode               =>  controllers.BowlController::editBowl
+15:36:56.889 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/editBowlConfirmation               =>  controllers.BowlController::editBowlConfirmation
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/editBowlCompletion                 =>  controllers.BowlController::editBowlCompletion
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/updateBowl                         =>  controllers.BowlController::updateBowl
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/updateBowlConfirmation             =>  controllers.BowlController::updateBowlConfirmation
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/updateBowlCompletion               =>  controllers.BowlController::updateBowlCompletion
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/modifyBowl                         =>  controllers.BowlController::modifyBowl
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowl                       =>  controllers.BowlController::registerBowl
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowl                       =>  controllers.BowlController::registerBowl
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByGeoRegionCode        =>  controllers.BowlController::registerBowlByGeoRegionCode
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByManufactureYear      =>  controllers.BowlController::registerBowlByManufactureYear
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByStatusCode           =>  controllers.BowlController::registerBowlByStatusCode
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByTimberCode           =>  controllers.BowlController::registerBowlByTimberCode
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlConfirmation           =>  controllers.BowlController::registerBowlConfirmation
+15:36:56.890 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlCompletion             =>  controllers.BowlController::registerBowlCompletion
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlMod                    =>  controllers.BowlController::registerBowlMod
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlMod                    =>  controllers.BowlController::registerBowlMod
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModConfirmation        =>  controllers.BowlController::registerBowlModConfirmation
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModCompletion          =>  controllers.BowlController::registerBowlModCompletion
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlModItem                =>  controllers.BowlController::registerBowlModItem
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItem                =>  controllers.BowlController::registerBowlModItem
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItemConfirmation    =>  controllers.BowlController::registerBowlModItemConfirmation
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItemCompletion      =>  controllers.BowlController::registerBowlModItemCompletion
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - GET  /customer                                     =>  controllers.CustomerController::list
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerCustomer                             =>  controllers.CustomerController::registerCustomer
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomer                             =>  controllers.CustomerController::registerCustomer
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomerConfirmation                 =>  controllers.CustomerController::registerCustomerConfirmation
+15:36:56.891 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomerCompletion                   =>  controllers.CustomerController::registerCustomerCompletion
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/customer                           =>  controllers.CustomerController::list
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerCustomer                   =>  controllers.CustomerController::registerCustomer
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomer                   =>  controllers.CustomerController::registerCustomer
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomerConfirmation       =>  controllers.CustomerController::registerCustomerConfirmation
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomerCompletion         =>  controllers.CustomerController::registerCustomerCompletion
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - GET  /exhibition                                   =>  controllers.ExhibitionController::list
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerExhibition                           =>  controllers.ExhibitionController::registerExhibition
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibition                           =>  controllers.ExhibitionController::registerExhibition
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibitionConfirmation               =>  controllers.ExhibitionController::registerExhibitionConfirmation
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibitionCompletion                 =>  controllers.ExhibitionController::registerExhibitionCompletion
+15:36:56.892 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/exhibition                         =>  controllers.ExhibitionController::list
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerExhibition                 =>  controllers.ExhibitionController::registerExhibition
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibition                 =>  controllers.ExhibitionController::registerExhibition
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibitionConfirmation     =>  controllers.ExhibitionController::registerExhibitionConfirmation
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibitionCompletion       =>  controllers.ExhibitionController::registerExhibitionCompletion
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - GET  /geoRegion                                    =>  controllers.GeoRegionController::list
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/geoRegion                          =>  controllers.GeoRegionController::list
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - GET  /status                                       =>  controllers.StatusController::list
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerStatus                               =>  controllers.StatusController::registerStatus
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatus                               =>  controllers.StatusController::registerStatus
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatusConfirmation                   =>  controllers.StatusController::registerStatusConfirmation
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatusCompletion                     =>  controllers.StatusController::registerStatusCompletion
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/status                             =>  controllers.StatusController::list
+15:36:56.893 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerStatus                     =>  controllers.StatusController::registerStatus
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatus                     =>  controllers.StatusController::registerStatus
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatusConfirmation         =>  controllers.StatusController::registerStatusConfirmation
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatusCompletion           =>  controllers.StatusController::registerStatusCompletion
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - GET  /timber                                       =>  controllers.TimberController::list
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerTimber                               =>  controllers.TimberController::registerTimber
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimber                               =>  controllers.TimberController::registerTimber
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberConfirmation                   =>  controllers.TimberController::registerTimberConfirmation
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberCompletion                     =>  controllers.TimberController::registerTimberCompletion
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/timber                             =>  controllers.TimberController::list
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerTimber                     =>  controllers.TimberController::registerTimber
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimber                     =>  controllers.TimberController::registerTimber
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberConfirmation         =>  controllers.TimberController::registerTimberConfirmation
+15:36:56.894 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberCompletion           =>  controllers.TimberController::registerTimberCompletion
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - GET  /timberOrigin                                 =>  controllers.TimberOriginController::list
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerTimberOrigin                         =>  controllers.TimberOriginController::registerTimberOrigin
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOrigin                         =>  controllers.TimberOriginController::registerTimberOrigin
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOriginConfirmation             =>  controllers.TimberOriginController::registerTimberOriginConfirmation
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOriginCompletion               =>  controllers.TimberOriginController::registerTimberOriginCompletion
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/timberOrigin                       =>  controllers.TimberOriginController::list
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerTimberOrigin               =>  controllers.TimberOriginController::registerTimberOrigin
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOrigin               =>  controllers.TimberOriginController::registerTimberOrigin
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOriginConfirmation   =>  controllers.TimberOriginController::registerTimberOriginConfirmation
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOriginCompletion     =>  controllers.TimberOriginController::registerTimberOriginCompletion
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - GET  /assets/webjars/{fileName: .*}                =>  ninja.AssetsController::serveWebJars
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - GET  /assets/{fileName: .*}                        =>  ninja.AssetsController::serveStatic
+15:36:56.895 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/setup                              =>  controllers.ApplicationController::setup
+15:36:56.905 [NinjaJetty] INFO  ninja.NinjaDefault - 
+ _______  .___ _______        ____.  _____   
+ \      \ |   |\      \      |    | /  _  \  
+ /   |   \|   |/   |   \     |    |/  /_\  \ 
+/    |    \   /    |    \/\__|    /    |    \  http://www.ninjaframework.org
+\____|__  /___\____|__  /\________\____|__  /  @ninjaframework
+     web\/framework   \/                  \/   6.2.0
+
+15:36:56.905 [NinjaJetty] INFO  ninja.lifecycle.LifecycleServiceImpl - Starting Ninja application...
+15:36:56.997 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:36:56.997 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:36:56.998 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:36:57.232 [NinjaJetty] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: superbowlDS
+	...]
+15:36:57.394 [NinjaJetty] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+15:36:57.397 [NinjaJetty] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:36:57.401 [NinjaJetty] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:36:58.077 [NinjaJetty] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:36:58.161 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH010002: C3P0 using driver: org.h2.Driver at URL: jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true
+15:36:58.162 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH000046: Connection properties: {user=sa, password=****}
+15:36:58.162 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH000006: Autocommit mode: false
+15:36:58.194 [NinjaJetty] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+15:36:58.386 [NinjaJetty] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+15:36:58.566 [NinjaJetty] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@66146fe [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@bf32dc93 [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfsx9r18qb1u9wt8lli|f649d3, idleConnectionTestPeriod -> 2000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 500, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@c9aad3b9 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfsx9r18qb1u9wt8lli|1dcd7f1, jdbcUrl -> jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfsx9r18qb1u9wt8lli|b9a54, numHelperThreads -> 3 ]
+15:36:58.994 [NinjaJetty] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+15:36:59.065 [NinjaJetty] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+15:36:59.648 [NinjaJetty] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+15:36:59.758 [NinjaJetty] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.1.Final
+15:37:00.863 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+15:37:00.863 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+15:37:00.884 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+15:37:00.947 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOTANICSYSTEM
+15:37:00.953 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bs_id, bs_family, bs_subfamily_index, bs_version, bs_subfamily, bs_ordinal, bs_family_index, bs_order, bs_order_index]
+15:37:00.954 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:00.955 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bs_ordinal_idx, primary_key_f]
+15:37:00.977 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWL
+15:37:00.978 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bowl_comment, bowl_exhibition_id, bowl_status_id, bowl_sales_location, bowl_version, bowl_timberorigin_id, bowl_timber_id, bowl_sales_price, bowl_imagename, bowl_id, bowl_sales_date, bowl_index, bowl_customer_id, bowl_manufacture_id, bowl_price, bowl_ordinal]
+15:37:00.978 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bowl_exhibition_fk, bowl_timberorigin_fk, bowl_status_fk, bowl_manufacture_fk, bowl_timber_fk, bowl_customer_fk]
+15:37:00.978 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bowl_status_fk_index_1, bowl_status_idx, bowl_timberorigin_fk_index_1, bowl_timberorigin_idx, bowl_manufacture_idx, bowl_exhibition_fk_index_1, bowl_pk, primary_key_1f, bowl_manufacture_fk_index_1, bowl_timber_fk_index_1, bowl_timber_idx, bowl_customer_idx, bowl_customer_fk_index_1, bowl_exhibition_idx]
+15:37:01.003 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMOD
+15:37:01.004 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bm_height, bm_version, bm_recess, bm_surface, bm_wallthickness_min, bm_granulation, bm_tap, bm_date, bm_diameter, bm_bms_id, bm_wallthickness_max, bm_id, bm_bowl_id, bm_comment]
+15:37:01.004 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bm_bowl_fk, bm_bms_fk]
+15:37:01.004 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bm_bowl_fk_index_2, primary_key_2f, bm_bms_idx, bm_bowl_idx, bm_bms_fk_index_2]
+15:37:01.020 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODITEM
+15:37:01.020 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bmi_id, bmi_version, bmi_moisture, bmi_weight, bmi_text, bmi_bm_id, bmi_date]
+15:37:01.021 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bmi_bm_fk]
+15:37:01.024 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_73a, bmi_bm_fk_index_7, bmi_bm_idx]
+15:37:01.080 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODJOINED
+15:37:01.080 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bowlmodjoined_id, bowlmodjoined_surface, bowlmodjoined_bowlmod_version, bowlmodjoined_bowlmodstep_id, bowlmodjoined_version, bowlmodjoined_wallthickness_max, bowlmodjoined_date, bowlmodjoined_item_bowlmod_id, bowlmodjoined_tap, bowlmodjoined_granulation, bowlmodjoined_height, bowlmodjoined_item_date, bowlmodjoined_recess, bowlmodjoined_bowlmod_id, bowlmodjoined_item_weight, bowlmodjoined_item_text, bowlmodjoined_bowl_id, bowlmodjoined_item_moisture, bowlmodjoined_comment, bowlmodjoined_diameter, bowlmodjoined_wallthickness_min, bowlmodjoined_item_id, bowlmodjoined_item_version]
+15:37:01.080 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.080 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_3]
+15:37:01.095 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODSTEP
+15:37:01.096 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bms_id, bms_version, bms_code, bms_name, bms_index, bms_comment]
+15:37:01.096 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.096 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_73]
+15:37:01.117 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.CUSTOMER
+15:37:01.117 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [customer_salutation, customer_mobile, customer_country, customer_givenname, customer_phone, customer_countrycode, customer_housenumber, customer_familyname, customer_street, customer_fax, customer_index, customer_zipcode, customer_email, customer_version, customer_id, customer_comment, customer_graduation, customer_city]
+15:37:01.117 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.117 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [customer_familyname_idx, customer_email_idx, primary_key_5]
+15:37:01.133 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.EXHIBITION
+15:37:01.133 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [exhibition_country, exhibition_date_from, exhibition_city, exhibition_name, exhibition_id, exhibition_institution, exhibition_year, exhibition_date_to, exhibition_comment, exhibition_version, exhibition_index]
+15:37:01.134 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.134 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_9]
+15:37:01.172 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.GEOREGION
+15:37:01.172 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [gr_code, gr_name, gr_index, gr_ordinal, gr_version, gr_region, gr_id]
+15:37:01.172 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.172 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_1, georegion_region_idx]
+15:37:01.201 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.MANUFACTURE
+15:37:01.201 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [manu_version, manu_index, manu_id, manu_year]
+15:37:01.201 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.202 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_6]
+15:37:01.215 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.ROADMAP
+15:37:01.216 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [roadmap_id, roadmap_feature, roadmap_version, roadmap_status, roadmap_versionnumber, roadmap_comment]
+15:37:01.216 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.216 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_7]
+15:37:01.246 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SALES
+15:37:01.246 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sales_customer_id, sales_date, sales_version, sales_comment, sales_price, sales_id, sales_location, sales_bowl_id]
+15:37:01.246 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_biu8k4to3bdyqapo1opdxgdar, fk_6jp4vfmr7chcjho0jewmpm041]
+15:37:01.246 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_4, fk_biu8k4to3bdyqapo1opdxgdar_index_4, fk_6jp4vfmr7chcjho0jewmpm041_index_4]
+15:37:01.263 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SETTING
+15:37:01.263 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [setting_version, setting_param_name, setting_param_value, setting_comment, setting_id]
+15:37:01.264 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.264 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_a]
+15:37:01.286 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SOFTWARE
+15:37:01.286 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [software_vendor, software_id, software_description, software_versionnumber, software_type, software_version, software_name, software_url]
+15:37:01.286 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.287 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [software_vendor_idx, primary_key_7d]
+15:37:01.301 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.STATUS
+15:37:01.302 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [status_id, status_code, status_index, status_comment, status_text, status_version]
+15:37:01.302 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.302 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_92]
+15:37:01.322 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SUBUSER
+15:37:01.322 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [subuser_userid, subuser_lastlogout, subuser_username, subuser_logincount, subuser_lastlogin, subuser_locked, subuser_email, subuser_id, subuser_password, subuser_version]
+15:37:01.323 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:01.323 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [subuser_email_idx, primary_key_b, subuser_userid_idx, subuser_username_idx]
+15:37:01.337 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.TIMBER
+15:37:01.338 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [timber_bending_strength, timber_burst_strength, timber_id, timber_type, timber_tangent_shrinkage, timber_code, timber_brinell_hardness2, timber_brinell_hardness1, timber_radial_shrinkage, timber_imagename, timber_botanicsystem_id, timber_name, timber_index, timber_tensile_strength, timber_academicname, timber_version, timber_shear_strength, timber_gross_density, timber_georegion_id]
+15:37:01.338 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [timber_georegion_fk, timber_botanicsystem_fk]
+15:37:01.338 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_93, timber_georegion_fk_index_9, timber_botanicsystem_fk_index_9, timber_botanicsystem_idx, timber_georegion_idx, timber_name_idx]
+15:37:01.356 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.TIMBERORIGIN
+15:37:01.356 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [to_location_text, to_timber_id, to_comment, to_location, to_cutdown, to_id, to_city, to_version, to_index]
+15:37:01.356 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [to_timber_fk]
+15:37:01.356 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_2, to_city_idx, to_timber_idx, to_location_idx, to_timber_fk_index_2]
+15:37:01.359 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+15:37:01.670 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isDev() : true
+15:37:01.670 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isProd(): false
+15:37:01.671 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isTest(): false
+15:37:01.671 [NinjaJetty] INFO  ninja.lifecycle.LifecycleServiceImpl - Ninja application started in 4766ms
+15:37:01.675 [NinjaJetty] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@acce5d{/,null,AVAILABLE}
+15:37:01.703 [NinjaJetty] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@167080e{HTTP/1.1,[http/1.1]}{0.0.0.0:8090}
+15:37:01.703 [NinjaJetty] INFO  org.eclipse.jetty.server.Server - Started @10852ms
+15:37:01.703 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Started jetty v9.3.15.v20161220 on <all>:8090
+15:37:01.703 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - -------------------------------------------------------
+15:37:01.703 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Ninja application running at
+15:37:01.704 [NinjaJetty] INFO  ninja.standalone.NinjaJetty -  => http://localhost:8090
+15:37:01.704 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - -------------------------------------------------------
+15:37:09.253 [Thread-16] INFO  ninja.lifecycle.LifecycleServiceImpl - Stopping Ninja application...
+15:37:09.282 [Thread-16] INFO  ninja.lifecycle.LifecycleServiceImpl - Ninja application stopped in 29ms
+15:37:09.283 [Thread-16] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@acce5d{/,null,UNAVAILABLE}
+15:37:09.284 [Thread-16] INFO  ninja.standalone.NinjaJetty - Trying to stop jetty on <all>:8090
+15:37:09.311 [Thread-16] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@167080e{HTTP/1.1,[http/1.1]}{0.0.0.0:8090}
+15:37:09.325 [Thread-16] INFO  ninja.standalone.NinjaJetty - Stopped jetty on <all>:8090
+15:37:10.258 [main] INFO  ninja.utils.NinjaModeHelper - Ninja is running in mode dev
+15:37:10.434 [NinjaJetty] INFO  org.eclipse.jetty.util.log - Logging initialized @1055ms
+15:37:10.535 [NinjaJetty] WARN  o.e.j.server.handler.ContextHandler - Empty contextPath
+15:37:10.826 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Trying to start jetty v9.3.15.v20161220 on <all>:8090
+15:37:10.829 [NinjaJetty] INFO  org.eclipse.jetty.server.Server - jetty-9.3.15.v20161220
+15:37:11.242 [NinjaJetty] INFO  ninja.servlet.NinjaServletListener - Using JSR-356 websocket container org.eclipse.jetty.websocket.jsr356.server.ServerContainer
+15:37:11.245 [NinjaJetty] INFO  ninja.Bootstrap - Successfully configured Logback.
+15:37:11.248 [NinjaJetty] INFO  ninja.Bootstrap - Enabling Ninja classic configuration
+15:37:13.143 [NinjaJetty] INFO  ninja.cache.CacheProvider - Using ninja.cache.CacheEhCacheImpl as implementation for ninja.cache.Cache
+15:37:13.386 [NinjaJetty] INFO  ninja.utils.SwissKnife - Could not load file conf/messages_de_DE.properties (not a bad thing necessarily, but I am returing null)
+15:37:13.387 [NinjaJetty] INFO  ninja.i18n.MessagesImpl - Did not find conf/messages_de_DE.properties but it was specified in application.conf. Using default language instead.
+15:37:13.388 [NinjaJetty] INFO  ninja.utils.SwissKnife - Could not load file conf/messages_en_GB.properties (not a bad thing necessarily, but I am returing null)
+15:37:13.388 [NinjaJetty] INFO  ninja.i18n.MessagesImpl - Did not find conf/messages_en_GB.properties but it was specified in application.conf. Using default language instead.
+15:37:13.504 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - -------------------------------------------------------------------
+15:37:13.504 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - Registered response template engines
+15:37:13.504 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - -------------------------------------------------------------------
+15:37:13.504 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/javascript  =>  ninja.template.TemplateEngineJsonP
+15:37:13.504 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/json        =>  ninja.template.TemplateEngineJson
+15:37:13.505 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - application/xml         =>  ninja.template.TemplateEngineXml
+15:37:13.505 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - text/html               =>  ninja.template.TemplateEngineFreemarker
+15:37:13.505 [NinjaJetty] INFO  n.template.TemplateEngineManagerImpl - text/plain              =>  ninja.template.TemplateEngineText
+15:37:13.665 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - ----------------------------------------------------------------------------
+15:37:13.665 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - Registered request bodyparser engines
+15:37:13.666 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - ----------------------------------------------------------------------------
+15:37:13.666 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/json                   =>  ninja.bodyparser.BodyParserEngineJson
+15:37:13.666 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/x-www-form-urlencoded  =>  ninja.bodyparser.BodyParserEnginePost
+15:37:13.666 [NinjaJetty] INFO  n.b.BodyParserEngineManagerImpl - application/xml                    =>  ninja.bodyparser.BodyParserEngineXml
+15:37:13.668 [NinjaJetty] INFO  ninja.Bootstrap - Ninja injector started in 2415 ms.
+15:37:13.723 [NinjaJetty] WARN  ninja.params.ControllerMethodInvoker - Using deprecated non-strict mode for injection of parameters into controller (ninja.strict_argument_extractors = false). This mode will soon be removed from Ninja. Make sure you upgrade your application as soon as possible. More: http://www.ninjaframework.org/documentation/basic_concepts/controllers.html 'A note about null and Optional'.
+15:37:14.050 [NinjaJetty] INFO  ninja.RouterImpl - -----------------------------------------------------------------------------------------
+15:37:14.053 [NinjaJetty] INFO  ninja.RouterImpl - Registered routes
+15:37:14.053 [NinjaJetty] INFO  ninja.RouterImpl - -----------------------------------------------------------------------------------------
+15:37:14.054 [NinjaJetty] INFO  ninja.RouterImpl - GET  /                                             =>  controllers.ApplicationController::index
+15:37:14.054 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl                                    =>  controllers.ApplicationController::index
+15:37:14.054 [NinjaJetty] INFO  ninja.RouterImpl - GET  /exhibitions                                  =>  controllers.ApplicationController::exhibitions
+15:37:14.055 [NinjaJetty] INFO  ninja.RouterImpl - GET  /events                                       =>  controllers.ApplicationController::events
+15:37:14.055 [NinjaJetty] INFO  ninja.RouterImpl - GET  /news                                         =>  controllers.ApplicationController::news
+15:37:14.055 [NinjaJetty] INFO  ninja.RouterImpl - GET  /partners                                     =>  controllers.ApplicationController::partners
+15:37:14.055 [NinjaJetty] INFO  ninja.RouterImpl - GET  /profile                                      =>  controllers.ApplicationController::profile
+15:37:14.055 [NinjaJetty] INFO  ninja.RouterImpl - GET  /roadmap                                      =>  controllers.ApplicationController::roadmap
+15:37:14.056 [NinjaJetty] INFO  ninja.RouterImpl - GET  /settings                                     =>  controllers.ApplicationController::settings
+15:37:14.056 [NinjaJetty] INFO  ninja.RouterImpl - GET  /software                                     =>  controllers.ApplicationController::software
+15:37:14.056 [NinjaJetty] INFO  ninja.RouterImpl - GET  /specification                                =>  controllers.ApplicationController::specification
+15:37:14.056 [NinjaJetty] INFO  ninja.RouterImpl - GET  /login                                        =>  controllers.ApplicationController::login
+15:37:14.057 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/exhibitions                        =>  controllers.ApplicationController::exhibitions
+15:37:14.057 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/events                             =>  controllers.ApplicationController::events
+15:37:14.057 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/news                               =>  controllers.ApplicationController::news
+15:37:14.057 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/partners                           =>  controllers.ApplicationController::partners
+15:37:14.058 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/profile                            =>  controllers.ApplicationController::profile
+15:37:14.058 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/roadmap                            =>  controllers.ApplicationController::roadmap
+15:37:14.058 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/settings                           =>  controllers.ApplicationController::settings
+15:37:14.058 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/software                           =>  controllers.ApplicationController::software
+15:37:14.059 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/specification                      =>  controllers.ApplicationController::specification
+15:37:14.059 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/login                              =>  controllers.ApplicationController::login
+15:37:14.059 [NinjaJetty] INFO  ninja.RouterImpl - GET  /botanicSystem                                =>  controllers.BotanicSystemController::list
+15:37:14.060 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBotanicSystem                        =>  controllers.BotanicSystemController::registerBotanicSystem
+15:37:14.060 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystem                        =>  controllers.BotanicSystemController::registerBotanicSystem
+15:37:14.060 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystemConfirmation            =>  controllers.BotanicSystemController::registerBotanicSystemConfirmation
+15:37:14.060 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBotanicSystemCompletion              =>  controllers.BotanicSystemController::registerBotanicSystemCompletion
+15:37:14.061 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/botanicSystem                      =>  controllers.BotanicSystemController::list
+15:37:14.066 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBotanicSystem              =>  controllers.BotanicSystemController::registerBotanicSystem
+15:37:14.066 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystem              =>  controllers.BotanicSystemController::registerBotanicSystem
+15:37:14.066 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystemConfirmation  =>  controllers.BotanicSystemController::registerBotanicSystemConfirmation
+15:37:14.067 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBotanicSystemCompletion    =>  controllers.BotanicSystemController::registerBotanicSystemCompletion
+15:37:14.067 [NinjaJetty] INFO  ninja.RouterImpl - GET  /bowl                                         =>  controllers.AbstractBowlController::listBowl
+15:37:14.068 [NinjaJetty] INFO  ninja.RouterImpl - GET  /portfolioBowl                                =>  controllers.BowlController::portfolioBowl
+15:37:14.068 [NinjaJetty] INFO  ninja.RouterImpl - GET  /editBowl                                     =>  controllers.BowlController::editBowl
+15:37:14.068 [NinjaJetty] INFO  ninja.RouterImpl - GET  /editBowlByStatusCode                         =>  controllers.BowlController::editBowl
+15:37:14.069 [NinjaJetty] INFO  ninja.RouterImpl - POST /editBowlConfirmation                         =>  controllers.BowlController::editBowlConfirmation
+15:37:14.069 [NinjaJetty] INFO  ninja.RouterImpl - POST /editBowlCompletion                           =>  controllers.BowlController::editBowlCompletion
+15:37:14.069 [NinjaJetty] INFO  ninja.RouterImpl - GET  /updateBowl                                   =>  controllers.BowlController::updateBowl
+15:37:14.069 [NinjaJetty] INFO  ninja.RouterImpl - POST /updateBowlConfirmation                       =>  controllers.BowlController::updateBowlConfirmation
+15:37:14.070 [NinjaJetty] INFO  ninja.RouterImpl - POST /updateBowlCompletion                         =>  controllers.BowlController::updateBowlCompletion
+15:37:14.070 [NinjaJetty] INFO  ninja.RouterImpl - GET  /modifyBowl                                   =>  controllers.BowlController::modifyBowl
+15:37:14.070 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowl                                 =>  controllers.BowlController::registerBowl
+15:37:14.070 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowl                                 =>  controllers.BowlController::registerBowl
+15:37:14.071 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByGeoRegionCode                  =>  controllers.BowlController::registerBowlByGeoRegionCode
+15:37:14.071 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByManufactureYear                =>  controllers.BowlController::registerBowlByManufactureYear
+15:37:14.071 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByStatusCode                     =>  controllers.BowlController::registerBowlByStatusCode
+15:37:14.071 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlByTimberCode                     =>  controllers.BowlController::registerBowlByTimberCode
+15:37:14.072 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlConfirmation                     =>  controllers.BowlController::registerBowlConfirmation
+15:37:14.072 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlCompletion                       =>  controllers.BowlController::registerBowlCompletion
+15:37:14.072 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlMod                              =>  controllers.BowlController::registerBowlMod
+15:37:14.072 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlMod                              =>  controllers.BowlController::registerBowlMod
+15:37:14.073 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModConfirmation                  =>  controllers.BowlController::registerBowlModConfirmation
+15:37:14.073 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModCompletion                    =>  controllers.BowlController::registerBowlModCompletion
+15:37:14.073 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerBowlModItem                          =>  controllers.BowlController::registerBowlModItem
+15:37:14.073 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItem                          =>  controllers.BowlController::registerBowlModItem
+15:37:14.074 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItemConfirmation              =>  controllers.BowlController::registerBowlModItemConfirmation
+15:37:14.074 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerBowlModItemCompletion                =>  controllers.BowlController::registerBowlModItemCompletion
+15:37:14.074 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/bowl                               =>  controllers.AbstractBowlController::listBowl
+15:37:14.074 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/portfolioBowl                      =>  controllers.BowlController::portfolioBowl
+15:37:14.075 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/editBowl                           =>  controllers.BowlController::editBowl
+15:37:14.075 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/editBowlByStatusCode               =>  controllers.BowlController::editBowl
+15:37:14.075 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/editBowlConfirmation               =>  controllers.BowlController::editBowlConfirmation
+15:37:14.075 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/editBowlCompletion                 =>  controllers.BowlController::editBowlCompletion
+15:37:14.076 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/updateBowl                         =>  controllers.BowlController::updateBowl
+15:37:14.076 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/updateBowlConfirmation             =>  controllers.BowlController::updateBowlConfirmation
+15:37:14.084 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/updateBowlCompletion               =>  controllers.BowlController::updateBowlCompletion
+15:37:14.084 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/modifyBowl                         =>  controllers.BowlController::modifyBowl
+15:37:14.084 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowl                       =>  controllers.BowlController::registerBowl
+15:37:14.085 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowl                       =>  controllers.BowlController::registerBowl
+15:37:14.085 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByGeoRegionCode        =>  controllers.BowlController::registerBowlByGeoRegionCode
+15:37:14.085 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByManufactureYear      =>  controllers.BowlController::registerBowlByManufactureYear
+15:37:14.085 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByStatusCode           =>  controllers.BowlController::registerBowlByStatusCode
+15:37:14.085 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlByTimberCode           =>  controllers.BowlController::registerBowlByTimberCode
+15:37:14.085 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlConfirmation           =>  controllers.BowlController::registerBowlConfirmation
+15:37:14.085 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlCompletion             =>  controllers.BowlController::registerBowlCompletion
+15:37:14.085 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlMod                    =>  controllers.BowlController::registerBowlMod
+15:37:14.086 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlMod                    =>  controllers.BowlController::registerBowlMod
+15:37:14.086 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModConfirmation        =>  controllers.BowlController::registerBowlModConfirmation
+15:37:14.086 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModCompletion          =>  controllers.BowlController::registerBowlModCompletion
+15:37:14.086 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerBowlModItem                =>  controllers.BowlController::registerBowlModItem
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItem                =>  controllers.BowlController::registerBowlModItem
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItemConfirmation    =>  controllers.BowlController::registerBowlModItemConfirmation
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerBowlModItemCompletion      =>  controllers.BowlController::registerBowlModItemCompletion
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - GET  /customer                                     =>  controllers.CustomerController::list
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerCustomer                             =>  controllers.CustomerController::registerCustomer
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomer                             =>  controllers.CustomerController::registerCustomer
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomerConfirmation                 =>  controllers.CustomerController::registerCustomerConfirmation
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerCustomerCompletion                   =>  controllers.CustomerController::registerCustomerCompletion
+15:37:14.087 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/customer                           =>  controllers.CustomerController::list
+15:37:14.088 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerCustomer                   =>  controllers.CustomerController::registerCustomer
+15:37:14.088 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomer                   =>  controllers.CustomerController::registerCustomer
+15:37:14.088 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomerConfirmation       =>  controllers.CustomerController::registerCustomerConfirmation
+15:37:14.088 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerCustomerCompletion         =>  controllers.CustomerController::registerCustomerCompletion
+15:37:14.088 [NinjaJetty] INFO  ninja.RouterImpl - GET  /exhibition                                   =>  controllers.ExhibitionController::list
+15:37:14.088 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerExhibition                           =>  controllers.ExhibitionController::registerExhibition
+15:37:14.089 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibition                           =>  controllers.ExhibitionController::registerExhibition
+15:37:14.089 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibitionConfirmation               =>  controllers.ExhibitionController::registerExhibitionConfirmation
+15:37:14.089 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerExhibitionCompletion                 =>  controllers.ExhibitionController::registerExhibitionCompletion
+15:37:14.089 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/exhibition                         =>  controllers.ExhibitionController::list
+15:37:14.089 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerExhibition                 =>  controllers.ExhibitionController::registerExhibition
+15:37:14.089 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibition                 =>  controllers.ExhibitionController::registerExhibition
+15:37:14.089 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibitionConfirmation     =>  controllers.ExhibitionController::registerExhibitionConfirmation
+15:37:14.089 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerExhibitionCompletion       =>  controllers.ExhibitionController::registerExhibitionCompletion
+15:37:14.090 [NinjaJetty] INFO  ninja.RouterImpl - GET  /geoRegion                                    =>  controllers.GeoRegionController::list
+15:37:14.090 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/geoRegion                          =>  controllers.GeoRegionController::list
+15:37:14.090 [NinjaJetty] INFO  ninja.RouterImpl - GET  /status                                       =>  controllers.StatusController::list
+15:37:14.090 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerStatus                               =>  controllers.StatusController::registerStatus
+15:37:14.090 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatus                               =>  controllers.StatusController::registerStatus
+15:37:14.090 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatusConfirmation                   =>  controllers.StatusController::registerStatusConfirmation
+15:37:14.090 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerStatusCompletion                     =>  controllers.StatusController::registerStatusCompletion
+15:37:14.091 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/status                             =>  controllers.StatusController::list
+15:37:14.091 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerStatus                     =>  controllers.StatusController::registerStatus
+15:37:14.091 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatus                     =>  controllers.StatusController::registerStatus
+15:37:14.091 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatusConfirmation         =>  controllers.StatusController::registerStatusConfirmation
+15:37:14.091 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerStatusCompletion           =>  controllers.StatusController::registerStatusCompletion
+15:37:14.091 [NinjaJetty] INFO  ninja.RouterImpl - GET  /timber                                       =>  controllers.TimberController::list
+15:37:14.091 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerTimber                               =>  controllers.TimberController::registerTimber
+15:37:14.092 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimber                               =>  controllers.TimberController::registerTimber
+15:37:14.092 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberConfirmation                   =>  controllers.TimberController::registerTimberConfirmation
+15:37:14.092 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberCompletion                     =>  controllers.TimberController::registerTimberCompletion
+15:37:14.092 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/timber                             =>  controllers.TimberController::list
+15:37:14.092 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerTimber                     =>  controllers.TimberController::registerTimber
+15:37:14.092 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimber                     =>  controllers.TimberController::registerTimber
+15:37:14.092 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberConfirmation         =>  controllers.TimberController::registerTimberConfirmation
+15:37:14.093 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberCompletion           =>  controllers.TimberController::registerTimberCompletion
+15:37:14.093 [NinjaJetty] INFO  ninja.RouterImpl - GET  /timberOrigin                                 =>  controllers.TimberOriginController::list
+15:37:14.093 [NinjaJetty] INFO  ninja.RouterImpl - GET  /registerTimberOrigin                         =>  controllers.TimberOriginController::registerTimberOrigin
+15:37:14.093 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOrigin                         =>  controllers.TimberOriginController::registerTimberOrigin
+15:37:14.093 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOriginConfirmation             =>  controllers.TimberOriginController::registerTimberOriginConfirmation
+15:37:14.093 [NinjaJetty] INFO  ninja.RouterImpl - POST /registerTimberOriginCompletion               =>  controllers.TimberOriginController::registerTimberOriginCompletion
+15:37:14.093 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/timberOrigin                       =>  controllers.TimberOriginController::list
+15:37:14.094 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/registerTimberOrigin               =>  controllers.TimberOriginController::registerTimberOrigin
+15:37:14.094 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOrigin               =>  controllers.TimberOriginController::registerTimberOrigin
+15:37:14.094 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOriginConfirmation   =>  controllers.TimberOriginController::registerTimberOriginConfirmation
+15:37:14.094 [NinjaJetty] INFO  ninja.RouterImpl - POST /superbowl/registerTimberOriginCompletion     =>  controllers.TimberOriginController::registerTimberOriginCompletion
+15:37:14.094 [NinjaJetty] INFO  ninja.RouterImpl - GET  /assets/webjars/{fileName: .*}                =>  ninja.AssetsController::serveWebJars
+15:37:14.094 [NinjaJetty] INFO  ninja.RouterImpl - GET  /assets/{fileName: .*}                        =>  ninja.AssetsController::serveStatic
+15:37:14.095 [NinjaJetty] INFO  ninja.RouterImpl - GET  /superbowl/setup                              =>  controllers.ApplicationController::setup
+15:37:14.096 [NinjaJetty] INFO  ninja.NinjaDefault - 
+ _______  .___ _______        ____.  _____   
+ \      \ |   |\      \      |    | /  _  \  
+ /   |   \|   |/   |   \     |    |/  /_\  \ 
+/    |    \   /    |    \/\__|    /    |    \  http://www.ninjaframework.org
+\____|__  /___\____|__  /\________\____|__  /  @ninjaframework
+     web\/framework   \/                  \/   6.2.0
+
+15:37:14.097 [NinjaJetty] INFO  ninja.lifecycle.LifecycleServiceImpl - Starting Ninja application...
+15:37:14.220 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:37:14.221 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:37:14.222 [NinjaJetty] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:37:14.424 [NinjaJetty] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: superbowlDS
+	...]
+15:37:14.622 [NinjaJetty] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+15:37:14.627 [NinjaJetty] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:37:14.631 [NinjaJetty] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:37:15.192 [NinjaJetty] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:37:15.299 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH010002: C3P0 using driver: org.h2.Driver at URL: jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true
+15:37:15.300 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH000046: Connection properties: {user=sa, password=****}
+15:37:15.300 [NinjaJetty] INFO  o.h.c.i.C3P0ConnectionProvider - HHH000006: Autocommit mode: false
+15:37:15.350 [NinjaJetty] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+15:37:15.556 [NinjaJetty] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+15:37:15.695 [NinjaJetty] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@1a6166d1 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@2b36b720 [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfsx9r18qbf369cdqtd|f649d3, idleConnectionTestPeriod -> 2000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 500, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@de224acc [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfsx9r18qbf369cdqtd|1dcd7f1, jdbcUrl -> jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfsx9r18qbf369cdqtd|b9a54, numHelperThreads -> 3 ]
+15:37:16.048 [NinjaJetty] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+15:37:16.074 [NinjaJetty] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+15:37:16.607 [NinjaJetty] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+15:37:16.714 [NinjaJetty] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.1.Final
+15:37:18.175 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+15:37:18.176 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+15:37:18.194 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+15:37:18.260 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOTANICSYSTEM
+15:37:18.264 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bs_id, bs_family, bs_subfamily_index, bs_version, bs_subfamily, bs_ordinal, bs_family_index, bs_order, bs_order_index]
+15:37:18.264 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.265 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bs_ordinal_idx, primary_key_f]
+15:37:18.313 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWL
+15:37:18.321 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bowl_comment, bowl_exhibition_id, bowl_status_id, bowl_sales_location, bowl_version, bowl_timberorigin_id, bowl_timber_id, bowl_sales_price, bowl_imagename, bowl_id, bowl_sales_date, bowl_index, bowl_customer_id, bowl_manufacture_id, bowl_price, bowl_ordinal]
+15:37:18.324 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bowl_exhibition_fk, bowl_timberorigin_fk, bowl_status_fk, bowl_manufacture_fk, bowl_timber_fk, bowl_customer_fk]
+15:37:18.325 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bowl_status_fk_index_1, bowl_status_idx, bowl_timberorigin_fk_index_1, bowl_timberorigin_idx, bowl_manufacture_idx, bowl_exhibition_fk_index_1, bowl_pk, primary_key_1f, bowl_manufacture_fk_index_1, bowl_timber_fk_index_1, bowl_timber_idx, bowl_customer_idx, bowl_customer_fk_index_1, bowl_exhibition_idx]
+15:37:18.346 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMOD
+15:37:18.349 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bm_height, bm_version, bm_recess, bm_surface, bm_wallthickness_min, bm_granulation, bm_tap, bm_date, bm_diameter, bm_bms_id, bm_wallthickness_max, bm_id, bm_bowl_id, bm_comment]
+15:37:18.351 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bm_bowl_fk, bm_bms_fk]
+15:37:18.352 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [bm_bowl_fk_index_2, primary_key_2f, bm_bms_idx, bm_bowl_idx, bm_bms_fk_index_2]
+15:37:18.374 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODITEM
+15:37:18.375 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bmi_id, bmi_version, bmi_moisture, bmi_weight, bmi_text, bmi_bm_id, bmi_date]
+15:37:18.375 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [bmi_bm_fk]
+15:37:18.375 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_73a, bmi_bm_fk_index_7, bmi_bm_idx]
+15:37:18.399 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODJOINED
+15:37:18.401 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bowlmodjoined_id, bowlmodjoined_surface, bowlmodjoined_bowlmod_version, bowlmodjoined_bowlmodstep_id, bowlmodjoined_version, bowlmodjoined_wallthickness_max, bowlmodjoined_date, bowlmodjoined_item_bowlmod_id, bowlmodjoined_tap, bowlmodjoined_granulation, bowlmodjoined_height, bowlmodjoined_item_date, bowlmodjoined_recess, bowlmodjoined_bowlmod_id, bowlmodjoined_item_weight, bowlmodjoined_item_text, bowlmodjoined_bowl_id, bowlmodjoined_item_moisture, bowlmodjoined_comment, bowlmodjoined_diameter, bowlmodjoined_wallthickness_min, bowlmodjoined_item_id, bowlmodjoined_item_version]
+15:37:18.401 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.402 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_3]
+15:37:18.426 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.BOWLMODSTEP
+15:37:18.426 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [bms_id, bms_version, bms_code, bms_name, bms_index, bms_comment]
+15:37:18.427 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.427 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_73]
+15:37:18.433 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.CUSTOMER
+15:37:18.434 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [customer_salutation, customer_mobile, customer_country, customer_givenname, customer_phone, customer_countrycode, customer_housenumber, customer_familyname, customer_street, customer_fax, customer_index, customer_zipcode, customer_email, customer_version, customer_id, customer_comment, customer_graduation, customer_city]
+15:37:18.434 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.434 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [customer_familyname_idx, customer_email_idx, primary_key_5]
+15:37:18.445 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.EXHIBITION
+15:37:18.446 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [exhibition_country, exhibition_date_from, exhibition_city, exhibition_name, exhibition_id, exhibition_institution, exhibition_year, exhibition_date_to, exhibition_comment, exhibition_version, exhibition_index]
+15:37:18.446 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.447 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_9]
+15:37:18.508 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.GEOREGION
+15:37:18.508 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [gr_code, gr_name, gr_index, gr_ordinal, gr_version, gr_region, gr_id]
+15:37:18.508 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.508 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_1, georegion_region_idx]
+15:37:18.526 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.MANUFACTURE
+15:37:18.526 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [manu_version, manu_index, manu_id, manu_year]
+15:37:18.526 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.527 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_6]
+15:37:18.540 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.ROADMAP
+15:37:18.541 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [roadmap_id, roadmap_feature, roadmap_version, roadmap_status, roadmap_versionnumber, roadmap_comment]
+15:37:18.541 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.541 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_7]
+15:37:18.569 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SALES
+15:37:18.569 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sales_customer_id, sales_date, sales_version, sales_comment, sales_price, sales_id, sales_location, sales_bowl_id]
+15:37:18.570 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_biu8k4to3bdyqapo1opdxgdar, fk_6jp4vfmr7chcjho0jewmpm041]
+15:37:18.576 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_4, fk_biu8k4to3bdyqapo1opdxgdar_index_4, fk_6jp4vfmr7chcjho0jewmpm041_index_4]
+15:37:18.586 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SETTING
+15:37:18.586 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [setting_version, setting_param_name, setting_param_value, setting_comment, setting_id]
+15:37:18.587 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.587 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_a]
+15:37:18.600 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SOFTWARE
+15:37:18.600 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [software_vendor, software_id, software_description, software_versionnumber, software_type, software_version, software_name, software_url]
+15:37:18.601 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.601 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [software_vendor_idx, primary_key_7d]
+15:37:18.612 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.STATUS
+15:37:18.612 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [status_id, status_code, status_index, status_comment, status_text, status_version]
+15:37:18.613 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.613 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_92]
+15:37:18.639 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.SUBUSER
+15:37:18.640 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [subuser_userid, subuser_lastlogout, subuser_username, subuser_logincount, subuser_lastlogin, subuser_locked, subuser_email, subuser_id, subuser_password, subuser_version]
+15:37:18.645 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:37:18.645 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [subuser_email_idx, primary_key_b, subuser_userid_idx, subuser_username_idx]
+15:37:18.662 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.TIMBER
+15:37:18.663 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [timber_bending_strength, timber_burst_strength, timber_id, timber_type, timber_tangent_shrinkage, timber_code, timber_brinell_hardness2, timber_brinell_hardness1, timber_radial_shrinkage, timber_imagename, timber_botanicsystem_id, timber_name, timber_index, timber_tensile_strength, timber_academicname, timber_version, timber_shear_strength, timber_gross_density, timber_georegion_id]
+15:37:18.663 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [timber_georegion_fk, timber_botanicsystem_fk]
+15:37:18.663 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_93, timber_georegion_fk_index_9, timber_botanicsystem_fk_index_9, timber_botanicsystem_idx, timber_georegion_idx, timber_name_idx]
+15:37:18.678 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: SUPERBOWLDB.PUBLIC.TIMBERORIGIN
+15:37:18.679 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [to_location_text, to_timber_id, to_comment, to_location, to_cutdown, to_id, to_city, to_version, to_index]
+15:37:18.679 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [to_timber_fk]
+15:37:18.679 [NinjaJetty] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary_key_2, to_city_idx, to_timber_idx, to_location_idx, to_timber_fk_index_2]
+15:37:18.682 [NinjaJetty] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+15:37:19.164 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isDev() : true
+15:37:19.165 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isProd(): false
+15:37:19.165 [NinjaJetty] WARN  Ninja - StartupActions:generateDummyDataWhenInTest -> ninjaProperties.isTest(): false
+15:37:19.165 [NinjaJetty] INFO  ninja.lifecycle.LifecycleServiceImpl - Ninja application started in 5069ms
+15:37:19.170 [NinjaJetty] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@acce5d{/,null,AVAILABLE}
+15:37:19.198 [NinjaJetty] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@167080e{HTTP/1.1,[http/1.1]}{0.0.0.0:8090}
+15:37:19.198 [NinjaJetty] INFO  org.eclipse.jetty.server.Server - Started @9822ms
+15:37:19.198 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Started jetty v9.3.15.v20161220 on <all>:8090
+15:37:19.198 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - -------------------------------------------------------
+15:37:19.198 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - Ninja application running at
+15:37:19.198 [NinjaJetty] INFO  ninja.standalone.NinjaJetty -  => http://localhost:8090
+15:37:19.199 [NinjaJetty] INFO  ninja.standalone.NinjaJetty - -------------------------------------------------------
+15:37:23.543 [qtp23598067-16] INFO  Ninja - No Setting instance found in data store!
+15:37:23.993 [qtp23598067-16] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key setting.register missing. Using key as value inside template - but this is most likely not what you want.
+15:37:23.995 [qtp23598067-16] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key setting.title missing. Using key as value inside template - but this is most likely not what you want.
+15:38:08.052 [qtp23598067-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key setting.register missing. Using key as value inside template - but this is most likely not what you want.
+15:38:08.054 [qtp23598067-13] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key setting.title missing. Using key as value inside template - but this is most likely not what you want.
+15:38:15.905 [qtp23598067-16] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key setting.register missing. Using key as value inside template - but this is most likely not what you want.
+15:38:15.906 [qtp23598067-16] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key setting.title missing. Using key as value inside template - but this is most likely not what you want.
+15:39:29.537 [qtp23598067-14] INFO  Ninja - 71 BotanicSystem instance(s) found in data store!
+15:39:50.265 [qtp23598067-27] INFO  Ninja - 2 exhibition(s) found in data store!
+15:39:55.670 [qtp23598067-10] INFO  Ninja - 14 GeoRegion instance(s) found in data store!
+15:40:05.025 [qtp23598067-16] INFO  Ninja - 241 Timber instance(s) found in data store!
+15:40:36.165 [qtp23598067-14] INFO  Ninja - 4 TimberOrigin instance(s) found in data store!
+15:41:23.866 [qtp23598067-9] INFO  Ninja - 17 Software instance(s) found in data store!
+15:41:51.930 [qtp23598067-12] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key events.title missing. Using key as value inside template - but this is most likely not what you want.
+15:41:51.932 [qtp23598067-12] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key events.title.text missing. Using key as value inside template - but this is most likely not what you want.
+15:41:51.933 [qtp23598067-12] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key events.title missing. Using key as value inside template - but this is most likely not what you want.
+15:41:51.933 [qtp23598067-12] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key events.title.text missing. Using key as value inside template - but this is most likely not what you want.
+15:41:56.687 [qtp23598067-14] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key news.title missing. Using key as value inside template - but this is most likely not what you want.
+15:41:56.688 [qtp23598067-14] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key news.title.text missing. Using key as value inside template - but this is most likely not what you want.
+15:41:56.689 [qtp23598067-14] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key news.title missing. Using key as value inside template - but this is most likely not what you want.
+15:41:56.696 [qtp23598067-14] ERROR n.t.TemplateEngineFreemarkerAssetsAtMethod - Message key news.title.text missing. Using key as value inside template - but this is most likely not what you want.
+15:42:04.110 [qtp23598067-16] INFO  Ninja - 25 Roadmap instance(s) found in data store!
+15:42:38.422 [qtp23598067-27] INFO  Ninja - 4 Bowl instance(s) found in data store!
+15:42:49.887 [qtp23598067-14] INFO  Ninja - BowlController.portfolioBowl -> SessionId......: 70dc18dc-9101-474e-8834-9f3369058239
+15:42:49.887 [qtp23598067-14] INFO  Ninja - BowlController.portfolioBowl -> Session.isEmpty: false
+15:42:49.888 [qtp23598067-14] INFO  Ninja - BowlController.portfolioBowl -> BowlId.........: null
+15:43:04.958 [qtp23598067-14] INFO  Ninja - 4 Bowl instance(s) found in data store!
+15:43:18.553 [qtp23598067-16] INFO  Ninja - BowlController.editBowl -> Session      id: 0eff17a6-141b-4006-bef8-1fdedac14426
+15:43:18.554 [qtp23598067-16] INFO  Ninja - BowlController.editBowl -> Bowl         id: 3
+15:43:18.554 [qtp23598067-16] INFO  Ninja - BowlController.editBowl -> TimberOrigin id: 3
+15:43:18.554 [qtp23598067-16] INFO  Ninja - BowlController.editBowl -> Status     code: MODI
+15:43:18.576 [qtp23598067-16] INFO  Ninja - 4 TimberOrigin instance(s) found in data store!
+15:43:18.683 [qtp23598067-16] INFO  Ninja - AbstractBowlController.getBowlDtoFromSession -> Session    id: 0eff17a6-141b-4006-bef8-1fdedac14426
+15:43:18.684 [qtp23598067-16] INFO  Ninja - AbstractBowlController.getBowlDtoFromSession -> Session empty: false
+15:43:18.684 [qtp23598067-16] INFO  Ninja - AbstractBowlController.getBowlDtoFromSession timberOriginName -> null
+15:43:18.685 [qtp23598067-16] INFO  Ninja - AbstractBowlController.getBowlDtoFromSession BowlDto -> BowlDto [id=null, version=null, index=null, manufacture=null, status=null, timber=null, timberOrigin=null, customer=null, exhibition=null, ordinal=null, year=null, imageName=null, price=null, cent=0, salesPrice=null, salesCent=null, salesLocation=null, salesDate=null, comment=null, emptyTable=false]
+15:43:48.036 [qtp23598067-27] INFO  Ninja - 4 Bowl instance(s) found in data store!
+15:45:18.308 [Thread-16] INFO  ninja.lifecycle.LifecycleServiceImpl - Stopping Ninja application...
+15:45:18.341 [Thread-16] INFO  ninja.lifecycle.LifecycleServiceImpl - Ninja application stopped in 33ms
+15:45:18.342 [Thread-16] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@acce5d{/,null,UNAVAILABLE}
+15:45:18.346 [Thread-16] INFO  ninja.standalone.NinjaJetty - Trying to stop jetty on <all>:8090
+15:45:18.365 [Thread-16] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@167080e{HTTP/1.1,[http/1.1]}{0.0.0.0:8090}
+15:45:18.371 [Thread-16] INFO  ninja.standalone.NinjaJetty - Stopped jetty on <all>:8090
