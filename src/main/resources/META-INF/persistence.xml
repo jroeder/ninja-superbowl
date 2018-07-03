@@ -1,24 +1,31 @@
+<!-- =============================================== -->
+<!-- File: persistence.xml                           -->
+<!-- SQL Database Persistence Configuration Settings -->
+<!-- Created: 2018-05-26                             -->
+<!-- Last Update: 2018-05-31                         -->
+<!-- =============================================== -->
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
 
+	<!-- ============== -->
+	<!-- MySQL Database -->
+	<!-- ============== -->
 	<persistence-unit name="superbowlDS" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<!-- H2 Database -->
 			<property name="hibernate.archive.autodetection" value="class" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"	/>
-			<property name="hibernate.connection.driver_class" value="org.h2.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:h2:tcp/localhost:9092/opt/h2/store/superbowl/superbowlDB;ifexists=true" />
 			<!--
-			<property name="hibernate.connection.url" value="jdbc:h2:tcp/localhost:9092/./opt/h2/store/superbowl/superbowlDB;ifexists=true" />
-			<property name="hibernate.connection.url" value="jdbc:h2:tcp/localhost:9092/~/workspace/h2-store/superbowl/superbowlDB;ifexists=true" />
-			<property name="hibernate.connection.url" value="jdbc:h2:tcp/localhost:9092/E:/db/store/h2/superbowl/superbowlDB;ifexists=true" />
-			<property name="hibernate.connection.url" value="jdbc:h2:tcp/localhost:9092/E:/db/store/h2/superbowl/superbowlDB;AUTO_SERVER=true" />
-			<property name="hibernate.connection.url" value="jdbc:h2/~/Data/H2/superbowlDB" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"	/>
 			-->
-			<property name="hibernate.connection.user" value="sa" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql/localhost:3306/superbowlDB" />
+			<property name="javax.persistence.jdbc.user" value="superbowl" />
+			<property name="javax.persistence.jdbc.password" value="L49dEnd3" />
+			
+			<property name="hibernate.connection.user" value="microbeans" />
 			<property name="hibernate.show_sql"	value="true" />
 			<property name="hibernate.format_sql" value="false" />
 			<property name="hibernate.flushMode" value="FLUSH_AUTO" />

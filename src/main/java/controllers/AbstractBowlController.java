@@ -57,7 +57,7 @@ import types.SuperbowlHelper;
 import types.Whitespace;
 
 /**
- * Common abstract {@code IController} for {@code Bowl} controllers.
+ * Common abstract {@code AbstractBowlController} for {@code Bowl} controllers.
  *
  * @author mbsusr01
  *
@@ -233,26 +233,29 @@ public abstract class AbstractBowlController extends AbstractController implemen
 	public Result listBowl(Context context) {
 		Session session = context.getSession();
 		session.clear();
-		List<BowlDto> bowlList = bowlService.listBowls();
-		Iterator<BowlDto> iterator = bowlList.iterator();
 		BowlDto bowlDto = null;
 		Boolean bowlInExhibition = Boolean.FALSE;
 		Boolean bowlSold = Boolean.FALSE;
-		while (iterator.hasNext()) {
-			bowlDto = iterator.next();
-			if (bowlDto.getExhibition() != null) {
-				bowlInExhibition = Boolean.TRUE;
-			} else {
-				if (bowlDto.getCustomer() != null) {
-					bowlSold = Boolean.TRUE;
+		Integer bowlOrdinal = 0;
+		List<BowlDto> bowlList = bowlService.listBowls();
+		if (!bowlList.isEmpty()) {
+			Iterator<BowlDto> iterator = bowlList.iterator();
+			while (iterator.hasNext()) {
+				bowlDto = iterator.next();
+				if (bowlDto.getExhibition() != null) {
+					bowlInExhibition = Boolean.TRUE;
+				} else {
+					if (bowlDto.getCustomer() != null) {
+						bowlSold = Boolean.TRUE;
+					}
+				}
+				if (bowlInExhibition && bowlSold) {
+					break;
 				}
 			}
-			if (bowlInExhibition && bowlSold) {
-				break;
-			}
+			bowlDto = bowlService.getBowlMaxOrdinal();
+			bowlOrdinal = bowlDto.getOrdinal();
 		}
-		bowlDto = bowlService.getBowlMaxOrdinal();
-		Integer bowlOrdinal = bowlDto.getOrdinal();
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("bowlInExhibition", bowlInExhibition);
 		map.put("bowlSold", bowlSold);

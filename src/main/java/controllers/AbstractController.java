@@ -23,7 +23,7 @@ import ninja.utils.NinjaProperties;
 import types.SuperbowlHelper;
 
 /**
- * Common abstract {@code IController} for all persistence type controllers.
+ * Common abstract {@code AbstractController} for all persistence type controllers.
  *
  * @author mbsusr01
  *
@@ -50,7 +50,7 @@ public abstract class AbstractController {
 	SuperbowlHelper helper;
 
 	/**
-	 * Insert Constructor description here...
+	 * AbstractController default constructor.
 	 */
 	public AbstractController() {
 		super();

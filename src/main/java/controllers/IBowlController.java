@@ -27,7 +27,7 @@ import ninja.Result;
 import ninja.session.Session;
 
 /**
- * Common {@code IController} interface for all bowl controllers.
+ * Common {@code IBowlController} interface for all bowl controllers.
  *
  * @author mbsusr01
  *

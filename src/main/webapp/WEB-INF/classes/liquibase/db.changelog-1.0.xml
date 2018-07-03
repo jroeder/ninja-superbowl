@@ -1,0 +1,732 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-1">
+        <createTable remarks="Represents the botanical system information a timber relates to" tableName="BOTANICSYSTEM">
+            <column autoIncrement="true" name="BS_ID" remarks="Unique technical identifier" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_F"/>
+            </column>
+            <column defaultValueNumeric="0" name="BS_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BS_ORDINAL" remarks="The ordinal number of an botanic system instance" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BS_ORDER_INDEX" remarks="The order index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BS_FAMILY_INDEX" remarks="The family index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BS_SUBFAMILY_INDEX" remarks="The subfamily index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BS_ORDER" remarks="The botanical order (latin)" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BS_FAMILY" remarks="The botanical family name (latin)" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BS_SUBFAMILY" remarks="The botanical sub family name (latin)" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-2">
+        <createTable remarks="Represents a timber bowl as the end product of a manufacturing process" tableName="BOWL">
+            <column autoIncrement="true" name="BOWL_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_1F"/>
+            </column>
+            <column defaultValueNumeric="0" name="BOWL_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BOWL_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOWL_MANUFACTURE_ID" remarks="Reference to a manufacture instance" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOWL_STATUS_ID" remarks="Reference to a status instance" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOWL_TIMBER_ID" remarks="Reference to a timber instance" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOWL_TIMBERORIGIN_ID" remarks="Reference to an timberorigin instance" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOWL_CUSTOMER_ID" remarks="Reference to a customer instance (nullable)" type="BIGINT(19)"/>
+            <column name="BOWL_EXHIBITION_ID" remarks="Reference to a exhibition instance (nullable)" type="BIGINT(19)"/>
+            <column name="BOWL_ORDINAL" remarks="The ordinal number of a bowl" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BOWL_IMAGENAME" remarks="The name of an image representing the bowl" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BOWL_PRICE" remarks="The price of an artefact" type="DECIMAL(7, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BOWL_SALES_PRICE" remarks="The sales price of a bowl" type="DECIMAL(7, 2)"/>
+            <column defaultValue="" name="BOWL_SALES_LOCATION" remarks="The sales location" type="VARCHAR(32)"/>
+            <column name="BOWL_SALES_DATE" remarks="The sales date" type="date"/>
+            <column defaultValue="" name="BOWL_COMMENT" remarks="A free text comment related to the bowl" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-3">
+        <createTable remarks="Represents the modification process of a timber bowl as a whole" tableName="BOWLMOD">
+            <column autoIncrement="true" name="BM_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_2F"/>
+            </column>
+            <column defaultValueNumeric="0" name="BM_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BM_BOWL_ID" remarks="Reference to a Bowl" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BM_BMS_ID" remarks="Reference to a ModStep" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BM_DATE" remarks="Modification date of a bowl" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BM_DIAMETER" remarks="Diameter of a bowl" type="DECIMAL(7, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BM_HEIGHT" remarks="Height of a bowl" type="DECIMAL(7, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BM_WALLTHICKNESS_MIN" remarks="Minimum wallthickness of a bowl" type="DECIMAL(7, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BM_WALLTHICKNESS_MAX" remarks="Maximum wallthickness of a bowl" type="DECIMAL(7, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BM_GRANULATION" remarks="Granulation of a bowl" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BM_TAP" remarks="Tap of a bowl" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BM_RECESS" remarks="Recess of a bowl" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BM_SURFACE" remarks="Surface of a bowl" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BM_COMMENT" remarks="Comment about the currrent modification of a bowl" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-4">
+        <createTable remarks="Represents a modification process during manufacturing of a timber bowl" tableName="BOWLMODITEM">
+            <column autoIncrement="true" name="BMI_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_73A"/>
+            </column>
+            <column defaultValueNumeric="0" name="BMI_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BMI_BM_ID" remarks="Reference to a Modification" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BMI_TEXT" remarks="Short description notice of the modification item" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BMI_DATE" remarks="Date of bowl modification process" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BMI_WEIGHT" remarks="Weigth of a modified bowl at modification date" type="DECIMAL(7, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BMI_MOISTURE" remarks="Moisture of a bowl at modification date" type="DECIMAL(7, 2)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-5">
+        <createTable tableName="BOWLMODJOINED">
+            <column autoIncrement="true" name="BOWLMODJOINED_ID" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_3"/>
+            </column>
+            <column name="BOWLMODJOINED_BOWL_ID" type="VARBINARY(255)"/>
+            <column name="BOWLMODJOINED_BOWLMOD_ID" type="BIGINT(19)"/>
+            <column name="BOWLMODJOINED_BOWLMODSTEP_ID" type="VARBINARY(255)"/>
+            <column name="BOWLMODJOINED_BOWLMOD_VERSION" type="INT(10)"/>
+            <column name="BOWLMODJOINED_COMMENT" type="VARCHAR(255)"/>
+            <column name="BOWLMODJOINED_DATE" type="date"/>
+            <column name="BOWLMODJOINED_DIAMETER" type="DECIMAL(19, 2)"/>
+            <column name="BOWLMODJOINED_GRANULATION" type="INT(10)"/>
+            <column name="BOWLMODJOINED_HEIGHT" type="DECIMAL(19, 2)"/>
+            <column name="BOWLMODJOINED_ITEM_BOWLMOD_ID" type="VARBINARY(255)"/>
+            <column name="BOWLMODJOINED_ITEM_DATE" type="date"/>
+            <column name="BOWLMODJOINED_ITEM_ID" type="BIGINT(19)"/>
+            <column name="BOWLMODJOINED_ITEM_MOISTURE" type="DECIMAL(19, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOWLMODJOINED_ITEM_TEXT" type="VARCHAR(255)"/>
+            <column name="BOWLMODJOINED_ITEM_VERSION" type="INT(10)"/>
+            <column name="BOWLMODJOINED_ITEM_WEIGHT" type="DECIMAL(19, 2)"/>
+            <column name="BOWLMODJOINED_RECESS" type="INT(10)"/>
+            <column name="BOWLMODJOINED_SURFACE" type="VARCHAR(255)"/>
+            <column name="BOWLMODJOINED_TAP" type="INT(10)"/>
+            <column name="BOWLMODJOINED_VERSION" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOWLMODJOINED_WALLTHICKNESS_MAX" type="DECIMAL(19, 2)"/>
+            <column name="BOWLMODJOINED_WALLTHICKNESS_MIN" type="DECIMAL(19, 2)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-6">
+        <createTable remarks="Represents a modification step during manufacturing process of a timber bowl" tableName="BOWLMODSTEP">
+            <column autoIncrement="true" name="BMS_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_73"/>
+            </column>
+            <column defaultValueNumeric="0" name="BMS_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="BMS_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BMS_CODE" remarks="The 2-digit code" type="CHAR(2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BMS_NAME" remarks="Name of the modification step" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="BMS_COMMENT" remarks="Comment about the modification step" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-7">
+        <createTable remarks="Represents an active participant of the application" tableName="CUSTOMER">
+            <column autoIncrement="true" name="CUSTOMER_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_5"/>
+            </column>
+            <column defaultValueNumeric="0" name="CUSTOMER_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="CUSTOMER_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_SALUTATION" remarks="The salutation to a customer [Herr | Frau | Sonstige]" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_GRADUATION" remarks="The academic graduation" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_GIVENNAME" remarks="The given name of the customer" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_FAMILYNAME" remarks="The family name of the customer" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_PHONE" remarks="The phone number of the customer" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_FAX" remarks="The fax number of the customer" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_MOBILE" remarks="The mobile phone number of the customer" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_EMAIL" remarks="The email address of the customer" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_STREET" remarks="The street name of the postal address of the customer" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_HOUSENUMBER" remarks="The house number of the postal address of the customer" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_ZIPCODE" remarks="The zip code of the postal address of the customer" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_CITY" remarks="The city name of the postal address of the customer" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_COUNTRYCODE" remarks="The country code of the postal address of a customer" type="VARCHAR(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_COUNTRY" remarks="The name of the country [state|nation] a customer lives in" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="CUSTOMER_COMMENT" remarks="Free text to store information about a customer" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-8">
+        <createTable remarks="A status represents the manufacturing progress state of a artefact (bowl)" tableName="EXHIBITION">
+            <column autoIncrement="true" name="EXHIBITION_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_9"/>
+            </column>
+            <column defaultValueNumeric="0" name="EXHIBITION_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="EXHIBITION_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="EXHIBITION_NAME" remarks="The official name of the exhibition" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="EXHIBITION_INSTITUTION" remarks="The official name of the institution where the exhibition occurs" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="EXHIBITION_YEAR" remarks="The calendar year of the exhibition" type="CHAR(4)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXHIBITION_DATE_FROM" remarks="The official start date of the exhibition" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXHIBITION_DATE_TO" remarks="The official end date of the exhibition" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="EXHIBITION_CITY" remarks="The name of the city where th exhibition occurs" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="EXHIBITION_COUNTRY" remarks="The name of the country where th exhibition occurs" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="EXHIBITION_COMMENT" remarks="A comment about the Status" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-9">
+        <createTable remarks="Represents a geographic region where timber growths" tableName="GEOREGION">
+            <column autoIncrement="true" name="GR_ID" remarks="Unique technical identifier" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_1"/>
+            </column>
+            <column defaultValueNumeric="0" name="GR_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GR_ORDINAL" remarks="The ordinal number" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="GR_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="GR_CODE" remarks="The 4-digit code" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="GR_NAME" remarks="The name of the continent the geo region belongs to" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="GR_REGION" remarks="The specific region name" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-10">
+        <createTable remarks="Contains data about the manufacturing of a bowl" tableName="MANUFACTURE">
+            <column autoIncrement="true" name="MANU_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_6"/>
+            </column>
+            <column defaultValueNumeric="0" name="MANU_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="MANU_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="MANU_YEAR" remarks="The manufacturing year of a bowl" type="CHAR(4)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-11">
+        <createTable remarks="A user represents the manufacturing progress state of a artefact (bowl)" tableName="ROADMAP">
+            <column autoIncrement="true" name="ROADMAP_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_7"/>
+            </column>
+            <column defaultValueNumeric="0" name="ROADMAP_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="ROADMAP_FEATURE" remarks="The feature description" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="ROADMAP_STATUS" remarks="The status of a new software feature [work planned; work in progress; implementation finished]" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="ROADMAP_COMMENT" remarks="The comment about the new implementation" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="ROADMAP_VERSIONNUMBER" remarks="The software version number" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-12">
+        <createTable tableName="SALES">
+            <column autoIncrement="true" name="SALES_ID" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_4"/>
+            </column>
+            <column name="SALES_COMMENT" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SALES_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SALES_LOCATION" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SALES_PRICE" type="DECIMAL(19, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SALES_VERSION" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SALES_BOWL_ID" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SALES_CUSTOMER_ID" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-13">
+        <createTable remarks="A user represents the manufacturing progress state of a artefact (bowl)" tableName="SOFTWARE">
+            <column autoIncrement="true" name="SOFTWARE_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_7D"/>
+            </column>
+            <column defaultValueNumeric="0" name="SOFTWARE_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SOFTWARE_VENDOR" remarks="The name of the software vendor" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SOFTWARE_NAME" remarks="The name of the software product" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SOFTWARE_URL" remarks="The URL of the software vendor/product" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SOFTWARE_VERSIONNUMBER" remarks="The version of the software product used in this project" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SOFTWARE_TYPE" remarks="The type of sofware [Freeware], [Open Source] or [Commecial]" type="CHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SOFTWARE_DESCRIPTION" remarks="The description of the type of sofware [Freeware], [Open Source] or [Commercial]" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-14">
+        <createTable remarks="A status represents the manufacturing progress state of a artefact (bowl)" tableName="STATUS">
+            <column autoIncrement="true" name="STATUS_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_92"/>
+            </column>
+            <column defaultValueNumeric="0" name="STATUS_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="STATUS_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="STATUS_CODE" remarks="A short 4-digit abbreviation of a status" type="CHAR(4)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="STATUS_TEXT" remarks="The textual description (name) of a status" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="STATUS_COMMENT" remarks="A comment about the Status" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-15">
+        <createTable remarks="A user represents the manufacturing progress state of a artefact (bowl)" tableName="SUBUSER">
+            <column autoIncrement="true" name="SUBUSER_ID" remarks="Unique technical identifier of a Status" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_B"/>
+            </column>
+            <column defaultValueNumeric="0" name="SUBUSER_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SUBUSER_USERID" remarks="The user identification string" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SUBUSER_PASSWORD" remarks="The user password" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SUBUSER_USERNAME" remarks="The user name as given by his parents (given name and family name" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="SUBUSER_EMAIL" remarks="The user email address" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SUBUSER_LASTLOGIN" remarks="Timestamp of last login" type="TIMESTAMP"/>
+            <column name="SUBUSER_LASTLOGOUT" remarks="Timestamp of last logout" type="TIMESTAMP"/>
+            <column defaultValueNumeric="0" name="SUBUSER_LOGINCOUNT" remarks="The login counter" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueBoolean="false" name="SUBUSER_LOCKED" remarks="Identifies whether the user is locked [true] (cannot login) or not [false]" type="BOOLEAN(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-16">
+        <createTable remarks="Represents some specific about timber used to manufacture bowls" tableName="TIMBER">
+            <column autoIncrement="true" name="TIMBER_ID" remarks="Unique technical identifier" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_93"/>
+            </column>
+            <column defaultValueNumeric="0" name="TIMBER_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="TIMBER_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TIMBER_GEOREGION_ID" remarks="Reference to an georegion instance" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TIMBER_BOTANICSYSTEM_ID" remarks="Reference to an botanicsystem instance" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TIMBER_TYPE" remarks="The type of a timber [broadleaved | conifer]" type="CHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TIMBER_CODE" remarks="4-character code of a timber" type="CHAR(4)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TIMBER_NAME" remarks="Free text name" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TIMBER_IMAGENAME" remarks="Free text image name" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TIMBER_ACADEMICNAME" remarks="The academic name of a timber (latin)" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_GROSS_DENSITY" remarks="The gross density of a timber [Rohdichte]" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_TENSILE_STRENGTH" remarks="The tensile strength of a timber [Zugfestigkeit]" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_BURST_STRENGTH" remarks="The burst strength of a timber [Druckfestigkeit]" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_BENDING_STRENGTH" remarks="The bending strength of a timber [Biegefestigkeit]" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_SHEAR_STRENGTH" remarks="The shear strength of a timber [Scherfestigkeit]" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_BRINELL_HARDNESS1" remarks="The brinell hardness 1 of a timber" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_BRINELL_HARDNESS2" remarks="The brinell hardness 2 of a timber" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_TANGENT_SHRINKAGE" remarks="The tangent shrinkage of a timber" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="k.A." name="TIMBER_RADIAL_SHRINKAGE" remarks="The radial shrinkage of a timber" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-17">
+        <createTable remarks="Represents the original location and the cut down date of the timber raw material used to manufacture a bowl" tableName="TIMBERORIGIN">
+            <column autoIncrement="true" name="TO_ID" remarks="Unique technical identifier" type="BIGINT(19)">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_2"/>
+            </column>
+            <column defaultValueNumeric="0" name="TO_VERSION" remarks="Version number for optimistic locking" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TO_TIMBER_ID" remarks="Reference to an timber instance" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="TO_INDEX" remarks="The index (starting at 0) for selection" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TO_CITY" remarks="The origin city of the timber tree" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TO_LOCATION" remarks="The origin location of the timber tree" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TO_LOCATION_TEXT" remarks="Extended textual description related to the origin location of the timber tree" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TO_CUTDOWN" remarks="The cut down date of a timber tree" type="VARCHAR(12)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="TO_COMMENT" remarks="A comment about the TimberOrigin" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-18">
+        <createIndex indexName="BMI_BM_IDX" tableName="BOWLMODITEM">
+            <column name="BMI_BM_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-19">
+        <createIndex indexName="BM_BMS_FK_INDEX_2" tableName="BOWLMOD">
+            <column name="BM_BMS_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-20">
+        <createIndex indexName="BM_BOWL_IDX" tableName="BOWLMOD">
+            <column name="BM_BOWL_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-21">
+        <createIndex indexName="BOWL_CUSTOMER_FK_INDEX_1" tableName="BOWL">
+            <column name="BOWL_CUSTOMER_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-22">
+        <createIndex indexName="BOWL_EXHIBITION_IDX" tableName="BOWL">
+            <column name="BOWL_EXHIBITION_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-23">
+        <createIndex indexName="BOWL_MANUFACTURE_FK_INDEX_1" tableName="BOWL">
+            <column name="BOWL_MANUFACTURE_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-24">
+        <createIndex indexName="BOWL_PK" tableName="BOWL" unique="true">
+            <column name="BOWL_ORDINAL"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-25">
+        <createIndex indexName="BOWL_STATUS_FK_INDEX_1" tableName="BOWL">
+            <column name="BOWL_STATUS_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-26">
+        <createIndex indexName="BOWL_TIMBERORIGIN_IDX" tableName="BOWL">
+            <column name="BOWL_TIMBERORIGIN_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-27">
+        <createIndex indexName="BOWL_TIMBER_IDX" tableName="BOWL">
+            <column name="BOWL_TIMBER_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-28">
+        <createIndex indexName="BS_ORDINAL_IDX" tableName="BOTANICSYSTEM">
+            <column name="BS_ORDINAL"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-29">
+        <createIndex indexName="CUSTOMER_EMAIL_IDX" tableName="CUSTOMER">
+            <column name="CUSTOMER_EMAIL"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-30">
+        <createIndex indexName="CUSTOMER_FAMILYNAME_IDX" tableName="CUSTOMER">
+            <column name="CUSTOMER_FAMILYNAME"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-31">
+        <createIndex indexName="FK_6JP4VFMR7CHCJHO0JEWMPM041_INDEX_4" tableName="SALES">
+            <column name="SALES_CUSTOMER_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-32">
+        <createIndex indexName="FK_BIU8K4TO3BDYQAPO1OPDXGDAR_INDEX_4" tableName="SALES">
+            <column name="SALES_BOWL_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-33">
+        <createIndex indexName="GEOREGION_REGION_IDX" tableName="GEOREGION">
+            <column name="GR_REGION"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-34">
+        <createIndex indexName="SOFTWARE_VENDOR_IDX" tableName="SOFTWARE">
+            <column name="SOFTWARE_VENDOR"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-35">
+        <createIndex indexName="SUBUSER_EMAIL_IDX" tableName="SUBUSER">
+            <column name="SUBUSER_EMAIL"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-36">
+        <createIndex indexName="SUBUSER_USERID_IDX" tableName="SUBUSER">
+            <column name="SUBUSER_USERID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-37">
+        <createIndex indexName="SUBUSER_USERNAME_IDX" tableName="SUBUSER">
+            <column name="SUBUSER_USERNAME"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-38">
+        <createIndex indexName="TIMBER_BOTANICSYSTEM_FK_INDEX_9" tableName="TIMBER">
+            <column name="TIMBER_BOTANICSYSTEM_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-39">
+        <createIndex indexName="TIMBER_GEOREGION_FK_INDEX_9" tableName="TIMBER">
+            <column name="TIMBER_GEOREGION_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-40">
+        <createIndex indexName="TIMBER_NAME_IDX" tableName="TIMBER">
+            <column name="TIMBER_NAME"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-41">
+        <createIndex indexName="TO_CITY_IDX" tableName="TIMBERORIGIN">
+            <column name="TO_CITY"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-42">
+        <createIndex indexName="TO_LOCATION_IDX" tableName="TIMBERORIGIN">
+            <column name="TO_LOCATION"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-43">
+        <createIndex indexName="TO_TIMBER_FK_INDEX_2" tableName="TIMBERORIGIN">
+            <column name="TO_TIMBER_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-44">
+        <addForeignKeyConstraint baseColumnNames="BMI_BM_ID" baseTableName="BOWLMODITEM" constraintName="BMI_BM_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="BM_ID" referencedTableName="BOWLMOD"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-45">
+        <addForeignKeyConstraint baseColumnNames="BM_BMS_ID" baseTableName="BOWLMOD" constraintName="BM_BMS_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="BMS_ID" referencedTableName="BOWLMODSTEP"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-46">
+        <addForeignKeyConstraint baseColumnNames="BM_BOWL_ID" baseTableName="BOWLMOD" constraintName="BM_BOWL_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="BOWL_ID" referencedTableName="BOWL"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-47">
+        <addForeignKeyConstraint baseColumnNames="BOWL_CUSTOMER_ID" baseTableName="BOWL" constraintName="BOWL_CUSTOMER_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="CUSTOMER_ID" referencedTableName="CUSTOMER"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-48">
+        <addForeignKeyConstraint baseColumnNames="BOWL_EXHIBITION_ID" baseTableName="BOWL" constraintName="BOWL_EXHIBITION_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="EXHIBITION_ID" referencedTableName="EXHIBITION"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-49">
+        <addForeignKeyConstraint baseColumnNames="BOWL_MANUFACTURE_ID" baseTableName="BOWL" constraintName="BOWL_MANUFACTURE_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="MANU_ID" referencedTableName="MANUFACTURE"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-50">
+        <addForeignKeyConstraint baseColumnNames="BOWL_STATUS_ID" baseTableName="BOWL" constraintName="BOWL_STATUS_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="STATUS_ID" referencedTableName="STATUS"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-51">
+        <addForeignKeyConstraint baseColumnNames="BOWL_TIMBERORIGIN_ID" baseTableName="BOWL" constraintName="BOWL_TIMBERORIGIN_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="TO_ID" referencedTableName="TIMBERORIGIN"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-52">
+        <addForeignKeyConstraint baseColumnNames="BOWL_TIMBER_ID" baseTableName="BOWL" constraintName="BOWL_TIMBER_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="TIMBER_ID" referencedTableName="TIMBER"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-53">
+        <addForeignKeyConstraint baseColumnNames="SALES_CUSTOMER_ID" baseTableName="SALES" constraintName="FK_6JP4VFMR7CHCJHO0JEWMPM041" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="CUSTOMER_ID" referencedTableName="CUSTOMER"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-54">
+        <addForeignKeyConstraint baseColumnNames="SALES_BOWL_ID" baseTableName="SALES" constraintName="FK_BIU8K4TO3BDYQAPO1OPDXGDAR" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="BOWL_ID" referencedTableName="BOWL"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-55">
+        <addForeignKeyConstraint baseColumnNames="TIMBER_BOTANICSYSTEM_ID" baseTableName="TIMBER" constraintName="TIMBER_BOTANICSYSTEM_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="BS_ID" referencedTableName="BOTANICSYSTEM"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-56">
+        <addForeignKeyConstraint baseColumnNames="TIMBER_GEOREGION_ID" baseTableName="TIMBER" constraintName="TIMBER_GEOREGION_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="GR_ID" referencedTableName="GEOREGION"/>
+    </changeSet>
+    <changeSet author="mbsusr01 (generated)" id="1496742436872-57">
+        <addForeignKeyConstraint baseColumnNames="TO_TIMBER_ID" baseTableName="TIMBERORIGIN" constraintName="TO_TIMBER_FK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="TIMBER_ID" referencedTableName="TIMBER"/>
+    </changeSet>
+</databaseChangeLog>

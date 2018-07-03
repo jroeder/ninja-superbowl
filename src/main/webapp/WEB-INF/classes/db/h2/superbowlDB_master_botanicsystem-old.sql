@@ -1,0 +1,88 @@
+/*==============================================================
+DBMS     :  H2
+Version  :  1.4.193
+Database :  superbowlDB
+Created  :  07.03.2017 00:00:00
+Modified :  25.05.2017 00:00:00
+==============================================================*/
+
+-- ==================================================
+-- Table: BOTANICSYSTEM
+-- ==================================================
+DELETE FROM BOTANICSYSTEM;
+INSERT INTO BOTANICSYSTEM (BS_VERSION, BS_INDEX, BS_ORDINAL, BS_ORDER, BS_FAMILY, BS_SUBFAMILY)
+VALUES
+	 (0,  0,  1, 'BORAGINALES', 'Boraginaceae', 'Cordioideae')
+	,(0,  1,  2, 'CELASTRALES', 'Aquifoliaceae', '')
+	,(0,  2,  3, 'CELASTRALES', 'Celastraceae', '')
+	,(0,  3,  4, 'CONIFERALES', 'Cupressaceae', '')
+	,(0,  4,  5, 'CONIFERALES', 'Taxaceae', '')
+	,(0,  5,  6, 'CORNALES', 'Cornaceae', '')
+	,(0,  6,  7, 'CUCURBITALES', 'Tetramelaceae', '')
+	,(0,  7,  8, 'ERICALES', 'Ebenaceae', '')
+	,(0,  8,  9, 'ERICALES', 'Lecythidaceae', '')
+	,(0,  9, 10, 'ERICALES', 'Sapotaceae', '')
+	,(0, 10, 11, 'ERICALES', 'Sapotaceae', 'Chrysophylloideae')
+	,(0, 11, 12, 'ERICALES', 'Sapotaceae', 'Sapotaceae')
+	,(0, 12, 13, 'ERICALES', 'Sapotaceae', 'Sapotoideae')
+	,(0, 13, 14, 'FABALES', 'Fabaceae', '')
+	,(0, 14, 15, 'FABALES', 'Fabaceae', 'Caesalpinioideae')
+	,(0, 15, 16, 'FABALES', 'Fabaceae', 'Faboideae')
+	,(0, 16, 17, 'FABALES', 'Fabaceae', 'Mimosoideae')
+	,(0, 17, 18, 'FAGALES', 'Betulaceae', '')
+	,(0, 18, 19, 'FAGALES', 'Betulaceae', 'Betuloideae')
+	,(0, 19, 20, 'FAGALES', 'Betulaceae', 'Coryloideae')
+	,(0, 20, 21, 'FAGALES', 'Fagaceae', 'Castaneoideae')
+	,(0, 21, 22, 'FAGALES', 'Fagaceae', 'Fagoideae')
+	,(0, 22, 23, 'FAGALES', 'Juglandaceae', '')
+	,(0, 23, 24, 'FAGALES', 'Nothofagaceae', '')
+	,(0, 24, 25, 'GENTIANALES', 'Apocynaceae', 'Rauvolfioideae')
+	,(0, 25, 26, 'GENTIANALES', 'Rubiaceae', 'Cinchonoideae')
+	,(0, 26, 27, 'GENTIANALES', 'Rubiaceae', '')
+	,(0, 27, 28, 'LAMIALES', 'Bignoniaceae', '')
+	,(0, 28, 29, 'LAMIALES', 'Lamiaceae', '')
+	,(0, 29, 30, 'LAMIALES', 'Oleaceae', '')
+	,(0, 30, 31, 'LAURALES', 'Lauraceae', '')
+	,(0, 31, 32, 'MAGNOLIALES', 'Magnoliaceae', '')
+	,(0, 32, 33, 'MAGNOLIALES', 'Myristicaceae', '')
+	,(0, 33, 34, 'MAGNOLIOPSIDA', 'Fabaceae', '')
+	,(0, 34, 35, 'MAGNOLIOPSIDA', 'Myristicaceae', '')
+	,(0, 35, 36, 'MALPIGHIALES', 'Achariaceae', '')
+	,(0, 36, 37, 'MALPIGHIALES', 'Calophyllaceae', '')
+	,(0, 37, 38, 'MALPIGHIALES', 'Caryocaraceae', '')
+	,(0, 38, 39, 'MALPIGHIALES', 'Euphorbiaceae', 'Crotonoideae')
+	,(0, 39, 40, 'MALPIGHIALES', 'Ochnaceae', 'Ochnoideae')
+	,(0, 40, 41, 'MALPIGHIALES', 'Salicaceae', '')
+	,(0, 41, 42, 'MALVALES', 'Dipterocarpaceae', '')
+	,(0, 42, 43, 'MALVALES', 'Malvaceae', 'Bombacoideae')
+	,(0, 43, 44, 'MALVALES', 'Malvaceae', 'Dombeyoideae')
+	,(0, 44, 45, 'MALVALES', 'Malvaceae', 'Helicteroideae')
+	,(0, 45, 46, 'MALVALES', 'Malvaceae', 'Sterculioideae')
+	,(0, 46, 47, 'MALVALES', 'Malvaceae', 'Tilioideae')
+	,(0, 47, 48, 'MALVALES', 'Malvaceae', 'Thymelaeceae')
+	,(0, 48, 49, 'MYRTALES', 'Combretaceae', 'Combretoideae')
+	,(0, 49, 50, 'MYRTALES', 'Myrtaceae', '')
+	,(0, 50, 51, 'MYRTALES', 'Myrtaceae', 'Myrtoideae')
+	,(0, 51, 52, 'MYRTALES', 'Vochysiaceae', '')
+	,(0, 52, 53, 'PROTEALES', 'Platenaceae', '')
+	,(0, 53, 54, 'ROSALES', 'Cannabaceae', '')
+	,(0, 54, 55, 'ROSALES', 'Fabaceae', 'Faboideae')
+	,(0, 55, 56, 'ROSALES', 'Moraceae', '')
+	,(0, 56, 57, 'ROSALES', 'Moraceae', 'Moreae')
+	,(0, 57, 58, 'ROSALES', 'Rosaceae', 'Amygdaloideae')
+	,(0, 58, 59, 'ROSALES', 'Ulmaceae', '')
+	,(0, 59, 60, 'RUBIALES', 'Anacardiaceae', 'Spondiadoideae')
+	,(0, 60, 61, 'SANTALALES', 'Santalaceae', '')
+	,(0, 61, 62, 'SAPINDALES', 'Aceraceae', 'Hippocastanoideae')
+	,(0, 62, 63, 'SAPINDALES', 'Anacardiaceae', 'Anacardioideae')
+	,(0, 63, 64, 'SAPINDALES', 'Burseraceae', '')
+	,(0, 64, 65, 'SAPINDALES', 'Meliaceae', '')
+	,(0, 65, 66, 'SAPINDALES', 'Rutaceae', 'Toddalioideae')
+	,(0, 66, 67, 'SAPINDALES', 'Sapindaceae', 'Hippocastanoideae')
+	,(0, 67, 68, 'SAPINDALES', 'Sapindaceae', 'Sapindoideae')
+	,(0, 68, 69, 'SAPINDALES', 'Simaroubaceae', '')
+	,(0, 69, 70, 'SAXIFRAGALES', 'Altingiaceae', '')
+	,(0, 70, 71, 'ZYGOPHYLLALES', 'Zygophyllaceae', 'Larreoideae')
+	;
+
+COMMIT;

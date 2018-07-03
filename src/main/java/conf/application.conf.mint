@@ -150,9 +150,6 @@ superbowl.log.dao.timber.origin=false
 # Active JPA persistence unit
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ninja.jpa.persistence_unit_name=superbowlDS
-#ninja.jpa.persistence_unit_name=derby_superbowlDB_DEV
-#ninja.jpa.persistence_unit_name=derby_superbowlDB_PROD
-#ninja.jpa.persistence_unit_name=derby_timberbowlDB_DEV
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # H2 Database connection properties (Windows)
@@ -165,20 +162,15 @@ ninja.jpa.persistence_unit_name=superbowlDS
 # H2 Database connection properties (Linux Mint)
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #db.connection.url=jdbc:h2:tcp://localhost:9092/./opt/h2/store/superbowl/superbowlDB;ifexists=true
-db.connection.url=jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true
-db.connection.username=sa
-db.connection.password=
+#db.connection.url=jdbc:h2:tcp://localhost:9092//opt/h2/store/superbowl/superbowlDB;ifexists=true
+#db.connection.username=sa
+#db.connection.password=
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# Apache Derby Database connection properties
+# MySQL Database connection properties (Linux Mint)
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#db.connection.url=jdbc:derby://localhost:1527/superbowlDB_DEV;create=true;user=;password=
-#db.connection.url=jdbc:derby://localhost:1527/superbowlDB_DEV;create=true;user=dba;password=Him@laya
-#db.connection.url=jdbc:derby://localhost:1527/superbowlDB_DEV;create=true;user=DBAdmin;password=Him@l@y@
-#db.connection.url=jdbc:derby://localhost:1527/superbowlDB_DEV;create=true;user=SBUser;password=Superbowl
-#db.connection.url=jdbc:derby://localhost:1527/E:/db/store/derby/superbowlDB_DEV;create=true
-#db.connection.username=SBUSer
-#db.connection.password=Superbowl
-#db.connection.url=jdbc:derby://localhost:1527/superbowlDB_DEV;create=true
-#db.connection.username=app
-#db.connection.password=user
+#db.connection.url=jdbc:mysql://localhost:3306/superbowlDB;user=;password=
+#db.connection.url=jdbc:mysql://localhost:3306/superbowlDB;user=microbeans;password=Him@laya
+db.connection.url=jdbc:mysql://localhost:3306/superbowlDB
+db.connection.username=superbowl
+db.connection.password=L49dEnd3

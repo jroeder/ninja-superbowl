@@ -1,12 +1,20 @@
+<!-- =============================================== -->
+<!-- File: persistence.xml                           -->
+<!-- SQL Database Persistence Configuration Settings -->
+<!-- Created: 2018-05-26                             -->
+<!-- Last Update: 2018-05-26                         -->
+<!-- =============================================== -->
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
 
+	<!-- ============== -->
+	<!-- H2 Database    -->
+	<!-- ============== -->
 	<persistence-unit name="superbowlDS" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<!-- H2 Database -->
 			<property name="hibernate.archive.autodetection" value="class" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"	/>
 			<property name="hibernate.connection.driver_class" value="org.h2.Driver" />

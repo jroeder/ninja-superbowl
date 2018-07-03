@@ -1,0 +1,3 @@
+delete from customer;
+commit;
+

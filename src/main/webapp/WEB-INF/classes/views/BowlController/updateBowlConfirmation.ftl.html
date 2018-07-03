@@ -1,0 +1,265 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.superbowlLayout "Superbowl Home">
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Content Wrapper. Contains page content
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="content-wrapper">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Content Header (Page header)
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content-header">
+		<h1>
+			${i18n("bowl.title")} <small>${i18n("bowl.title.text")}</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i>
+					${i18n("breadcrumb.home")}</a></li>
+			<li><a href="#">${i18n("bowl.title")}</a></li>
+			<li class="active">${i18n("bowl.title.text")}</li>
+		</ol>
+	</section>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Main content
+		  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<section class="content">
+
+		<!-- Your Page Content Here -->
+
+		<div class="container-fluid">
+			<div class="row-fluid form-horizontal">
+
+				<h3>Update der Daten zu Objekt bestätigen</h3>
+
+				<div class="form-group">
+
+					<label class="col-xs-1 control-label" for="textinput">Identifier</label>
+					<div class="col-xs-3">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.id}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					<label class="col-xs-1 control-label" for="textinput">Version</label>
+					<div class="col-xs-3">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.version}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					
+					<div class="col-xs-6"></div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-1 control-label" for="textinput">Status</label>
+					<div class="col-xs-1">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.statusId}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					<div class="col-xs-2">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.statusText}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+							
+					<#if bowl.customerId?has_content>
+						<label class="col-xs-1 control-label" for="textinput">Kunde</label>
+						<div class="col-xs-1">
+							<#if bowl??>
+								<p class="form-control-static">${bowl.customerId}</p>
+							<#else>
+								<p class="form-control-static">N.A.</p>
+							</#if>
+						</div>
+						<div class="col-xs-6">
+							<#if bowl??>
+								<p class="form-control-static">${bowl.customerGivenName} ${bowl.customerFamilyName}</p>
+							<#else>
+								<p class="form-control-static">N.A.</p>
+							</#if>
+						</div>
+					</#if>
+					
+					<#if bowl.exhibitionId?has_content>					
+					<label class="col-xs-1 control-label" for="textinput">Ausstellung</label>
+						<div class="col-xs-1">
+							<#if bowl??>
+								<p class="form-control-static">${bowl.exhibitionId}</p>
+							<#else>
+								<p class="form-control-static">N.A.</p>
+							</#if>
+						</div>
+						<div class="col-xs-6">
+							<#if bowl??>
+								<p class="form-control-static">${bowl.exhibitionName}</p>
+							<#else>
+								<p class="form-control-static">N.A.</p>
+							</#if>
+						</div>
+					</#if>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-1 control-label" for="textinput">Holzart</label>
+					<div class="col-xs-1">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.timberId}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					<div class="col-xs-2">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.timberName}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+					<label class="col-xs-1 control-label" for="textinput">Herkunft</label>
+					<div class="col-xs-7">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.timberOriginName!?replace("~", " ")}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-1 control-label" for="textinput">Ordinal#</label>
+					<div class="col-xs-3">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.ordinal}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+					
+					<label class="col-xs-1 control-label" for="textinput">Bildname</label>
+					<div class="col-xs-3">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.imageName}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+					<label class="col-xs-1 control-label" for="textinput">Jahr</label>
+					<div class="col-xs-3">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.year}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-1 control-label" for="textinput">Preis</label>
+					<div class="col-xs-1">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.price}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+					<#if bowl?? && bowl.salesPrice??>
+						<label class="col-xs-1 control-label" for="textinput">VK-Preis</label>
+						<div class="col-xs-1">
+							<p class="form-control-static">${bowl.salesPrice}</p>
+						</div>
+					</#if>
+
+					<#if bowl?? && bowl.salesLocation??>
+						<label class="col-xs-1 control-label" for="textinput">VK-Ort</label>
+						<div class="col-xs-3">
+							<p class="form-control-static">${bowl.salesLocation}</p>
+						</div>
+					</#if>
+
+					<#if bowl?? && bowl.salesDate??>
+						<label class="col-xs-1 control-label" for="textinput">VK-Datum</label>
+						<div class="col-xs-3">
+							<p class="form-control-static">${bowl.salesDate}</p>
+						</div>
+					</#if>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-1 control-label" for="textinput">Herkunft</label>
+					<div class="col-xs-11">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.timberOriginName}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<div class="form-group">
+
+					<label class="col-xs-1 control-label" for="textinput">Kommentar</label>
+					<div class="col-xs-11">
+						<#if bowl??>
+							<p class="form-control-static">${bowl.comment?replace("~", " ")}</p>
+						<#else>
+							<p class="form-control-static">N.A.</p>
+						</#if>
+					</div>
+
+				</div>
+				<!-- ./form-group -->
+
+				<form method="post" action="/superbowl/updateBowlCompletion">
+					<!-- Button (Double) -->
+					<div class="form-group">
+						<label class="col-xs-1 control-label" for="buttonUpdateBowlOK"></label>
+						<div class="col-xs-11">
+							<button id="buttonConfirmUpdateBowl" name="buttonUpdateBowlOK" type="submit" class="btn btn-success btn-sm">${i18n("button.ok")}</button>
+							<#if bowl.customerId?has_content>
+								<a class="btn btn-info btn-sm" href="/superbowl/updateBowl?bowlId=${bowl.id}&timberOriginId=${timberOriginId}&statusCode=${statusCode}&exhibitionId=&customerId=${bowl.customerId}" role="button">${i18n("button.back")}</a>
+							</#if>
+							<#if bowl.exhibitionId?has_content>
+								<a class="btn btn-info btn-sm" href="/superbowl/updateBowl?bowlId=${bowl.id}&timberOriginId=${timberOriginId}&statusCode=${statusCode}&exhibitionId=${bowl.exhibitionId}&customerId=" role="button">${i18n("button.back")}</a>
+							</#if>
+							<a class="btn btn-warning btn-sm" href="/superbowl/bowl" role="button">${i18n("button.cancel")}</a>
+						</div>
+					</div>
+				</form>
+
+			</div>
+			<!-- ./row-fluid -->
+		</div>
+		<!-- ./container-fluid -->
+
+	</section>
+	<!-- ./content -->
+</div>
+<!-- /.content-wrapper --> </@layout.superbowlLayout>

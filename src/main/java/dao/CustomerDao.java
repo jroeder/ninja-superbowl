@@ -261,7 +261,7 @@ public class CustomerDao extends AbstractDao {
 				Customer.class);
 		List<Customer> typedQueryResultList = typedQuery.getResultList();
 
-		List<CustomerDto> customerDtos = new ArrayList<>();
+		List<CustomerDto> customerDtoList = new ArrayList<>();
 
 		if (typedQueryResultList.isEmpty()) {
 			logger.info("No Customer instance found in data store!");
@@ -275,10 +275,10 @@ public class CustomerDao extends AbstractDao {
 						customer.getFamilyName(), customer.getPhone(), customer.getFax(), customer.getMobile(),
 						customer.getEmail(), customer.getStreet(), customer.getHouseNumber(), customer.getZipCode(),
 						customer.getCity(), customer.getCountryCode(), customer.getCountry(), customer.getComment());
-				customerDtos.add(customerDto);
+				customerDtoList.add(customerDto);
 			}
 		}
-		return customerDtos;
+		return customerDtoList;
 
 	}
 

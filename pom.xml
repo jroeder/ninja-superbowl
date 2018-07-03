@@ -17,16 +17,13 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<ninja.version>6.2.0</ninja.version>
-		<!-- <ninja.version.rc1>6.0.0-rc1</ninja.version.rc1> -->
+		<ninja.version>6.0.0</ninja.version>
 		<jetty.version>9.4.2.v20170220</jetty.version>
 		<bootstrap.version>3.3.7</bootstrap.version>
 		<jquery.version>3.1.1</jquery.version>
 		<datatables.version>1.10.13</datatables.version>
 		<h2.version>1.4.193</h2.version>
-		<!-- <mysql.version>5.1.41</mysql.version> -->
-		<!-- <mariadb.version>1.5.8</mariadb.version> -->
-		<!-- <derby.version>10.13.1.1</derby.version> -->
+		<mysql.connectorj.version>5.1.46</mysql.connectorj.version>
 		<!--
 		<liquibase.version>3.5.3</liquibase.version>
 		-->
@@ -375,20 +372,6 @@
 				</excludes>
 			</resource>
 			<!-- ====================== -->
-			<!-- src/main/javadoc       -->
-			<!-- ====================== -->
-			<resource>
-				<directory>src/main/javadoc</directory>
-				<includes>
-					<!--
-					<include>**/*</include>
-					-->
-				</includes>
-				<excludes>
-					<exclude>**/*</exclude>
-				</excludes>
-			</resource>
-			<!-- ====================== -->
 			<!-- src/main/webapp        -->
 			<!-- ====================== -->
 			<resource>
@@ -408,9 +391,10 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<includes>
-					<include>**/*</include>
+					<include>lib/*.*</include>
 				</includes>
 				<excludes>
+					<exclude>images/*.*</exclude>
 					<exclude>**/*.html</exclude>
 					<exclude>**/*.css</exclude>
 					<exclude>**/*.jpg</exclude>
@@ -420,9 +404,22 @@
 					<exclude>**/*.txt</exclude>
 					<exclude>**/*.sql</exclude>
 					<exclude>**/*.properties</exclude>
-					<exclude>**/*.xml.derby</exclude>
 					<exclude>**/*.xml.h2</exclude>
 					<exclude>**/*.xml.mysql</exclude>
+				</excludes>
+			</resource>
+			<!-- ====================== -->
+			<!-- doc                    -->
+			<!-- ====================== -->
+			<resource>
+				<directory>doc</directory>
+				<includes>
+					<!--
+					<include>**/*</include>
+					-->
+				</includes>
+				<excludes>
+					<exclude>**/*</exclude>
 				</excludes>
 			</resource>
 		</resources>
@@ -499,12 +496,6 @@
 			<version>${datatables.version}</version>
 		</dependency>
 		-->
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>${h2.version}</version>
-		</dependency>
 		<!-- iText PDF v7.x -->
 		<!--
 		<dependency>
@@ -513,35 +504,18 @@
 			<version>${itextpdf.version}</version>
 		</dependency>
 		-->
-		<!-- https://mvnrepository.com/artifact/com.mariadb/mariadb -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connectorj.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
 		<!--
 		<dependency>
-			<groupId>org.mariadb.jdbc</groupId>
-			<artifactId>mariadb-java-client</artifactId>
-			<version>${mariadb.version}</version>
-		</dependency>
-		-->
-		<!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
-		<!--
-		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derby</artifactId>
-			<version>${derby.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derbyclient</artifactId>
-			<version>${derby.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derbynet</artifactId>
-			<version>${derby.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derbytools</artifactId>
-			<version>${derby.version}</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
 		</dependency>
 		-->
 		<!-- Reflow skin requires Velocity >= 1.7 -->

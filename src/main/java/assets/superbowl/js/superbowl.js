@@ -3,12 +3,14 @@
     ------------------------------------ */
 
 /**
- * ------------------------------------ DataTables and its extensions are
+ * ------------------------------------ 
+ * DataTables and its extensions are
  * extremely configurable libraries and almost every aspect of the enhancements
  * they make to HTML tables can be customised. Features can be enabled, disabled
  * or customised to meet your exact needs for your table implementations.
  * Customisation of these options are performed by defining options in the
- * $().DataTable() constructor. ------------------------------------
+ * $().DataTable() constructor. 
+ * ------------------------------------
  */
 $(function() {
 
